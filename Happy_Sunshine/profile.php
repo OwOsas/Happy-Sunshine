@@ -8,7 +8,7 @@ include_once __DIR__ . "/config.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Sunshine</title>
+    <title>Profile | Happy Sunshine</title>
     <link rel="shortcut icon" type="image/svg" href="./img/favicon.svg">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/form.css">
