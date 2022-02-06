@@ -163,6 +163,7 @@
 @media screen and (min-width: $tablet_bp){
     .banner{
         background-image: url(../img/banner_img.png);
+        height: 450px;
     }
     .fst {
         max-width: 950px;
@@ -172,6 +173,8 @@
         #start_here{
             flex-direction: row;
             flex-wrap: wrap;
+
+            margin-top: 5rem;
 
             gap: 2rem 1rem;
             margin-inline: auto;

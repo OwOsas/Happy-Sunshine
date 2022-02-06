@@ -103,12 +103,10 @@ include_once __DIR__ . "/config.php";
         </div>
     </div>
 
-    <div class="menu">
         <link rel="stylesheet" href="./css/menu.css">
         <?php
-        include_once __DIR__ .'/food_menu.php';
+        include_once __DIR__ .'/menu_gen.php';
         ?>
-    </div>
 
     <div class="footer" style="height: 500px; width: 100%;">
 

@@ -153,7 +153,7 @@ header{
     }
     .menu{
         transform: none;
-        display: flex;
+        display: flex !important;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
@@ -164,6 +164,7 @@ header{
         position: relative;
 
         box-sizing: content-box;
+        padding: 1rem 4rem;
 
         .active{
             border-bottom: 2px solid $clr_tertiary;

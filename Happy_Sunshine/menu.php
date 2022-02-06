@@ -16,7 +16,7 @@
 <body>
     <?php
         include_once __DIR__ .'/components/header.php';
-        include_once __DIR__ .'/food_menu.php';
+        include_once __DIR__ .'/menu_gen.php';
     ?>
 
     
