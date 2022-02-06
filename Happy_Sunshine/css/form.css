@@ -44,7 +44,7 @@ label {
   border-bottom: 4px solid #EE702A;
 }
 
-#login_btn {
+.form_btn {
   border: none;
   margin-top: 1rem;
 }
@@ -55,4 +55,4 @@ label {
     width: 50%;
   }
 }
-/*# sourceMappingURL=login.css.map */
+/*# sourceMappingURL=form.css.map */

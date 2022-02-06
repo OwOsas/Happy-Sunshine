@@ -18,24 +18,19 @@ include_once __DIR__ . "/config.php";
         include_once __DIR__ .'/components/header.php';
     ?>
 
-    <div class="banner desktop">
-        
-    </div>
-
     <div class="fst">
         <div class="main_container">
-            <div id="login_options">
-                <a href="" class="active">Login</a>
-                <a href="">Sign Up</a>
-            </div>
-            
             <div class="input_field_container">
                 <form action="#">
-                    <label for="login_email">Email Address:</label>
-                    <input type="text" id="login_email" name="login_email" class="input_field">
-                    <label for="login_password">Password:</label>
-                    <input type="password" id="login_password" name="login_password" class="input_field">
-                    <input type="submit" value="Login" class="btn form_btn" id="login_btn">
+                    <label for="profile_name">Name:</label>
+                    <input type="text" id="profile_name" name="profile_name" class="input_field">
+                    <label for="profile_phone">Phone number:</label>
+                    <input type="text" id="profile_number" name="profile_number" class="input_field">
+                    <label for="profile_email">Email address:</label>
+                    <input type="text" id="profile_email" name="profile_email" class="input_field">
+                    <label for="profile_password">Password:</label>
+                    <input type="password" id="profile_password" name="profile_password" class="input_field">
+                    <input type="submit" value="Update profile" class="btn form_btn" id="update_profile_btn">
                 </form>
             </div>
         </div>
