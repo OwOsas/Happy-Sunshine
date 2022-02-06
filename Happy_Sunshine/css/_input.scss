@@ -1,0 +1,22 @@
+@import "./style_guide";
+
+input{
+    display: block;
+}
+
+.input_field{
+    border: 2.5px solid $clr_black;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    height: 2.5rem;
+    padding: 0 0.5rem;
+    width: 100%;
+}
+
+label{
+    display: block;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    margin-top: 1rem;
+}
