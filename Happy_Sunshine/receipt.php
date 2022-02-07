@@ -22,37 +22,43 @@ include_once __DIR__ . "/config.php";
     </div>
     
     <div class="fst">
+        <div class = "main_container">
         <h2>Receipt</h2>
         <p>Thank you for your order</p>
         <p>Show this receipt when picking up your order at</p>
         <a target="_blank" href="https://www.google.com/maps/search/33rd+and+Arch+Street,++Philadelphia,+PA+19104/@39.9593223,-75.1915078,17z/data=!3m1!4b1">
             33rd and Arch Street,<br> Philadelphia, PA 19104
         </a>
+        </div>
         <div class="float-container">
             <div class="float-child">
             <div class="order">
-                <h3>Breakfast Sandwich</h3>
-                <p>Bagel, Bacon, Egg, Cheese, Ketchup, Salt, Pepper</p>
-                <p>Price: <b>$5.00</b></p>
+                <div class="left">
+                    <img src="./img/burger.png" alt=""width="60%" height="60%"> 
+                </div>	
+                <div class="right_button" >
+                    <h3><b>Breakfast Sandwich</b></h3>
+                    <p>Bagel, Bacon, Egg, Cheese, Ketchup, Salt, Pepper</p>
+                    <p>Price: <b>$5.00</b></p>
+                </div>
             </div>
             </div>
         </div>
             <div class="float-child">
-            <div class="main_container">
-                <h3>Name:</h3>
-                <h3>Phone Number:</h3>
-                <h3>Pick-up Time:</h3>
-                <h3>Total: $5.00 Cash Only</h3>
-            </div>
-            </div>
-        <a href="./track.php" class="btn" id="track_order">
-            Track Order
-        </a>
+                <h3>Name: <b>John Smith</b></h3>
+                <h3>Phone Number: <b>111-111-111</b></h3>
+                <h3>Pick-up Time: <b>1:15PM</b></h3>
+                <h3>Total: <b>$5.00 Cash Only</b></h3>
+                <div class="left_button">
+                  <a href="./track.php" class="btn" id="track_order"> Track Order</a>
+                </div>
 
-        <!-- <div> -->
-            <a href="" class="btn" id="recent">
-               Print Receipt
-            </a>
+                <!--<div class="right_button" >
+                 <a href="" class="btn" id="recent"> Print Receipt </a>
+                </div>--->
+
+            </div>
+            </div>
         </div>
     </div>
 
