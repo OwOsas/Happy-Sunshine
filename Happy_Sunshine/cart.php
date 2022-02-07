@@ -24,11 +24,11 @@ include_once __DIR__ . "/config.php";
     <div class="fst">
         <h2>My cart</h2>
         <img src="./img/chicken.png" alt="" width="50%" height="50%">
-        <p>My cart is empty!</p>
+        <h2>My cart is empty!</h2>
         
         <div id="start_here">
             <a href="./menu.php" class="btn" id="start_order">
-                Order Now 
+                Order Now
                 <img src="./img/icons/arrow_right.svg" alt="">
             </a>
 
