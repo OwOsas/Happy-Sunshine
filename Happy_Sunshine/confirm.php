@@ -25,11 +25,16 @@ include_once __DIR__ . "/config.php";
 
     <div class="float-container">
         <div class="float-child">
+            <div class="left">
+                <img src="./img/burger.png" alt=""width="60%" height="60%"> 
+            </div>	
+            <div class="right" >
             <h2>My Cart</h2>
             <h3><b>Breakfast Sandwich</b></h3>
             <p>Bagel, Bacon, Egg, Cheese, Ketchup, Salt, Pepper</p>
             <p>Price: <b>$5.00</b></p>
             <h3><b>Total: $5.00</b> Cash Only</h3>
+            </div>
         </div>
         <div class="float-child">
             <h2>Order Info</h2>
@@ -41,8 +46,11 @@ include_once __DIR__ . "/config.php";
                     <input type="phonenumber" id="phonenumber" name="phonenumber" class="input_field">
                 </form>
             </div>
+            <div class="pick up time">
             <h3><b>Pick-up Time</b></h3>
-            <div class="Choose pick-up time">
+            <!--Selection box here-->
+            <img src="./img/selection.png" alt=""width="50%" height="50%"> 
+            </div>
             <div class="find_us">
                     <div>
                         <img src="./img/icons/truck.svg" alt="">
@@ -55,7 +63,7 @@ include_once __DIR__ . "/config.php";
                                 View in Google Maps <img src="./img/icons/link_arrow_right.svg" alt="">
                             </a>-->
                         </div>
-                        <img src="./img/map.png" alt=""width="40%" height="40%"> 
+                        <img src="./img/map.png" alt=""width="60%" height="60%"> 
                     </div>
                     
             </div>
