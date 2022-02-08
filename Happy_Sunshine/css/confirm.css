@@ -162,10 +162,13 @@ form #confirm_order p {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  text-align: center;
 }
 
 form #confirm_order input {
   border: none;
+}
+
+form #confirm_order .total {
+  font-size: 1.5rem;
 }
 /*# sourceMappingURL=confirm.css.map */
