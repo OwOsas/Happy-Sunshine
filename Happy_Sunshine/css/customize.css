@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#customize_container a {
+  color: black;
+  font-weight: 400;
+  margin: 0 1.5rem;
+  text-decoration: none;
+}
+
+#item_info h1 {
+  font-size: 1.5rem;
+}
+
+.customize_section {
+  margin-top: 1rem;
+}
+
+.customize_section p {
+  display: inline-block;
+}
+
+.customize_section .section_title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.customize_section .selection {
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 0.5rem;
+          column-gap: 0.5rem;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.customize_section input[type="radio"], .customize_section input[type="checkbox"] {
+  display: none;
+}
+
+.customize_section input[type="radio"]:not(:checked) + label, .customize_section input[type="checkbox"]:not(:checked) + label {
+  background-color: white;
+  border: 2px solid #C4C4C4;
+  border-radius: 22px;
+  display: block;
+  -webkit-filter: drop-shadow(0 3px 1.5px #C4C4C4);
+          filter: drop-shadow(0 3px 1.5px #C4C4C4);
+  padding: 0.75rem 2rem;
+  text-align: center;
+}
+
+.customize_section input[type="radio"]:checked + label, .customize_section input[type="checkbox"]:checked + label {
+  background-color: #F0D028;
+  border: 2px solid #D6BA24;
+  border-radius: 22px;
+  display: block;
+  padding: 0.75rem 2rem;
+  text-align: center;
+}
+
+.customize_section .price_tag {
+  background-color: #EE652A;
+  border-radius: 16px;
+  color: white;
+  -webkit-filter: drop-shadow(0 3px 1.5px #C4C4C4);
+          filter: drop-shadow(0 3px 1.5px #C4C4C4);
+  padding: 0.1rem 0.5rem;
+  position: absolute;
+  right: 0;
+  top: -12px;
+  z-index: 10;
+}
+
+.customize_section .with_price_tag {
+  margin-top: 1.25rem;
+  position: relative;
+}
+
+.customize_section .without_price_tag {
+  margin-top: 0.75rem;
+}
+
+#add_note_section {
+  margin-bottom: 1rem;
+}
+
+#add_note_section .input_field {
+  border: 2.5px solid black;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  width: 100%;
+}
+
+#add_note_section label {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  margin-top: 1rem;
+}
+
+#add_to_cart_btn {
+  border: none;
+}
+/*# sourceMappingURL=customize.css.map */
