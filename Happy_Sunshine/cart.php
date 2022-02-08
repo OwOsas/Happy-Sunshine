@@ -45,6 +45,13 @@ include_once __DIR__ . "/config.php";
             </div>
         </div>
 <!-- _____________________________________________ -->
+
+        <div id="confirm_order">
+            <h3>Total:$5.0</h3>
+            <button href="./menu.php" class="btn" id="confirm_order_btn">
+            Confirm Order
+            </button>
+        </div>
         <div id="cart_empty">
             <img src="./img//icons/cart_empty_crying_bird.svg" alt="" width="50%" height="50%">
             <h2>My cart is empty!</h2>

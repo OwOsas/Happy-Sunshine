@@ -9,6 +9,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
 
     padding: 2rem;
 
@@ -60,6 +61,9 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    border-bottom: 2px $clr_grey solid;
+    padding: 1rem 0;
+    
     .item{
         display: flex;
         width: 100%;
@@ -90,31 +94,89 @@
         display: flex;
         flex-direction: row;
         justify-content:space-between;
+        
+        a{
+            font-size: 1.15rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
         .quantity{
+            cursor: pointer;
             display: flex;
             flex-direction: row;
             gap: .5rem;
-            justify-content: space-between;
-            width: 6rem;
+            justify-content: end;
+            align-items: center;
+            width: 10rem;
             .subtract{
-                width: 16px;
-                height: 5px;
-                background-color: $clr_black;
+                width: calc(16px + 1rem);
+                height: calc(5px + 1rem);
+                padding: .5rem;
+                &::after{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 16px;
+                    height: 5px;
+                    background-color: $clr_grey;
+                    transition: .3s;
+                }
+                &:hover{
+                    &::after{
+                        background-color: $clr_black;
+                    }
+
+                }
             }
             .add{
-                width: 16px;
-                height: 16px;
+                width: calc(16px + 1rem);
+                height: calc(16px + 1rem);
+                padding: .5rem;
+                position: relative;
+
+                cursor: pointer;
                 &::before{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
                     width: 16px;
                     height: 5px;
-                    background-color: $clr_black;
+                    background-color: $clr_grey;
+                    transition: .3s;
                 }
                 &::after{
-                    width: 16px;
-                    height: 5px;
-                    background-color: $clr_black;
+                    content: "";
+                    display: block;
+                    margin: 0 auto;
+                    width: 5px;
+                    height: 16px;
+                    background-color: $clr_grey;
+                    transition: .3s;
+                }
+
+                &:hover{
+                    &::before, &::after{
+                        background-color: $clr_black;
+                    }
+
                 }
             }
         }
+    }
+}
+
+#confirm_order{
+    width: 100%;
+    h3{
+        font-size: 1.5rem;
+        text-align: end;
+    }
+    .btn{
+        border: none;
+        margin: 1rem 0;
+        cursor: pointer;
     }
 }

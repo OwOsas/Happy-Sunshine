@@ -19,7 +19,7 @@ console.log('This is header js');
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 50) {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("header_container").classList.add("header_shrink");
   } else {
     document.getElementById("header_container").classList.remove("header_shrink");
