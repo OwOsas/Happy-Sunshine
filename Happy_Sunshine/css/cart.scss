@@ -4,10 +4,10 @@
 @import './btn';
 @import './style_guide';
 
-.fst{
+.fst {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     gap: 2rem;
 
@@ -15,26 +15,26 @@
 
     min-height: calc(100vh - 100px);
 
-    #title{
+    #title {
         display: flex;
         justify-content: space-between;
         width: 100%;
 
-        &::after{
+        &::after {
             content: "";
             display: block;
             height: 1rem;
             width: 4rem;
         }
 
-        h1{
+        h1 {
             text-align: center;
             font-weight: 500;
             font-size: 2rem;
             justify-self: center;
         }
 
-        a{
+        a {
             color: $clr_black;
             text-decoration: none;
             font-weight: normal;
@@ -46,74 +46,84 @@
         }
     }
 
-    #cart_empty{
-        img{
+    #cart_empty {
+        margin: 4rem;
+
+        img {
             height: 300px;
             width: unset;
         }
-        h2{
+
+        h2 {
             text-align: center;
         }
     }
 }
 
-.cart_item_card{
+.cart_item_card {
     display: flex;
     flex-direction: column;
+
     width: 100%;
     border-bottom: 2px $clr_grey solid;
     padding: 1rem 0;
-    
-    .item{
+
+    .item {
         display: flex;
         width: 100%;
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
-        .img{
+
+        .img {
             width: 64px;
             height: 64px;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
         }
-        .item_description{
+
+        .item_description {
             max-width: calc(100% - 80px);
-            h3{
+
+            h3 {
                 font-size: 1.25rem;
             }
         }
     }
-    .price{
-        text-align: end;
+
+    .price {
+        text-align: right;
         font-weight: 500;
         font-size: 1.15rem;
     }
-    
-    .item_mod{
+
+    .item_mod {
         display: flex;
         flex-direction: row;
-        justify-content:space-between;
-        
-        a{
+        justify-content: space-between;
+
+        a {
             font-size: 1.15rem;
             font-weight: bold;
             text-decoration: none;
         }
 
-        .quantity{
+        .quantity {
             cursor: pointer;
             display: flex;
             flex-direction: row;
             gap: .5rem;
-            justify-content: end;
+            justify-content: flex-end;
             align-items: center;
             width: 10rem;
-            .subtract{
+
+            .subtract {
                 width: calc(16px + 1rem);
                 height: calc(5px + 1rem);
                 padding: .5rem;
-                &::after{
+
+                &::after {
                     content: "";
                     display: block;
                     position: absolute;
@@ -122,21 +132,24 @@
                     background-color: $clr_grey;
                     transition: .3s;
                 }
-                &:hover{
-                    &::after{
+
+                &:hover {
+                    &::after {
                         background-color: $clr_black;
                     }
 
                 }
             }
-            .add{
+
+            .add {
                 width: calc(16px + 1rem);
                 height: calc(16px + 1rem);
                 padding: .5rem;
                 position: relative;
 
                 cursor: pointer;
-                &::before{
+
+                &::before {
                     content: "";
                     display: block;
                     position: absolute;
@@ -147,7 +160,8 @@
                     background-color: $clr_grey;
                     transition: .3s;
                 }
-                &::after{
+
+                &::after {
                     content: "";
                     display: block;
                     margin: 0 auto;
@@ -157,8 +171,10 @@
                     transition: .3s;
                 }
 
-                &:hover{
-                    &::before, &::after{
+                &:hover {
+
+                    &::before,
+                    &::after {
                         background-color: $clr_black;
                     }
 
@@ -168,15 +184,31 @@
     }
 }
 
-#confirm_order{
+#confirm_order {
     width: 100%;
-    h3{
+
+    h3 {
         font-size: 1.5rem;
-        text-align: end;
+        text-align: right;
     }
-    .btn{
+
+    .btn {
         border: none;
         margin: 1rem 0;
         cursor: pointer;
     }
+}
+
+// Dev only
+#dev_switch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px black solid;
+    background-color: violet;
+    z-index: 10000;
+}
+
+.hidden {
+    display: none !important;
 }

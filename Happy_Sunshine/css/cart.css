@@ -250,7 +250,7 @@ a img {
 .fst {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 2rem;
   padding: 2rem;
@@ -281,6 +281,9 @@ a img {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+}
+.fst #cart_empty {
+  margin: 4rem;
 }
 .fst #cart_empty img {
   height: 300px;
@@ -318,7 +321,7 @@ a img {
   font-size: 1.25rem;
 }
 .cart_item_card .price {
-  text-align: end;
+  text-align: right;
   font-weight: 500;
   font-size: 1.15rem;
 }
@@ -337,7 +340,7 @@ a img {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   width: 10rem;
 }
@@ -394,10 +397,23 @@ a img {
 }
 #confirm_order h3 {
   font-size: 1.5rem;
-  text-align: end;
+  text-align: right;
 }
 #confirm_order .btn {
   border: none;
   margin: 1rem 0;
   cursor: pointer;
+}
+
+#dev_switch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px black solid;
+  background-color: violet;
+  z-index: 10000;
+}
+
+.hidden {
+  display: none !important;
 }/*# sourceMappingURL=cart.css.map */
