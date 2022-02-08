@@ -1,6 +1,6 @@
 <div id="recent_orders_container">
     <a class="mobile" href="../Happy_Sunshine/"><img src="./img/icons/return_arrow_left.svg" alt=""> Home</a>
-    <h1>Recent Orders</h1>
+    <h1>Recent <br> Orders</h1>
 </div>
 
 <div id="recent_orders">

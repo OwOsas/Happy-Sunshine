@@ -1,6 +1,27 @@
 @import './style_guide';
 $header_height: 100px;
+
+#header_container{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 100px;
+}
+
+.header_shrink{
+    header{
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+        height: calc(50px + 1rem);
+        #logo img{
+                height: 80%;
+        }
+    }
+
+}
+
 header{
+    background-color: $clr_bg;
     height: $header_height;
     width: 100%;
     display: flex;
@@ -34,8 +55,22 @@ header{
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        cursor: pointer;
     
         position: relative;
+
+        &:hover{
+            &::before{
+                width: $burger_width - 10px;
+            }
+        }
+
+        &.active:hover{
+            &::before{
+                width: $burger_width;
+            }
+        }
 
         &::before, &::after{
             content: "";
@@ -73,11 +108,7 @@ header{
     
 }
 
-.header_container{
-    position: relative;
-    background-color: transparent;
-    z-index: 100;
-}
+
 
 .menu{
 
@@ -121,7 +152,7 @@ header{
 
 
 @media screen and (min-width: $tablet_bp){
-    .header_container{
+    #header_container{
         .desktop{
             display: unset;
         }

@@ -189,6 +189,13 @@
         }
     }
 }
+
+.desktop{
+    menu{
+        display: none;
+    }
+
+}
     
 
 @media screen and (min-width: $desktop_bp){
@@ -203,4 +210,10 @@
         }
     }
 
+    .desktop{
+        menu{
+            display: block;
+        }
+    
+    }
 }
