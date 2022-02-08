@@ -25,7 +25,7 @@ include_once __DIR__ . "/config.php";
         <h1>Confirm Order</h1>
     </div>
 
-    <form>
+    <form action="receipt.php">
         <div id="cart_info">
             <h2>My Cart</h2>
             <div class="item_info">
