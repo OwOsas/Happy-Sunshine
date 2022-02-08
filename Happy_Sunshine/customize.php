@@ -21,7 +21,7 @@ include_once __DIR__ . "/include/functions.php";
     ?>
 
     <div id="customize_container">
-        <a class="mobile" href="../Happy_Sunshine/"><img src="./img/icons/return_arrow_left.svg" alt=""> Menu</a>
+        <a class="mobile" href="../Happy_Sunshine/menu.php"><img src="./img/icons/return_arrow_left.svg" alt=""> Menu</a>
     </div>
 
     <div class="banner desktop">
@@ -36,7 +36,7 @@ include_once __DIR__ . "/include/functions.php";
         </div>
 
         <div>
-            <form action="#">
+            <form action="cart.php">
                 <div class="customize_section">
                     <p class="section_title">Bread</p>
                     <p>Choose 1</p>
