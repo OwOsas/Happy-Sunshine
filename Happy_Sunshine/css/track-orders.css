@@ -167,7 +167,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
   border-top: 2px #CEC3B7 solid;
   margin-top: 3rem;
 }
@@ -276,7 +276,7 @@ a img {
 
 .container {
   min-height: calc(100vh - 100px);
-  padding: 2rem;
+  padding: 1.5rem;
   display: flex;
   position: relative;
   flex-direction: column;
