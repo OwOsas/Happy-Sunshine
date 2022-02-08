@@ -48,6 +48,7 @@
 
         border-top: 1px solid $clr_black;
         border-inline: 0;
+        text-decoration: none;
 
         cursor: pointer;
         
@@ -56,6 +57,7 @@
             font-weight: 500;
             color: $clr_black;
             line-height: 1.5rem;
+
         }
 
         img{

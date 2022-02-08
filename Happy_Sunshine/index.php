@@ -108,7 +108,9 @@ include_once __DIR__ . "/config.php";
         include_once __DIR__ .'/menu_gen.php';
         ?>
 
-    <div class="footer" style="height: 500px; width: 100%;">
+<?php
+    include_once __DIR__ .'/components/footer.php';
+    ?>
 
 </div>
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
