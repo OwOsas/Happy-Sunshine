@@ -53,8 +53,8 @@ include_once __DIR__ . "/config.php";
         <!-- _____________________________________________ -->
 
         <div id="confirm_order">
-            <h3>Total:$5.0</h3>
-            <a href="./track_orders.php" class="btn" id="confirm_order_btn">
+            <h3>Total:$5.00</h3>
+            <a href="./confirm.php" class="btn" id="confirm_order_btn">
                 Confirm Order
             </a>
         </div>
