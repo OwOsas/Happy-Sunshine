@@ -1,5 +1,25 @@
 @import './style_guide';
 $header_height: 100px;
+
+#header_container{
+    position: sticky;
+    top: 0;
+    background-color: $clr_bg;
+    z-index: 100;
+}
+
+.header_shrink{
+    header{
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+        height: calc(50px + 1rem);
+        #logo img{
+                height: 80%;
+        }
+    }
+
+}
+
 header{
     height: $header_height;
     width: 100%;
@@ -73,11 +93,7 @@ header{
     
 }
 
-.header_container{
-    position: relative;
-    background-color: transparent;
-    z-index: 100;
-}
+
 
 .menu{
 
@@ -121,7 +137,7 @@ header{
 
 
 @media screen and (min-width: $tablet_bp){
-    .header_container{
+    #header_container{
         .desktop{
             display: unset;
         }

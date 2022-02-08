@@ -1,0 +1,120 @@
+@import './header';
+@import './footer';
+@import './general';
+@import './btn';
+@import './style_guide';
+
+.fst{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2rem;
+
+    min-height: calc(100vh - 100px);
+
+    #title{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        &::after{
+            content: "";
+            display: block;
+            height: 1rem;
+            width: 4rem;
+        }
+
+        h1{
+            text-align: center;
+            font-weight: 500;
+            font-size: 2rem;
+            justify-self: center;
+        }
+
+        a{
+            color: $clr_black;
+            text-decoration: none;
+            font-weight: normal;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .5rem;
+
+        }
+    }
+
+    #cart_empty{
+        img{
+            height: 300px;
+            width: unset;
+        }
+        h2{
+            text-align: center;
+        }
+    }
+}
+
+.cart_item_card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .item{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        .img{
+            width: 64px;
+            height: 64px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .item_description{
+            max-width: calc(100% - 80px);
+            h3{
+                font-size: 1.25rem;
+            }
+        }
+    }
+    .price{
+        text-align: end;
+        font-weight: 500;
+        font-size: 1.15rem;
+    }
+    
+    .item_mod{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        .quantity{
+            display: flex;
+            flex-direction: row;
+            gap: .5rem;
+            justify-content: space-between;
+            width: 6rem;
+            .subtract{
+                width: 16px;
+                height: 5px;
+                background-color: $clr_black;
+            }
+            .add{
+                width: 16px;
+                height: 16px;
+                &::before{
+                    width: 16px;
+                    height: 5px;
+                    background-color: $clr_black;
+                }
+                &::after{
+                    width: 16px;
+                    height: 5px;
+                    background-color: $clr_black;
+                }
+            }
+        }
+    }
+}

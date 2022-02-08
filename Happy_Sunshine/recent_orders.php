@@ -18,6 +18,7 @@
     <?php
         include_once __DIR__ .'/components/header.php';
         include_once __DIR__ .'/recent_order_gen.php';
+        include_once __DIR__ .'/components/footer.php';
     ?>
 
     <script src="./js/index.js"></script>

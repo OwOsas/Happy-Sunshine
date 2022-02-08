@@ -35,7 +35,7 @@ include_once __DIR__ . "/config.php";
                 </a>
 
                 <!-- <div> -->
-                    <a href="" class="btn" id="recent">
+                    <a href="./recent_orders.php" class="btn" id="recent">
                         Recent Orders
                     </a>
                     <!-- <div class="btn" id="favorites">
@@ -104,13 +104,16 @@ include_once __DIR__ . "/config.php";
     </div>
 
         <link rel="stylesheet" href="./css/menu.css">
+        <div class="desktop">
         <?php
         include_once __DIR__ .'/menu_gen.php';
         ?>
+        </div>
+
 
 <?php
     include_once __DIR__ .'/components/footer.php';
-    ?>
+?>
 
 </div>
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->

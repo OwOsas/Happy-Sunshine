@@ -1,8 +1,8 @@
-<div class="header_container">
+<div id="header_container">
     <header>
         <div id="burger_menu" class="mobile"></div>
 
-        <a id="logo" href="">
+        <a id="logo" href="./index.php">
             <!-- <img class="mobile" src=""    alt=""> -->
             <img class="" src="./img/HS_logo.svg" alt="">
         </a>
@@ -10,7 +10,7 @@
         <ul class="desktop menu">
             <li class="active"><a href="">Home</a></li>
             <li class="mobile"><a href="">Menu</a></li>
-            <li><a href="">Recent Orders</a></li>
+            <li><a href="./recent_orders.php">Recent Orders</a></li>
             <li><a href="">Profile</a></li>
         </ul>
 
