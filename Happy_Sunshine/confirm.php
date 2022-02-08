@@ -81,7 +81,7 @@ include_once __DIR__ . "/config.php";
             </div>
 
             <div id="start_here">
-                <a href="./menu.php" class="btn" id="start_order">
+                <a href="./receipt.php" class="btn" id="start_order">
             Place Order
             <img src="./img/icons/arrow_right.svg" alt="">
         </a>

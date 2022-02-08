@@ -11,6 +11,7 @@ include_once __DIR__ . "/config.php";
     <title>Happy Sunshine</title>
     <link rel="shortcut icon" type="image/svg" href="./img/favicon.svg">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/menu.css">
 </head>
 <body>
     <?php
@@ -92,7 +93,6 @@ include_once __DIR__ . "/config.php";
                         </a>
                     </div>
                 </div>
-                
             </div>
 
             <!--The div element for the map -->
@@ -103,7 +103,6 @@ include_once __DIR__ . "/config.php";
         </div>
     </div>
 
-        <link rel="stylesheet" href="./css/menu.css">
         <div class="desktop">
         <?php
         include_once __DIR__ .'/menu_gen.php';

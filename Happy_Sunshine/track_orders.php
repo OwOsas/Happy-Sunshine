@@ -10,46 +10,47 @@ include_once __DIR__ . "/config.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tracking Order | Happy Sunshine</title>
     <link rel="shortcut icon" type="image/svg" href="./img/favicon.svg">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/track-orders.css ">
 </head>
 <body>
     <?php
     include_once __DIR__ .'/components/header.php';
     ?>
 
-    <div class="banner desktop">
-        
-    </div>
-    
-    <div class="fst">
-        <h2>Track Order</h2>
-        
-        <div id="start_here">
+    <div class="container">
+        <div id="title">
+            <a class="mobile" href="../Happy_Sunshine/"><img src="./img/icons/return_arrow_left.svg" alt="">Home</a>
+            <h1>Recipe</h1>
+        </div>
 
-            <div class="order_tracking">
-                <div class="order_no">
-                    <h2>Preparing... </h2>
-                    <a href="./track_orders.php">
-                        Order #
-                        <!-- PHP -->
-                        5430
-                    </a>
+        <div class="tracking_card">
+            <h2>Preparing</h2>
+            <div class="break"></div>
+
+            <div class="food_item">
+            <div class="img" style="background-image:url('./img/banner_img.png');"></div>
+                <div>
+                    <h4>Breakfast Sandwich</h4>
+                    <p>$5.0</p>
                 </div>
-                <div class="status_tracker">
-                    <div id="order_placed">
-                        <p>Breakfast Sanwich</p>
-                        <img src="./img/icons/order_tracking_active.svg" alt="">
-                    </div>
-                    <div class="dash"></div>
-                    <div id="order_placed">
-                        <p>Breakfast Sanwich</p>
-                        <img src="./img/icons/order_tracking_active.svg" alt="">
-                    </div>
-                    <h3>Total: $69 Cash Only</h3>
-                </div>
-                
             </div>
-            <div class="find_us">
+
+            <div class="food_item">
+            <div class="img" style="background-image:url('./img/banner_img.png');"></div>
+                <div>
+                    <h4>Breakfast Sandwich</h4>
+                    <p>$5.0</p>
+                </div>
+
+            </div>
+
+            <div class="break"></div>
+            <h3>
+                Total: $10
+            </h3>
+        </div>
+
+        <div class="find_us">
                 <div>
                     <img src="./img/icons/truck.svg" alt="">
                     <div>
@@ -57,28 +58,26 @@ include_once __DIR__ . "/config.php";
                         <a target="_blank" href="https://www.google.com/maps/search/33rd+and+Arch+Street,++Philadelphia,+PA+19104/@39.9593223,-75.1915078,17z/data=!3m1!4b1">
                             33rd and Arch Street,<br> Philadelphia, PA 19104
                         </a>
+                        <p>6am to 2:30pm</p>
+                        <b>We are a cash only truck!</b>
                         <a target="_blank" href="https://www.google.com/maps/search/33rd+and+Arch+Street,++Philadelphia,+PA+19104/@39.9593223,-75.1915078,17z/data=!3m1!4b1">
                             View in Google Maps <img src="./img/icons/link_arrow_right.svg" alt="">
                         </a>
                     </div>
-                </div>
-                
-            </div>
-
-            <!--The div element for the map -->
-            <div id="map"></div>
-
-
-
+                </div> 
         </div>
+
+        <div id="map"></div>
     </div>
 
-        <link rel="stylesheet" href="./css/menu.css">
-        <?php
-        include_once __DIR__ .'/menu_gen.php';
-        ?>
+    <!--The div element for the map -->
 
-    <div class="footer" style="height: 500px; width: 100%;">
+
+    
+
+    <?php
+        include_once __DIR__ . '/components/footer.php';
+    ?>
 
 </div>
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->

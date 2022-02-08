@@ -1,0 +1,120 @@
+@import './header';
+@import './footer';
+@import './general';
+@import './btn';
+@import './style_guide';
+
+#title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &::after {
+        content: "";
+        display: block;
+        height: 1rem;
+        width: 4rem;
+    }
+
+    h1 {
+        text-align: center;
+        font-weight: 500;
+        font-size: 2rem;
+        justify-self: center;
+    }
+
+    a {
+        color: $clr_black;
+        text-decoration: none;
+        font-weight: normal;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+
+    }
+}
+
+.container{
+    min-height: calc(100vh - 100px);
+    padding: 2rem;
+
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+.tracking_card{
+    background-color: $clr_white;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 1.375rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    .break{
+        width: 100%;
+        height: 2px;
+        background-color: $clr_grey;
+    }
+
+    .food_item{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        .img{
+            width: 64px;
+            height: 64px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+}
+
+.find_us{
+    background-color: $clr_white;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > div{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        gap: 1rem;
+        width: 100%;
+        & > div{
+            display: flex;
+            flex-direction: column;
+
+            a{
+                color: $clr_tertiary;
+                font-weight: bold;
+            }
+            b{
+                font-weight: 600;
+            }
+        }
+        & > img{
+            margin-top: .5rem;
+        }
+    }
+}
+
+#map{
+    width: 100%;
+    height: 200px;
+    background-color: $clr_white;
+    border-radius: 10px;
+}
