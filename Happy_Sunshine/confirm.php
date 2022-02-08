@@ -11,6 +11,7 @@ include_once __DIR__ . "/config.php";
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Confirm Order | Happy Sunshine</title>
         <link rel="shortcut icon" type="image/svg" href="./img/favicon.svg">
+        <link rel="stylesheet" href="./css/index.css">
         <link rel="stylesheet" href="./css/confirm.css">
     </head>
 
@@ -19,79 +20,55 @@ include_once __DIR__ . "/config.php";
         include_once __DIR__ .'/components/header.php';
     ?>
 
-            <div class="banner desktop">
+    <div id="confirmation_container">
+        <a class="mobile" href="../Happy_Sunshine/menu.php"><img src="./img/icons/return_arrow_left.svg" alt="menu"> Menu</a>
+        <h1>Confirm Order</h1>
+    </div>
 
-            </div>
-
-            <div class="float-container">
-                <h2 class="cart1">My Cart</h2>
-                <div class="float-child">
-                    <div class="left">
-                        <img class="burger" src="./img/burger.png" alt="" width="60%" height="60%">
-                    </div>
-                    <div class="right">
-
-                        <h2 class="cart2">My Cart</h2>
-                        <h3><b>Breakfast Sandwich</b></h3>
-                        <p>Bagel, Bacon, Egg, Cheese, Ketchup, Salt, Pepper</p>
-                        <p>Price: <b>$5.00</b></p>
-                        <h3><b>Total: $5.00</b> Cash Only</h3>
-                    </div>
-                </div>
-                <div class="float-child">
-                    <h2>Order Info</h2>
-                    <div class="input_field_container">
-                        <form action="#">
-                            <div class="row">
-                                <div class="column">
-                                    <label for="login_name">Name</label>
-                                    <input type="text" id="login_name" name="login_name" class="input_field">
-                                </div>
-                                <div class="column">
-                                    <label for="phonenumber">Phone Number</label>
-                                    <input type="phonenumber" id="phonenumber" name="phonenumber" class="input_field">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="pick up time">
-                        <br>
-                        <h3><b>Pick-up Time</b></h3>
-                        <!--Selection box here-->
-                        <img class="pickUp" src="./img/selection.png" alt="" width="60%" height="60%">
-                    </div>
-                    <div class="find_us">
-                        <div>
-                            <img src="./img/icons/truck.svg" alt="">
-                            <div>
-                                <h3><b>Find us at:</b></h3>
-                                <a target="_blank" href="https://www.google.com/maps/search/33rd+and+Arch+Street,++Philadelphia,+PA+19104/@39.9593223,-75.1915078,17z/data=!3m1!4b1">
-                                33rd and Arch Street,<br> Philadelphia, PA 19104
-                            </a>
-                                <!--<a target="_blank" href="https://www.google.com/maps/search/33rd+and+Arch+Street,++Philadelphia,+PA+19104/@39.9593223,-75.1915078,17z/data=!3m1!4b1">
-                                View in Google Maps <img src="./img/icons/link_arrow_right.svg" alt="">
-                            </a>-->
-                            </div>
-                            <img class="find_us-img" src="./img/map.png" alt="" width="60%" height="60%">
-                        </div>
-
-                    </div>
-
+    <form action="receipt.php">
+        <div id="cart_info">
+            <h2>My Cart</h2>
+            <div class="item_info">
+                <img src="./img/burger.png" alt="Cart Item Photo">
+                <div>
+                    <p class="item_name">Breakfast Sandwich</p>
+                    <p class="item_content">Bagel, Bacon, Egg, Cheese, Ketchup, Salt, Pepper</p>
+                    <p class="item_price">Price: $5.00</p>
                 </div>
             </div>
-
-            <div id="start_here">
-                <a href="./receipt.php" class="btn" id="start_order">
-            Place Order
-            <img src="./img/icons/arrow_right.svg" alt="">
-        </a>
-
+        </div>
+        <div id="order_info">
+            <h2>Order Info</h2>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" class="input_field">
             </div>
+            <div>
+                <label for="phone_number">Phone Number</label>
+                <input type="phone_number" id="phone_number" name="phone_number" class="input_field">
+            </div>
+        </div>
+        <div id="pick_up_time">
+            <h2>Pick-up Time</h2>
+            <div id="time_selection">
+                <div>
+                    <input type="radio" name="pick_up_time" value="ASAP" checked>
+                    <label for="ASAP">ASAP</label>
+                </div>
+                <div>
+                    <input type="radio" name="select_time" value="select_time">
+                    <label for="select_time">Select pickup time</label>
+                </div>
+            </div>
+        </div> 
+        <div id="confirm_order">
+            <p class="total">Total: $5.00</p>
+            <p class="reminder">Reminder: This is a cash only order</p>
+            <input type="submit" value="Place Order" class="btn form_btn" id="place_order_btn">
+        </div>
+    </form>
 
-
-
-
-            <?php
+    <?php
         include_once __DIR__ .'/components/footer.php';
     ?>
 
