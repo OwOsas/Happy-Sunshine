@@ -55,8 +55,22 @@ header{
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        cursor: pointer;
     
         position: relative;
+
+        &:hover{
+            &::before{
+                width: $burger_width - 10px;
+            }
+        }
+
+        &.active:hover{
+            &::before{
+                width: $burger_width;
+            }
+        }
 
         &::before, &::after{
             content: "";

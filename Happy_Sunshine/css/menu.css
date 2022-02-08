@@ -45,7 +45,14 @@ header #burger_menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  cursor: pointer;
   position: relative;
+}
+header #burger_menu:hover::before {
+  width: 31px;
+}
+header #burger_menu.active:hover::before {
+  width: 41px;
 }
 header #burger_menu::before, header #burger_menu::after {
   content: "";
