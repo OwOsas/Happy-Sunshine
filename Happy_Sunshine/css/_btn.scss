@@ -19,8 +19,8 @@
     img{
         height: unset;
     }
-}
 
-.customization_btn{
-
+    &:hover{
+        cursor: pointer;
+    }
 }

@@ -31,7 +31,7 @@ include_once __DIR__ . "/config.php";
             <div class="img" style="background-image:url('./img/banner_img.png');"></div>
                 <div>
                     <h4>Breakfast Sandwich</h4>
-                    <p>$5.0</p>
+                    <p>$5.00</p>
                 </div>
             </div>
 
@@ -39,14 +39,14 @@ include_once __DIR__ . "/config.php";
             <div class="img" style="background-image:url('./img/banner_img.png');"></div>
                 <div>
                     <h4>Breakfast Sandwich</h4>
-                    <p>$5.0</p>
+                    <p>$5.00</p>
                 </div>
 
             </div>
 
             <div class="break"></div>
             <h3>
-                Total: $10
+                Total: $10.00
             </h3>
         </div>
 

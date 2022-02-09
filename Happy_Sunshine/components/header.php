@@ -22,6 +22,7 @@
         
         <li class="mobile"><a href="<?php echo './menu.php';?>">Menu</a></li>
         <li><a href="./recent_orders.php">Recent Orders</a></li>
+        <li><a href="./login.php">Login</a></li>
         <!-- <li><a href="">Profile</a></li> -->
     </ul>
 </div>

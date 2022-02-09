@@ -135,6 +135,10 @@ form{
             padding: 0.75rem 2rem;
             text-align: center;
         }
+
+        input[type="radio"]+label:hover, input[type="checkbox"]+label:hover{
+            cursor: pointer;
+        }
     }
 
     #confirm_order{

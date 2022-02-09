@@ -57,6 +57,10 @@
         text-align: center;
     }
 
+    input[type="radio"]+label:hover, input[type="checkbox"]+label:hover{
+        cursor: pointer;
+    }
+
     .price_tag{
         background-color: $clr_btn_priceTag;
         border-radius: 16px;

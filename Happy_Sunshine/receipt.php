@@ -21,7 +21,7 @@ include_once __DIR__ . "/config.php";
         <div class="order_item">
                 <div id="title">
                     <a class="mobile" href="../Happy_Sunshine/"><img src="./img/icons/return_arrow_left.svg" alt="">Home</a>
-                    <h1>Recipe</h1>
+                    <h1>Reciept</h1>
                 </div>
                 <p>
                     Thank you for order! <br> <b>Show this receipt when picking up your order at </b> <br> <a target="_blank" href="https://www.google.com/maps/search/33rd+and+Arch+Street,++Philadelphia,+PA+19104/@39.9593223,-75.1915078,17z/data=!3m1!4b1">33rd and Arch St.</a>
