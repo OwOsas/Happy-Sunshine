@@ -27,7 +27,7 @@ include_once __DIR__ . "/config.php";
 
     <div class="fst">
         <div id="title">
-            <a class="mobile" href="../Happy_Sunshine/"><img src="./img/icons/return_arrow_left.svg" alt="">Home</a>
+            <a class="mobile" href="../Happy_Sunshine/menu.php"><img src="./img/icons/return_arrow_left.svg" alt="">Menu</a>
             <h1>My Cart</h1>
         </div>
         <!-- Cart Item Card -->
@@ -53,7 +53,7 @@ include_once __DIR__ . "/config.php";
         <!-- _____________________________________________ -->
 
         <div id="confirm_order">
-            <h3>Total:$5.0</h3>
+            <h3>Total: $5.00</h3>
             <a href="./confirm.php" class="btn" id="confirm_order_btn">
                 Confirm Order
             </a>

@@ -1,78 +1,111 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 #confirmation_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 1rem 1.5rem;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 #confirmation_container::after {
   content: "";
   display: block;
   height: 1rem;
   width: 4rem;
 }
+
 #confirmation_container h1 {
   text-align: center;
   font-weight: 500;
   font-size: 2rem;
-  justify-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
+
 #confirmation_container a {
   color: black;
   text-decoration: none;
   font-weight: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .5rem;
 }
 
 form {
   margin: 0 1.5rem;
 }
+
 form #cart_info {
   border-bottom: 1px solid #C4C4C4;
   padding-bottom: 1rem;
 }
+
 form #cart_info h2 {
   font-weight: 500;
 }
+
 form #cart_info img {
   display: block;
   width: 100%;
 }
+
 form #cart_info .item_info {
+  display: -ms-grid;
   display: grid;
   gap: 0.5rem;
-  grid-template-columns: 1fr 2fr;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
 }
+
 form #cart_info .item_info img {
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
+
 form #cart_info .item_info div {
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
+
 form #cart_info .item_info div .item_name {
   font-size: 1.25rem;
   font-weight: 600;
 }
+
 form #cart_info .item_info div .item_price {
   font-weight: 600;
   margin-top: 0.25rem;
 }
+
 form #order_info {
   border-bottom: 1px solid #C4C4C4;
   padding-bottom: 1.5rem;
   padding-top: 1rem;
 }
+
 form #order_info div {
   margin-top: 0.5rem;
 }
+
 form #order_info h2 {
   font-weight: 500;
 }
+
 form #order_info label {
   font-weight: 500;
 }
+
 form #order_info .input_field {
   border: 2.5px solid black;
   border-radius: 5px;
@@ -81,33 +114,42 @@ form #order_info .input_field {
   padding: 0 0.5rem;
   width: 100%;
 }
+
 form #pick_up_time {
   padding-bottom: 1.5rem;
   padding-top: 1rem;
 }
+
 form #pick_up_time h2 {
   font-weight: 500;
 }
+
 form #pick_up_time #time_selection {
+  display: -ms-grid;
   display: grid;
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
-  grid-template-columns: 1fr 2fr;
+  -webkit-column-gap: 0.5rem;
+          column-gap: 0.5rem;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
   margin-top: 0.5rem;
 }
-form #pick_up_time input[type=radio], form #pick_up_time input[type=checkbox] {
+
+form #pick_up_time input[type="radio"], form #pick_up_time input[type="checkbox"] {
   display: none;
 }
-form #pick_up_time input[type=radio]:not(:checked) + label, form #pick_up_time input[type=checkbox]:not(:checked) + label {
+
+form #pick_up_time input[type="radio"]:not(:checked) + label, form #pick_up_time input[type="checkbox"]:not(:checked) + label {
   background-color: white;
   border: 2px solid #C4C4C4;
   border-radius: 22px;
   display: block;
-  filter: drop-shadow(0 3px 1.5px #C4C4C4);
+  -webkit-filter: drop-shadow(0 3px 1.5px #C4C4C4);
+          filter: drop-shadow(0 3px 1.5px #C4C4C4);
   padding: 0.75rem 2rem;
   text-align: center;
 }
-form #pick_up_time input[type=radio]:checked + label, form #pick_up_time input[type=checkbox]:checked + label {
+
+form #pick_up_time input[type="radio"]:checked + label, form #pick_up_time input[type="checkbox"]:checked + label {
   background-color: #F0D028;
   border: 2px solid #D6BA24;
   border-radius: 22px;
@@ -115,14 +157,22 @@ form #pick_up_time input[type=radio]:checked + label, form #pick_up_time input[t
   padding: 0.75rem 2rem;
   text-align: center;
 }
+
+form #pick_up_time input[type="radio"] + label:hover, form #pick_up_time input[type="checkbox"] + label:hover {
+  cursor: pointer;
+}
+
 form #confirm_order p {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
+
 form #confirm_order input {
   border: none;
 }
+
 form #confirm_order .total {
   font-size: 1.5rem;
-}/*# sourceMappingURL=confirm.css.map */
+}
+/*# sourceMappingURL=confirm.css.map */

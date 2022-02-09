@@ -14,7 +14,12 @@
     }
 
     generate_menu_items("Breakfast Sandwiches","./img/icons/breakfast-sandwich.svg", "./customize.php");
-    generate_menu_items("Breakfast Sandwiches","./img/icons/breakfast-sandwich.svg", "./customize.php");
+    generate_menu_items("French Toast","./img/icons/breakfast-sandwich.svg", "./customize.php");
+    generate_menu_items("Cheesesteaks","./img/icons/breakfast-sandwich.svg", "./customize.php");
+    generate_menu_items("Burgers","./img/icons/breakfast-sandwich.svg", "./customize.php");
+    generate_menu_items("Hot Dog & Sausage","./img/icons/breakfast-sandwich.svg", "./customize.php");
+    generate_menu_items("Side Orders","./img/icons/breakfast-sandwich.svg", "./customize.php");
+    generate_menu_items("Drinks","./img/icons/breakfast-sandwich.svg", "./customize.php");
     ?>
 </div>
 </menu>

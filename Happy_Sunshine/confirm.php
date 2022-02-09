@@ -21,7 +21,7 @@ include_once __DIR__ . "/config.php";
     ?>
 
     <div id="confirmation_container">
-        <a class="mobile" href="../Happy_Sunshine/menu.php"><img src="./img/icons/return_arrow_left.svg" alt="menu"> Menu</a>
+        <a class="mobile" href="../Happy_Sunshine/cart.php"><img src="./img/icons/return_arrow_left.svg" alt="menu"> Cart</a>
         <h1>Confirm Order</h1>
     </div>
 
@@ -41,11 +41,13 @@ include_once __DIR__ . "/config.php";
             <h2>Order Info</h2>
             <div>
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" class="input_field">
+                <input type="text" id="name" name="name" class="input_field" value="John Smith">
             </div>
             <div>
                 <label for="phone_number">Phone Number</label>
-                <input type="phone_number" id="phone_number" name="phone_number" class="input_field">
+                <input type="tel" id="phone_number" name="phone_number" class="input_field"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                value="111-111-1111">
             </div>
         </div>
         <div id="pick_up_time">
