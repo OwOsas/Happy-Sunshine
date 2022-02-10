@@ -27,7 +27,7 @@ include_once __DIR__ . "/config.php";
 
     <div class="fst">
         <div id="title">
-            <a class="mobile" href="../Happy_Sunshine/menu.php"><img src="./img/icons/return_arrow_left.svg" alt="">Menu</a>
+            <a class="mobile" href="menu.php"><img src="./img/icons/return_arrow_left.svg" alt="">Menu</a>
             <h1>My Cart</h1>
         </div>
         <!-- Cart Item Card -->

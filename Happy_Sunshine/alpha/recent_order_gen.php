@@ -1,5 +1,5 @@
 <div id="recent_orders_container">
-    <a class="mobile" href="../Happy_Sunshine/"><img src="./img/icons/return_arrow_left.svg" alt=""> Home</a>
+    <a class="mobile" href="index.php"><img src="./img/icons/return_arrow_left.svg" alt=""> Home</a>
     <h1>Recent Orders</h1>
 </div>
 
