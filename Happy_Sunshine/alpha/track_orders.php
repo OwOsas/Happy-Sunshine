@@ -19,8 +19,8 @@ include_once __DIR__ . "/config.php";
 
     <div class="container">
         <div id="title">
-            <a class="mobile" href="../Happy_Sunshine/"><img src="./img/icons/return_arrow_left.svg" alt="">Home</a>
-            <h1>Recipe</h1>
+            <a class="mobile" href="index.php"><img src="./img/icons/return_arrow_left.svg" alt="">Home</a>
+            <h1>Tracking</h1>
         </div>
 
         <div class="tracking_card">

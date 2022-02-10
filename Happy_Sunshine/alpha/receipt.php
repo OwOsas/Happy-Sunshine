@@ -20,7 +20,7 @@ include_once __DIR__ . "/config.php";
     <div class="container">
         <div class="order_item">
                 <div id="title">
-                    <a class="mobile" href="../Happy_Sunshine/"><img src="./img/icons/return_arrow_left.svg" alt="">Home</a>
+                    <a class="mobile" href="index.php"><img src="./img/icons/return_arrow_left.svg" alt="">Home</a>
                     <h1>Reciept</h1>
                 </div>
                 <p>

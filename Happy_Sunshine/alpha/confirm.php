@@ -21,7 +21,7 @@ include_once __DIR__ . "/config.php";
     ?>
 
     <div id="confirmation_container">
-        <a class="mobile" href="../Happy_Sunshine/cart.php"><img src="./img/icons/return_arrow_left.svg" alt="menu"> Cart</a>
+        <a class="mobile" href="cart.php"><img src="./img/icons/return_arrow_left.svg" alt="menu"> Cart</a>
         <h1>Confirm Order</h1>
     </div>
 
