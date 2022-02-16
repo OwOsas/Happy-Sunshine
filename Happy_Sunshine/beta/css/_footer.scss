@@ -1,0 +1,17 @@
+@import './style_guide';
+footer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-top: 2px $clr_grey solid;
+    margin-top: 3rem;
+    h3{
+        font-size: 1.15rem;
+    }
+    @media (min-width:$tablet_bp) {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 2rem 2rem;
+    }
+}

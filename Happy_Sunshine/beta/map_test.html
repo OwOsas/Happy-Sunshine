@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Map</title>
+
+    <!-- jsFiddle will insert css and js -->
+  </head>
+  <style>
+      /* Set the size of the div element that contains the map */
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
+  </style>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKw35BohszB7YZKEb73T_w4sW_w1h1KU0&callback=initMap&libraries=&v=weekly&channel=2"
+      async
+    ></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

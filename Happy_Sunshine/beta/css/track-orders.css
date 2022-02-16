@@ -330,50 +330,6 @@ a img {
   cursor: pointer;
 }
 
-.container {
-  min-height: calc(100vh - 100px);
-  padding: 1.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.order_item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 1rem;
-}
-
-.order_item > p {
-  font-weight: 500;
-  font-size: 1.25rem;
-  text-align: center;
-  padding: 0 2rem;
-}
-
 #title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -415,24 +371,17 @@ a img {
   gap: .5rem;
 }
 
-.cart_item_card {
+.container {
+  min-height: calc(100vh - 100px);
+  padding: 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100%;
-  border-bottom: 2px #CEC3B7 solid;
-  padding-bottom: 1rem;
-}
-
-.cart_item_card .item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -442,7 +391,41 @@ a img {
   gap: 1rem;
 }
 
-.cart_item_card .item .img {
+.tracking_card {
+  background-color: white;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 1.375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: .75rem;
+}
+
+.tracking_card .break {
+  width: 100%;
+  height: 2px;
+  background-color: #CEC3B7;
+}
+
+.tracking_card .food_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.tracking_card .food_item .img {
   width: 64px;
   height: 64px;
   background-size: cover;
@@ -450,38 +433,63 @@ a img {
   background-position: center;
 }
 
-.cart_item_card .item .item_description {
-  max-width: calc(100% - 80px);
-}
-
-.cart_item_card .item .item_description h3 {
-  font-size: 1.25rem;
-}
-
-.cart_item_card .price {
-  text-align: right;
-  font-weight: 500;
-  font-size: 1.15rem;
-}
-
-.order_info {
-  padding: 0;
+.find_us {
+  background-color: white;
   width: 100%;
-}
-
-.order_info ul {
-  margin-bottom: 2rem;
-}
-
-.order_info ul li {
-  list-style: none;
-  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  font-size: 1.125rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-/*# sourceMappingURL=receipt.css.map */
+
+.find_us > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  gap: 1rem;
+  width: 100%;
+}
+
+.find_us > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.find_us > div > div a {
+  color: #EE702A;
+  font-weight: bold;
+}
+
+.find_us > div > div b {
+  font-weight: 600;
+}
+
+.find_us > div > img {
+  margin-top: .5rem;
+}
+
+#map {
+  width: 100%;
+  height: 200px;
+  background-color: white;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=track-orders.css.map */

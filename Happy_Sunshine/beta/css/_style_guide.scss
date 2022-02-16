@@ -1,0 +1,26 @@
+
+// -----------------------Color-----------------------
+$clr_black: black;
+$clr_offBlack: #1D1D1D;
+$clr_grey: #CEC3B7;
+$clr_white: white;
+
+$clr_bg: #FAF6F2;
+
+$clr_primary: #F8A700;
+$clr_secondary: #F0D028;
+$clr_tertiary: #EE702A;
+
+// Buttons
+$clr_btn_priceTag: #EE652A;
+$clr_btn_border: #C4C4C4;
+$clr_btn_selected_border: #D6BA24;
+
+// -----------------------Fonts-----------------------
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$primary_font: 'Poppins', sans-serif;
+
+// --------------------Break Points--------------------
+$tablet_bp: 750px;
+$desktop_bp: 1050px;
