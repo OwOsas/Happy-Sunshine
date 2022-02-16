@@ -40,14 +40,16 @@ include_once __DIR__ . "/config.php";
         <div id="order_info">
             <h2>Order Info</h2>
             <div>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" class="input_field" value="John Smith">
-            </div>
-            <div>
-                <label for="phone_number">Phone Number</label>
-                <input type="tel" id="phone_number" name="phone_number" class="input_field"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                value="111-111-1111">
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" class="input_field" value="John Smith">
+                </div>
+                <div>
+                    <label for="phone_number">Phone Number</label>
+                    <input type="tel" id="phone_number" name="phone_number" class="input_field"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    value="111-111-1111">
+                </div>
             </div>
         </div>
         <div id="pick_up_time">

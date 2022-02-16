@@ -33,7 +33,7 @@ include_once __DIR__ . "/config.php";
         <!-- Cart Item Card -->
         <div class="cart_item_card">
             <div class="item">
-                <div class="img" style="background-image:url('./img/banner_img.png');"></div>
+                <div class="img" style="background-image:url('./img/breakfast-sandwich.png');"></div>
                 <div class="item_description">
                     <h3>Breakfast Sandwich</h3>
                     <p>Bagel, Bacon, Egg, Cheese, Ketchup, Salt, Pepper</p>
