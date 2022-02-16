@@ -1,0 +1,26 @@
+@import "./style_guide";
+
+.btn{
+    font-size: 1.75em;
+    font-weight: bold;
+    color: $clr_black;
+    text-decoration: none;
+    background-color: $clr_secondary;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    padding: .5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    img{
+        height: unset;
+    }
+
+    &:hover{
+        cursor: pointer;
+    }
+}
