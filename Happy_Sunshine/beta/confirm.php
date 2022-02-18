@@ -66,8 +66,7 @@ include_once __DIR__ . "/config.php";
             </div>
         </div> 
         <div id="confirm_order">
-            <p class="total">Total: $5.00</p>
-            <p class="reminder">Reminder: This is a cash only order</p>
+            <p id="total"><b>Total: $5.00</b> (Cash only)</p>
             <input type="submit" value="Place Order" class="btn form_btn" id="place_order_btn">
         </div>
     </form>

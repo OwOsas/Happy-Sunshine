@@ -140,7 +140,10 @@ include_once __DIR__ . "/include/functions.php";
                         <label for="order_note">Add note:</label>
                         <input type="text" id="order_note" name="order_note" class="input_field">
                     </div>
-                    <input type="submit" value="Add to cart" class="btn form_btn" id="add_to_cart_btn">
+                    <div id="price_and_confirm_section">
+                        <p id="total_price"><b>Total: $5.00</b> (Cash only)</p>
+                        <input type="submit" value="Add to cart" class="btn form_btn" id="add_to_cart_btn">
+                    </div>
                 <form>
             </div>
         </div>

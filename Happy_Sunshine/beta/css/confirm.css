@@ -163,17 +163,12 @@ form #pick_up_time input[type="radio"] + label:hover, form #pick_up_time input[t
 }
 
 form #confirm_order p {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
 form #confirm_order input {
   border: none;
-}
-
-form #confirm_order .total {
-  font-size: 1.5rem;
 }
 
 @media screen and (min-width: 750px) {

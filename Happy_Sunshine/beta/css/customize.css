@@ -116,6 +116,11 @@
   border: none;
 }
 
+#total_price {
+  font-size: 1.5rem;
+  margin: 1rem auto 0.5rem;
+}
+
 @media screen and (min-width: 750px) {
   #item_info {
     display: -ms-grid;
@@ -133,10 +138,18 @@
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-  #customize_main #add_to_cart_btn {
+  #customize_main #price_and_confirm_section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  #customize_main #price_and_confirm_section #add_to_cart_btn {
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+  }
+  #customize_main #price_and_confirm_section #total_price {
+    width: 100%;
   }
 }
 
