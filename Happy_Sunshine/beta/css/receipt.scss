@@ -5,34 +5,24 @@
 @import './style_guide';
 
 .container{
-    min-height: calc(100vh - 100px);
     padding: 1.5rem;
-
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
 }
 
-.order_item{
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1rem;
-
-
-
-
-    & > p{
+.receipt_header{
+    p{
         font-weight: 500;
         font-size: 1.25rem;
         text-align: center;
-        padding: 0 2rem;
+        padding: 0.5rem 2rem;
     }
+
+    #warning{
+        background-color: $clr_tertiary;
+        color: $clr_white;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
 }
 
 #title {
@@ -106,8 +96,9 @@
 }
 
 .order_info{
-    padding: 0;
+    margin-top: 1rem;
     width: 100%;
+
     ul{
         margin-bottom: 2rem;
         li{
@@ -115,7 +106,40 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-            font-size: 1.125rem;
+            font-size: 1.25rem;
+        }
+    }
+
+    b{
+        font-weight: 400;
+    }
+
+    #total{
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        
+        b{
+            font-weight: 600;
+        }
+    }
+}
+
+@media screen and (min-width: $tablet_bp){
+    #title{
+        display: block;
+
+        &::after{
+            content: none;
+        }
+    }
+
+    .container{
+        margin: 0 auto;
+        width: 80%;
+
+        h1{
+            text-align: center;
         }
     }
 }

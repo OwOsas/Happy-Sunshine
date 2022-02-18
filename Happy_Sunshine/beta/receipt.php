@@ -18,38 +18,36 @@ include_once __DIR__ . "/config.php";
     ?>
 
     <div class="container">
-        <div class="order_item">
-                <div id="title">
-                    <a class="mobile" href="index.php"><img src="./img/icons/return_arrow_left.svg" alt="">Home</a>
-                    <h1>Reciept</h1>
-                </div>
-                <p>
-                    Thank you for order! <br> <b>Show this receipt when picking up your order at </b> <br> <a target="_blank" href="https://www.google.com/maps/search/33rd+and+Arch+Street,++Philadelphia,+PA+19104/@39.9593223,-75.1915078,17z/data=!3m1!4b1">33rd and Arch St.</a>
-                </p>
-                <div class="cart_item_card">
-                <div class="item">
-                    <div class="img" style="background-image:url('./img/banner_img.png');"></div>
-                    <div class="item_description">
-                        <h3>Breakfast Sandwich</h3>
-                        <p>Bagel, Bacon, Egg, Cheese, Ketchup, Salt, Pepper</p>
-                    </div>
-                </div>
-                <div class="price">$5.00</div>
+        <div class="receipt_header">
+            <div id="title">
+                <a class="mobile" href="index.php"><img src="./img/icons/return_arrow_left.svg" alt="">Home</a>
+                <h1>Reciept</h1>
             </div>
+            <p>Thank you for your order!</p>
+            <p id="warning">Please show this receipt to the owner when picking up your order</p>
+        </div>
+
+        <div class="cart_item_card">
+            <div class="item">
+                <div class="img" style="background-image:url('./img/breakfast-sandwich.png');"></div>
+                <div class="item_description">
+                    <h3>Breakfast Sandwich</h3>
+                    <p>Bagel, Bacon, Egg, Cheese, Ketchup, Salt, Pepper</p>
+                </div>
+            </div>
+            <p class="price">$5.00</p>
         </div>
 
         <div class="order_info">
-                <ul>
-                    <li>Order number: <b>#0001</b></li>
-                    <li>Name: <b>John Smith</b>  </li>
-                    <li>Estimated pick-up time: <b>1:15pm</b></li>
-                    <li>Total: <b>$5.00</b></li>
-                </ul>
+            <ul>
+                <li id="total">Total: <b>$5.00</b></li>
+                <li>Order number: <b>#0001</b></li>
+                <li>Name: <b>John Smith</b>  </li>
+                <li>Estimated pick-up time: <b>1:15pm</b></li>
+            </ul>
                     
-                <a href="./track_orders.php" class="btn hidden" id="start_order">
-                    Track Order
-                </a>
-            </div>
+            <a href="./track_orders.php" class="btn hidden" id="start_order">Track Order</a>
+        </div>
     </div>
 
     
