@@ -135,11 +135,13 @@
     }
 
     .container{
-        margin: 0 auto;
-        width: 80%;
-
         h1{
             text-align: center;
+        }
+
+        #track_order{
+            margin: 0 auto;
+            width: 50%;
         }
     }
 }

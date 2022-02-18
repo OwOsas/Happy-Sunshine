@@ -46,7 +46,7 @@ include_once __DIR__ . "/config.php";
                 <li>Estimated pick-up time: <b>1:15pm</b></li>
             </ul>
                     
-            <a href="./track_orders.php" class="btn hidden" id="start_order">Track Order</a>
+            <a href="./track_orders.php" class="btn hidden" id="track_order">Track Order</a>
         </div>
     </div>
 

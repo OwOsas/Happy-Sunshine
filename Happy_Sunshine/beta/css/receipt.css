@@ -480,12 +480,12 @@ a img {
   #title::after {
     content: none;
   }
-  .container {
-    margin: 0 auto;
-    width: 80%;
-  }
   .container h1 {
     text-align: center;
+  }
+  .container #track_order {
+    margin: 0 auto;
+    width: 50%;
   }
 }
 /*# sourceMappingURL=receipt.css.map */
