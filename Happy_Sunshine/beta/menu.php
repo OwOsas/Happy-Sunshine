@@ -19,8 +19,9 @@
         include_once __DIR__ .'/menu_gen.php';
     ?>
 
-    
-    
+    <?php
+        include_once __DIR__ .'/components/footer.php';
+    ?>
 
     <script src="./js/index.js"></script>
     <script src="./js/header.js"></script>
