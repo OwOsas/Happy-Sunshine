@@ -60,7 +60,7 @@ if($result && !($result->num_rows == 0)){
     <div class="fst">
         <div id="customize_container">
             <div id="item_info">
-                <img src="./imgmenu/thumbnail/<?php echo $i_img_link;?>" alt="Breakfast sandwich featured image">
+                <img src="./img/menu/thumbnail/<?php echo $i_img_link;?>" alt="<?php echo $i_name?> featured image">
                 <div>
                     <h1><?php echo $i_name?></h1>
                     <p><?php echo $i_description?></p>
