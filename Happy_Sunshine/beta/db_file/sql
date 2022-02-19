@@ -23,5 +23,7 @@ CREATE TABLE customization(
     c_catagory varchar(128) NOT null,
     c_option varchar(128) NOT null,
     c_additionalprice decimal(8, 2) NOT null,
+    c_ischeckbox boolean NOT null,
+    c_isdefault boolean NOT null,
     c_ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
