@@ -1,0 +1,27 @@
+CREATE TABLE users(
+    u_id int(11) not null PRIMARY KEY AUTO_INCREMENT,
+    u_username varchar(128) not null,
+    u_pwd varchar(128) not null,
+    u_email varchar(128) not null,
+    u_phonenumber varchar(20) not null,
+    u_ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+
+CREATE TABLE menu(
+    m_id int(11) not null PRIMARY KEY AUTO_INCREMENT,
+    m_name varchar(128) NOT null,
+    m_icon varchar(128) NOT null,
+    m_image varchar(128) NOT null,
+    m_price decimal(8, 2) NOT null,
+   	m_description text NOT null,
+    m_ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+
+CREATE TABLE customization(
+    c_id int(11) not null PRIMARY KEY AUTO_INCREMENT,
+    c_nameofdish varchar(128) NOT null,
+    c_catagory varchar(128) NOT null,
+    c_option varchar(128) NOT null,
+    c_additionalprice decimal(8, 2) NOT null,
+    c_ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
