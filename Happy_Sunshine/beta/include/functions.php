@@ -70,7 +70,9 @@ include_once __DIR__ . "/dbh_inc.php";
         }
 
         echo '        <div  class="'. $class . '">';
-        echo '<p class="price_tag">+$'. number_format($price,2) . '</p>';
+        if ($price != 0){
+            echo '<p class="price_tag">+$'. number_format($price,2) . '</p>';
+        }
         echo '            <input type="'. $type . '" name="'. $item_category . '" value="'. $item_name . '" '. $checkmark . '>';
         echo '            <label for="'. $item_name . '">'. $item_name . '</label>';
         echo '        </div>';
