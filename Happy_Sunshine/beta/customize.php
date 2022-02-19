@@ -1,7 +1,40 @@
-
 <?php
 include_once __DIR__ . "/config.php";
 include_once __DIR__ . "/include/functions.php";
+include_once __DIR__ . "/include/dbh_inc.php";
+if(isset($_GET['id']) != true){
+    echo "no variable";
+    header("Location: ./menu.php");
+    die();
+}
+
+$id = $_GET['id'];
+
+$sql = "SELECT * FROM menu WHERE m_id = ". $id;
+$result = mysqli_query($conn,$sql);
+
+if($result && !($result->num_rows == 0)){
+    $row = mysqli_fetch_assoc($result);
+    $i_name = $row['m_name'];
+    $i_price = $row['m_price'];
+    $i_img_link = $row['m_image'];
+    $i_description = $row['m_description'];
+}
+
+$sql = "SELECT * FROM customization WHERE c_nameofdish = '". $i_name . "'";
+$result = mysqli_query($conn,$sql);
+
+$category_list = [];
+
+if($result && !($result->num_rows == 0)){
+    if(mysqli_num_rows($result)>0){ 
+        while ($row = mysqli_fetch_assoc($result)) {
+            if (!(in_array([$row['c_category'], $row['c_ischeckbox']], $category_list))){
+                array_push($category_list, [$row['c_category'], $row['c_ischeckbox']]);
+            }
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -24,119 +57,26 @@ include_once __DIR__ . "/include/functions.php";
         <a class="mobile" href="menu.php"><img src="./img/icons/return_arrow_left.svg" alt=""> Menu</a>
     </div>
 
-    <div class="banner desktop">
+    <div class="banner desktop" style="background-image: url(./img/menu/thumbnail/<?php echo $i_img_link;?>)!important;">
         
     </div>
 
     <div class="fst">
         <div id="item_info">
-            <h1>Breakfast Sandwich</h1>
-            <p>$4.00</p>
-            <p>Our classic breakfast sandwich comes with bacon, egg, and cheese.</p>
+            <h1><?php echo $i_name?></h1>
+            <p>$<?php echo $i_price?></p>
+            <p><?php echo $i_description?></p>
         </div>
 
         <div>
             <form action="cart.php">
-                <div class="customize_section">
-                    <p class="section_title">Bread</p>
-                    <p>Choose 1</p>
-                    <div class="selection">
-                        <div  class="without_price_tag">
-                            <input type="radio" name="bread" value="bagel" checked>
-                            <label for="bagel">Bagel</label>
-                        </div>
-                        <div class="without_price_tag">
-                            <input type="radio" name="bread" value="hoagie_roll">
-                            <label for="hoagie_roll">Hoagie Roll</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="customize_section">
-                    <p class="section_title">Protein</p>
-                    <p>Choose 1</p>
-                    <div class="selection">
-                        <div class="with_price_tag">
-                            <p class="price_tag">+$1.00</p>
-                            <input type="radio" name="protein" value="bacon" checked>
-                            <label for="bacon">Bacon</label>
-                        </div>
-                        <div class="with_price_tag">
-                            <p class="price_tag">+$1.00</p>
-                            <input type="radio" name="protein" value="ham">
-                            <label for="ham">Ham</label>
-                        </div>
-                        <div class="with_price_tag">
-                            <p class="price_tag">+$1.00</p>
-                            <input type="radio" name="protein" value="turkey">
-                            <label for="turkey">Turkey</label>
-                        </div>
-                        <div class="with_price_tag">
-                            <p class="price_tag">+$3.00</p>
-                            <input type="radio" name="protein" value="steak">
-                            <label for="steak">Steak</label>
-                        </div>
-                        <div class="with_price_tag">
-                            <p class="price_tag">+$1.00</p>
-                            <input type="radio" name="protein" value="sausage">
-                            <label for="sausage">Sausage</label>
-                        </div>
-                        <div class="with_price_tag">
-                            <p class="price_tag">+$2.00</p>
-                            <input type="radio" name="protein" value="kielbasa">
-                            <label for="kielbasa">Kielbasa</label>
-                        </div>
-                        <div class="with_price_tag">
-                            <p class="price_tag">+$1.00</p>
-                            <input type="radio" name="protein" value="pork_roll">
-                            <label for="pork_roll">Pork Roll</label>
-                        </div>
-                        <div class="with_price_tag">
-                            <p class="price_tag">+$1.00</p>
-                            <input type="radio" name="protein" value="scrapple">
-                            <label for="scrapple">Scrapple</label>
-                        </div>
-                        <div class="without_price_tag">
-                            <input type="radio" name="protein" value="none">
-                            <label for="none">None</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="customize_section">
-                    <p class="section_title">More</p>
-                    <p>Optional</p>
-                    <div class="selection">
-                        <div class="without_price_tag">
-                            <input type="checkbox" name="more" value="egg">
-                            <label for="egg">Egg</label>
-                        </div>
-                        <div class="without_price_tag">
-                            <input type="checkbox" name="more" value="hashbrown" checked>
-                            <label for="hashbrown">Hashbrown</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="customize_section">
-                    <p class="section_title">Toppings</p>
-                    <p>Optional</p>
-                    <div class="selection">
-                        <div class="without_price_tag">
-                            <input type="checkbox" name="toppings" value="cheese" checked>
-                            <label for="cheese">Cheese</label>
-                        </div>
-                        <div class="without_price_tag">
-                            <input type="checkbox" name="toppings" value="ketchup" checked>
-                            <label for="ketchup">Ketchup</label>
-                        </div>
-                        <div class="without_price_tag">
-                            <input type="checkbox" name="toppings" value="salt" checked>
-                            <label for="salt">Salt</label>
-                        </div>
-                        <div class="without_price_tag">
-                            <input type="checkbox" name="toppings" value="pepper" checked>
-                            <label for="pepper">Pepper</label>
-                        </div>
-                    </div>
-                </div>
+                <?php 
+                    foreach($category_list as $category){
+                        customization_section_template($conn, $i_name, $category[0], $category[1]);
+                    }
+
+                    ?>
+                
                 <div id="add_note_section">
                     <label for="order_note">Add note:</label>
                     <input type="text" id="order_note" name="order_note" class="input_field">
