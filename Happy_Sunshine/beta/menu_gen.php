@@ -1,4 +1,4 @@
-<menu>
+<div>
 <div id="food_menu_container">
     <a class="mobile" href="index.php"><img src="./img/icons/return_arrow_left.svg" alt=""> Home</a>
     <h1>Menu</h1>
@@ -11,7 +11,7 @@
     get_menu_items($conn);
     ?>
 </div>
-</menu>
+</div>
 
 
 

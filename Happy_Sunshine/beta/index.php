@@ -1,6 +1,7 @@
 <?php
 include_once __DIR__ . "/config.php";
-include_once './include/dbh_inc.php';
+include_once __DIR__ . "/include/functions.php";
+include_once __DIR__ . "/include/dbh_inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -117,12 +118,12 @@ include_once './include/dbh_inc.php';
 
 </div>
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly&channel=2"
-      async
-    ></script>
-    <script src="./js/index.js"></script>
-    <script src="./js/g_map.js"></script>
-    <script src="./js/header.js"></script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly&channel=2"
+  async
+></script>
+<script src="./js/index.js"></script>
+<script src="./js/g_map.js"></script>
+<script src="./js/header.js"></script>
 </body>
 </html>
