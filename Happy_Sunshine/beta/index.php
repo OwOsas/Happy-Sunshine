@@ -1,5 +1,6 @@
 <?php
 include_once __DIR__ . "/config.php";
+include_once './include/dbh_inc.php';
 ?>
 
 <!DOCTYPE html>
