@@ -57,32 +57,34 @@ if($result && !($result->num_rows == 0)){
         <a class="mobile" href="menu.php"><img src="./img/icons/return_arrow_left.svg" alt=""> Menu</a>
     </div>
 
-    <div class="banner desktop" style="background-image: url(./img/menu/thumbnail/<?php echo $i_img_link;?>)!important;">
-        
-    </div>
-
     <div class="fst">
-        <div id="item_info">
-            <h1><?php echo $i_name?></h1>
-            <p>$<?php echo $i_price?></p>
-            <p><?php echo $i_description?></p>
-        </div>
-
-        <div>
-            <form action="cart.php">
-                <?php 
-                    foreach($category_list as $category){
-                        customization_section_template($conn, $i_name, $category[0], $category[1]);
-                    }
-
-                    ?>
-                
-                <div id="add_note_section">
-                    <label for="order_note">Add note:</label>
-                    <input type="text" id="order_note" name="order_note" class="input_field">
+        <div id="customize_container">
+            <div id="item_info">
+                <img src="./imgmenu/thumbnail/<?php echo $i_img_link;?>" alt="Breakfast sandwich featured image">
+                <div>
+                    <h1><?php echo $i_name?></h1>
+                    <p><?php echo $i_description?></p>
                 </div>
-                <input type="submit" value="Add to cart" class="btn form_btn" id="add_to_cart_btn">
-            <form>
+            </div>
+
+            <div id="customize_main">
+                <form action="cart.php">
+                    <?php 
+                      foreach($category_list as $category){
+                          customization_section_template($conn, $i_name, $category[0], $category[1]);
+                      }
+                    ?>
+                    <div id="add_note_section">
+                        <label for="order_note">Add note:</label>
+                        <input type="text" id="order_note" name="order_note" class="input_field">
+                    </div>
+                    <div id="price_and_confirm_section">
+                        <p id="total_price"><b>Total: $5.00</b> (Cash only)</p>
+                        <input type="submit" value="Add to cart" class="btn form_btn" id="add_to_cart_btn">
+                    </div>
+                <form>
+            </div>
+
         </div>
     </div>
 
