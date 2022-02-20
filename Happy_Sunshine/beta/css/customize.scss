@@ -38,6 +38,7 @@
 
     .selection{
         display: grid;
+        align-items: end;
         column-gap: 0.5rem;
         grid-template-columns: 1fr 1fr;
     }
@@ -52,7 +53,7 @@
         border-radius: 22px;
         display: block;
         filter: drop-shadow(0 3px 1.5px $clr_btn_border);
-        padding: 0.75rem 2rem;
+        padding: 0.75rem 0.5rem;
         text-align: center;
     }
 
@@ -61,7 +62,7 @@
         border: 2px solid $clr_btn_selected_border;
         border-radius: 22px;
         display: block;
-        padding: 0.75rem 2rem;
+        padding: 0.75rem 0.5rem;
         text-align: center;
     }
 
