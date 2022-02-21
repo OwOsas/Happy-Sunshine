@@ -433,7 +433,11 @@ a img {
   background-position: center;
 }
 
-.find_us {
+.location {
+  width: 100%;
+}
+
+.location .find_us {
   background-color: white;
   width: 100%;
   padding: 1rem;
@@ -449,7 +453,7 @@ a img {
           align-items: center;
 }
 
-.find_us > div {
+.location .find_us > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -463,7 +467,7 @@ a img {
   width: 100%;
 }
 
-.find_us > div > div {
+.location .find_us > div > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -473,23 +477,37 @@ a img {
           flex-direction: column;
 }
 
-.find_us > div > div a {
+.location .find_us > div > div a {
   color: #EE702A;
   font-weight: bold;
 }
 
-.find_us > div > div b {
+.location .find_us > div > div b {
   font-weight: 600;
 }
 
-.find_us > div > img {
+.location .find_us > div > img {
   margin-top: .5rem;
 }
 
-#map {
+.location #map {
   width: 100%;
   height: 200px;
   background-color: white;
   border-radius: 10px;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 750px) {
+  #title {
+    display: block;
+  }
+  .location {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
 }
 /*# sourceMappingURL=track-orders.css.map */

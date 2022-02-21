@@ -160,6 +160,7 @@ body .desktop menu{
             height: 200px;
             background-color: $clr_white;
             border-radius: 10px;
+            margin-top: 1rem;
         }
     }
 }
@@ -178,7 +179,7 @@ body .desktop menu{
             flex-direction: row;
             flex-wrap: wrap;
 
-            margin-top: 5rem;
+            margin-top: 1.5rem;
 
             gap: 2rem 1rem;
             margin-inline: auto;
@@ -190,6 +191,12 @@ body .desktop menu{
                 width: 50%;
                 flex: 1 49%;
             }
+        }
+
+        .location{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
         }
     }
 }
