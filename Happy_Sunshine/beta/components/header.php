@@ -9,7 +9,7 @@
 
         <ul class="desktop menu">
             <li class="active"><a href="">Home</a></li>
-            <li class="mobile"><a href="">Menu</a></li>
+            <li><a href="">Menu</a></li>
             <li><a href="./recent_orders.php">Recent Orders</a></li>
             <li><a href="">Profile</a></li>
         </ul>

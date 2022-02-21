@@ -575,4 +575,13 @@ a img {
 .hidden {
   display: none !important;
 }
+
+@media screen and (min-width: 750px) {
+  .fst #title {
+    display: block;
+  }
+  .cart_item_card, #confirm_order {
+    width: 70%;
+  }
+}
 /*# sourceMappingURL=cart.css.map */

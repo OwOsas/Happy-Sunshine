@@ -48,7 +48,7 @@ include_once __DIR__ . "/dbh_inc.php";
     }
 
     function customization_item_template($item_category, $item_name, $is_single, $is_default, $price){
-        if ($is_single == 1){
+        if ($is_single == 0){
             $type = "radio";
         }
         else{
@@ -73,7 +73,7 @@ include_once __DIR__ . "/dbh_inc.php";
         if ($price != 0){
             echo '<p class="price_tag">+$'. number_format($price,2) . '</p>';
         }
-        echo '            <input type="'. $type . '" name="'. $item_category . '" value="'. $item_name . '" '. $checkmark . '>';
-        echo '            <label for="'. $item_name . '">'. $item_name . '</label>';
+        echo '            <input class="button_input" type="'. $type . '" name="'. $item_category . '" value="'. $item_name . '" '. $checkmark . '>';
+        echo '            <label class="button_label" for="'. $item_name . '">'. $item_name . '</label>';
         echo '        </div>';
     }

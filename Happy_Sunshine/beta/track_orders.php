@@ -29,7 +29,7 @@ include_once __DIR__ . "/config.php";
                 <div class="break"></div>
 
                 <div class="food_item">
-                    <div class="img" style="background-image:url('./img/banner_img.png');">
+                    <div class="img" style="background-image:url('./img/breakfast-sandwich.png');">
                 </div>
                 <div>
                     <h4>Breakfast Sandwich</h4>
@@ -38,7 +38,7 @@ include_once __DIR__ . "/config.php";
             </div>
 
             <div class="food_item">
-                <div class="img" style="background-image:url('./img/banner_img.png');">
+                <div class="img" style="background-image:url('./img/breakfast-sandwich.png');">
                 </div>
                 <div>
                     <h4>Breakfast Sandwich</h4>
@@ -52,25 +52,26 @@ include_once __DIR__ . "/config.php";
                 </h3>
             </div>
 
-            <div class="find_us">
-                <div>
-                    <img src="./img/icons/truck.svg" alt="">
+            <div class="location">
+                <div class="find_us">
                     <div>
-                        <h3>Find us at:</h3>
-                        <a target="_blank" href="https://www.google.com/maps/search/33rd+and+Arch+Street,++Philadelphia,+PA+19104/@39.9593223,-75.1915078,17z/data=!3m1!4b1">
-                        33rd and Arch Street
-                        <br> Philadelphia, PA 19104
-                        </a>
-                        <p>6am to 2:30pm</p>
-                        <b>We are a cash only truck!</b>
-                        <a target="_blank" href="https://www.google.com/maps/search/33rd+and+Arch+Street,++Philadelphia,+PA+19104/@39.9593223,-75.1915078,17z/data=!3m1!4b1">
-                        View in Google Maps<img src="./img/icons/link_arrow_right.svg" alt="">
-                        </a>
-                    </div>
-                </div> 
+                        <img src="./img/icons/truck.svg" alt="">
+                        <div>
+                            <h3>Find us at:</h3>
+                            <a target="_blank" href="https://www.google.com/maps/search/33rd+and+Arch+Street,++Philadelphia,+PA+19104/@39.9593223,-75.1915078,17z/data=!3m1!4b1">
+                            33rd and Arch Street
+                            <br> Philadelphia, PA 19104
+                            </a>
+                            <p>6am to 2:30pm</p>
+                            <b>We are a cash only truck!</b>
+                            <a target="_blank" href="https://www.google.com/maps/search/33rd+and+Arch+Street,++Philadelphia,+PA+19104/@39.9593223,-75.1915078,17z/data=!3m1!4b1">
+                            View in Google Maps<img src="./img/icons/link_arrow_right.svg" alt="">
+                            </a>
+                        </div>
+                    </div> 
+                </div>
+                <div id="map"></div>
             </div>
-                
-            <div id="map"></div>
         </div>
     
 

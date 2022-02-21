@@ -96,5 +96,6 @@ if($result && !($result->num_rows == 0)){
     
     <script src="./js/index.js"></script>
     <script src="./js/header.js"></script>
+    <script src="./js/button.js"></script>
 </body>
 </html>
