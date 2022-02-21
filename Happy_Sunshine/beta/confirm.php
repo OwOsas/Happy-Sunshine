@@ -56,12 +56,12 @@ include_once __DIR__ . "/config.php";
             <h2>Pick-up Time</h2>
             <div id="time_selection">
                 <div>
-                    <input type="radio" name="pick_up_time" value="ASAP" checked>
-                    <label for="ASAP">ASAP</label>
+                    <input class="button_input" type="radio" name="pick_up_time" value="ASAP" checked>
+                    <label class="button_label" for="ASAP">ASAP</label>
                 </div>
                 <div>
-                    <input type="radio" name="select_time" value="select_time">
-                    <label for="select_time">Select pickup time</label>
+                    <input class="button_input" type="radio" name="pick_up_time" value="">
+                    <label class="button_label" for="pick_up_time">Select pickup time</label>
                 </div>
             </div>
         </div> 
@@ -79,6 +79,7 @@ include_once __DIR__ . "/config.php";
 
                 <script src="./js/index.js"></script>
                 <script src="./js/header.js"></script>
+                <script src="./js/button.js"></script>
     </body>
 
     </html>

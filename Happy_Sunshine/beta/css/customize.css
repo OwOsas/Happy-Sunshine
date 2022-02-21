@@ -45,7 +45,11 @@
 }
 
 .customize_section input[type="radio"], .customize_section input[type="checkbox"] {
-  display: none;
+  accent-color: black;
+  position: absolute;
+  -webkit-transform: scale(1.75);
+          transform: scale(1.75);
+  z-index: 10;
 }
 
 .customize_section input[type="radio"]:not(:checked) + label, .customize_section input[type="checkbox"]:not(:checked) + label {
