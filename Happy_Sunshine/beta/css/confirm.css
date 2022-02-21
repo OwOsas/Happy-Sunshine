@@ -145,7 +145,7 @@ form #pick_up_time input[type="radio"]:not(:checked) + label, form #pick_up_time
   display: block;
   -webkit-filter: drop-shadow(0 3px 1.5px #C4C4C4);
           filter: drop-shadow(0 3px 1.5px #C4C4C4);
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 0.5rem;
   text-align: center;
 }
 
@@ -154,7 +154,7 @@ form #pick_up_time input[type="radio"]:checked + label, form #pick_up_time input
   border: 2px solid #D6BA24;
   border-radius: 22px;
   display: block;
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 0.5rem;
   text-align: center;
 }
 
