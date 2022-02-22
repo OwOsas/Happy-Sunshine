@@ -2,4 +2,5 @@
 .DS_Store
 *.map
 
-Happy_Sunshine/beta/include/dbh_inc.php
+dbh_inc.php
+
