@@ -7,11 +7,21 @@
             <img class="" src="./img/HS_logo.svg" alt="">
         </a>
 
-        <ul class="desktop menu">
-            <li class="active"><a href="">Home</a></li>
-            <li><a href="">Menu</a></li>
-            <li><a href="./recent_orders.php">Recent Orders</a></li>
-            <li><a href="">Profile</a></li>
+        <?php
+            $pages = array();
+            $pages["index.php"] = "Home";
+            $pages["menu.php"] = "Menu";
+            $pages["recent_orders.php"] = "Recent Orders";
+        ?>
+
+        <ul class="desktop menu" id="desktop_menu">
+            <?php foreach($pages as $url=>$title):?>
+                <li>
+                    <a <?php if($url === $activePage):?>class="active"<?php endif;?> href="./<?php echo $url;?>">
+                        <?php echo $title;?>
+                    </a>
+                </li>
+            <?php endforeach;?>
         </ul>
 
         <a id="cart" href="./cart.php"><img src="./img/icons/cart.svg" alt=""></a>

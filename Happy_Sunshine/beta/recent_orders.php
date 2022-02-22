@@ -3,6 +3,8 @@
     include_once __DIR__ . "/include/functions.php"
 ?>
 
+<?php $activePage = "recent_orders.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

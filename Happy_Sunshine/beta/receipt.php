@@ -2,6 +2,8 @@
 include_once __DIR__ . "/config.php";
 ?>
 
+<?php $activePage = "receipt.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

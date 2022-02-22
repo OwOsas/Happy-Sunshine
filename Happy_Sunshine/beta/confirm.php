@@ -2,6 +2,8 @@
 include_once __DIR__ . "/config.php";
 ?>
 
+<?php $activePage = "confirm.php"; ?>
+
     <!DOCTYPE html>
     <html lang="en">
 
