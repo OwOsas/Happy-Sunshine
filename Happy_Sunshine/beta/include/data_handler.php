@@ -19,7 +19,7 @@ else{
 //pass new item into
 if(isset($_GET["uid"]) && !$alreadyUploaded){
     echo "Passing New Item";
-    $passed_item = new cart_item($_GET["uid"], $_GET["id"], $_GET["i_name"]);
+    $passed_item = new cart_item($_GET["uid"], $_GET["id"], $_GET["i_name"], get_thumbnail_img($conn, $_GET["i_name"]));
     $keys = array_keys($_GET);
     foreach($keys as $key){
         if($key != "uid" && $key != "id" && $key != "i_name"){
@@ -35,8 +35,6 @@ if(isset($_GET["uid"]) && !$alreadyUploaded){
     }
     array_push($_SESSION["cart_items"], $passed_item);
 }
-
-var_dump($_SESSION["cart_items"]);
 
 //Check if user is logged in
 // $_SESSION["cart"] = 

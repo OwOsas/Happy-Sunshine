@@ -1,7 +1,7 @@
 <?php
 include_once __DIR__ . "/config.php";
 include_once __DIR__ . "/include/functions.php";
-include_once __DIR__ . "/include/data_handler.php"
+include_once __DIR__ . "/include/data_handler.php";
 ?>
 
 <?php $activePage = "cart.php"; ?>
@@ -35,28 +35,13 @@ include_once __DIR__ . "/include/data_handler.php"
             <h1>My Cart</h1>
         </div>
         <!-- Cart Item Card -->
-        <div class="cart_item_card">
+
             <?php
-            customization_cart_item_template("This is the name", ["item 1", "item 2"], 1.25);
+            foreach($_SESSION["cart_items"] as $theItem){
+                cart_item_template($theItem->getName(), $theItem->getItems_as_array(), $theItem->getPrice(), $theItem->getImg());
+            }
             ?>
-            <div class="item">
-                <div class="img" style="background-image:url('./img/breakfast-sandwich.png');"></div>
-                <div class="item_description">
-                    <h3>Breakfast Sandwich</h3>
-                    <p>Bagel, Bacon, Egg, Cheese, Ketchup, Salt, Pepper</p>
-                </div>
-            </div>
-            <div class="price">$5.00</div>
-            <div class="item_mod">
-                <a href="">Edit</a>
-                <a href="">Remove</a>
-                <div class="quantity">
-                    <div class="subtract"></div>
-                    <p>1</p>
-                    <div class="add"></div>
-                </div>
-            </div>
-        </div>
+
         <!-- _____________________________________________ -->
 
         <div id="confirm_order">
@@ -81,6 +66,7 @@ include_once __DIR__ . "/include/data_handler.php"
 
 
     <?php
+    
     include_once __DIR__ . '/components/footer.php';
     ?>
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->

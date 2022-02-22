@@ -1,5 +1,8 @@
 <?php
 include_once __DIR__ . "/config.php";
+include_once __DIR__ . "/include/functions.php";
+include_once __DIR__ . "/include/dbh_inc.php";
+session_start();
 ?>
 
 <?php $activePage = "receipt.php"; ?>
@@ -28,6 +31,12 @@ include_once __DIR__ . "/config.php";
             <p>Thank you for your order!</p>
             <p id="warning">Please show this receipt to the owner when picking up your order</p>
         </div>
+
+        <?php
+            foreach($_SESSION["cart_items"] as $theItem){
+                receipt_item_template($theItem->getName(), $theItem->getItems_as_array(), $theItem->getPrice(), $theItem->getImg());
+            }
+            ?>
 
         <div class="cart_item_card">
             <div class="item">

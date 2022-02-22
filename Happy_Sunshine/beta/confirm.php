@@ -3,7 +3,6 @@ include_once __DIR__ . "/config.php";
 include_once __DIR__ . "/include/functions.php";
 include_once __DIR__ . "/include/dbh_inc.php";
 session_start();
-var_dump($_SESSION["cart_items"]);
 ?>
 
 <?php $activePage = "confirm.php"; ?>
@@ -34,14 +33,11 @@ var_dump($_SESSION["cart_items"]);
     <form action="receipt.php">
         <div id="cart_info">
             <h2>My Cart</h2>
-            <div class="item_info">
-                <img src="./img/burger.png" alt="Cart Item Photo">
-                <div>
-                    <p class="item_name">Breakfast Sandwich</p>
-                    <p class="item_content">Bagel, Bacon, Egg, Cheese, Ketchup, Salt, Pepper</p>
-                    <p class="item_price">Price: $5.00</p>
-                </div>
-            </div>
+            <?php
+                foreach($_SESSION["cart_items"] as $theItem){
+                    receipt_item_template($theItem->getName(), $theItem->getItems_as_array(), $theItem->getPrice(), $theItem->getImg());
+                }
+            ?>
         </div>
         <div id="order_info">
             <h2>Order Info</h2>

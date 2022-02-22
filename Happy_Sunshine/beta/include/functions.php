@@ -79,13 +79,29 @@ include_once __DIR__ . "/dbh_inc.php";
         echo '        </div>';
     }
 
+    function get_thumbnail_img($conn, $m_name){
+        $sql = "SELECT * FROM menu WHERE m_name = '". $m_name . "'";
+        $result = mysqli_query($conn,$sql);
+
+        if($result != false){
+            $resultCheck = mysqli_num_rows($result);
+            if($resultCheck==1){
+                while ($row = mysqli_fetch_assoc($result)) {
+                    return $row["m_image"];
+                }
+            }
+        }
+    }
+
     class cart_item{
-        public function __construct(string $uid, int $id, string $name)
+        public function __construct(string $uid, int $id, string $name, string $img)
         {
             $this->id = $id;
             $this->uid = $uid;
             $this->name = $name;
             $this->items = array();
+            $this->price = 0.00;
+            $this->img = $img;
         }
         
         public function addItem(string $category, string $name){
@@ -101,23 +117,55 @@ include_once __DIR__ . "/dbh_inc.php";
             return $this->items;
         }
 
+        public function getItems_as_array(){
+            $array = [];
+            foreach($this->items as $key){
+                foreach($key as $i){
+                    array_push($array, $i);
+                }
+            }
+            return $array;
+        }
+
         public function getUID(){
             return $this->uid;
         }
+
+        public function getID(){
+            return $this->id;
+        }
+
+        public function getName(){
+            return $this->name;
+        }
+        
+        public function getPrice(){
+            return $this->price;
+        }
+
+        public function getImg(){
+            return $this->img;
+        }
     }
 
-function customization_cart_item_template(string $name, array $items, $price){
+function cart_item_template(string $name, array $items, $price, string $img){
+    echo '<div class="cart_item_card">';
     echo '    <div class="item">';
-    echo '        <div class="img" style="background-image:url(./img/breakfast-sandwich.png);"></div>';
+    echo '        <div class="img" style="background-image:url(./img/menu/thumbnail/' . $img . ');"></div>';
     echo '        <div class="item_description">';
     echo '            <h3>' . $name . '</h3>';
     echo '            <p>';
+    $echo = "";
     foreach($items as $item){
-        echo $item;
-        if($item != end($items)){
-            echo ",";
+        if($item != "None"){
+            $echo .= $item;
+            if($item != end($items)){
+                $echo .= ", ";
+            }
+
         }
     }
+    echo substr($echo, 0, -2);
     echo '</p>';
     echo '        </div>';
     echo '    </div>';
@@ -131,4 +179,55 @@ function customization_cart_item_template(string $name, array $items, $price){
     echo '            <div class="add"></div>';
     echo '        </div>';
     echo '    </div>';
+    echo '</div>';
+}
+
+function confirm_item_template(string $name, array $items, $price, string $img){
+    echo '<div class="item_info">';
+    echo '    <img src="./img/menu/thumbnail/' . $img . '" alt="Cart Item Photo">';
+    echo '    <div>';
+    echo '        <p class="item_name">' . $name . '</p>';
+    echo '        <p class="item_content">';
+    $echo = "";
+    foreach($items as $item){
+        if($item != "None"){
+            $echo .= $item;
+            if($item != end($items)){
+                $echo .= ", ";
+            }
+
+        }
+    }
+    echo substr($echo, 0, -2);
+    echo '</p>';
+    echo '        <p class="item_price">Price: $' . number_format($price,2) . '</p>';
+    echo '    </div>';
+    echo '</div>';
+
+}
+
+
+function receipt_item_template(string $name, array $items, $price, string $img){
+    echo '<div class="cart_item_card">';
+    echo '<div class="item">';
+    echo '        <div class="img" style="background-image:url(./img/menu/thumbnail/' . $img . ');"></div>';
+    echo '    <div class="item_description">';
+    echo '    <h3>' . $name . '</h3>';
+    echo '            <p>';
+    $echo = "";
+    foreach($items as $item){
+        if($item != "None"){
+            $echo .= $item;
+            if($item != end($items)){
+                $echo .= ", ";
+            }
+        
+        }
+    }
+    echo substr($echo, 0, -2);
+    echo '</p>';
+    echo '</div>';
+    echo '</div>';
+    echo '<p class="price">$' . number_format($price, 2) . '</p>';
+    echo '</div>';
 }
