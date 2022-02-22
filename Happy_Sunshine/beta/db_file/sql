@@ -20,7 +20,7 @@ CREATE TABLE menu(
 CREATE TABLE customization(
     c_id int(11) not null PRIMARY KEY AUTO_INCREMENT,
     c_nameofdish varchar(128) NOT null,
-    c_catagory varchar(128) NOT null,
+    c_category varchar(128) NOT null,
     c_option varchar(128) NOT null,
     c_additionalprice decimal(8, 2) NOT null,
     c_ischeckbox boolean NOT null,

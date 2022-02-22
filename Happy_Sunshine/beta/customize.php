@@ -2,6 +2,7 @@
 include_once __DIR__ . "/config.php";
 include_once __DIR__ . "/include/functions.php";
 include_once __DIR__ . "/include/dbh_inc.php";
+
 if(isset($_GET['id']) != true){
     echo "no variable";
     header("Location: ./menu.php");
@@ -68,8 +69,9 @@ if($result && !($result->num_rows == 0)){
             </div>
 
             <div id="customize_main">
-                <form action="cart.php">
+                <form id="customizedForm" action="cart.php">
                     <?php 
+                    //generate Categories and Items
                       foreach($category_list as $category){
                           customization_section_template($conn, $i_name, $category[0], $category[1]);
                       }
@@ -77,7 +79,11 @@ if($result && !($result->num_rows == 0)){
                     <div id="add_note_section">
                         <label for="order_note">Add note:</label>
                         <input type="text" id="order_note" name="order_note" class="input_field">
+
                     </div>
+                    <input type="text" id="id" name="id" class="id" value="<?php echo $id;?>" style="display: none;">
+                    <input type="text" id="i_name" name="i_name" class="i_name" value="<?php echo $i_name;?>" style="display: none;">
+                    <input type="text" id="uid" name="uid" class="uid" value="<?php echo uniqid();?>" style="display: none;">
                     <div id="price_and_confirm_section">
                         <p id="total_price"><b>Total: $5.00</b> (Cash only)</p>
                         <input type="submit" value="Add to cart" class="btn form_btn" id="add_to_cart_btn">
@@ -94,8 +100,10 @@ if($result && !($result->num_rows == 0)){
     
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     
+    
     <script src="./js/index.js"></script>
     <script src="./js/header.js"></script>
     <script src="./js/button.js"></script>
+    <script src="./js/submit_to_ls.js"></script>
 </body>
 </html>

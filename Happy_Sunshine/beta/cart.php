@@ -1,5 +1,7 @@
 <?php
 include_once __DIR__ . "/config.php";
+include_once __DIR__ . "/include/functions.php";
+include_once __DIR__ . "/include/data_handler.php"
 ?>
 
 <!DOCTYPE html>
@@ -15,9 +17,9 @@ include_once __DIR__ . "/config.php";
 </head>
 
 <body>
-    <div id="dev_switch">
+    <!-- <div id="dev_switch">
         Switch btwn empty and have item
-    </div>
+    </div> -->
 
     <?php
     include_once __DIR__ . '/components/header.php';
@@ -77,7 +79,7 @@ include_once __DIR__ . "/config.php";
     include_once __DIR__ . '/components/footer.php';
     ?>
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-    <script>
+    <!-- <script>
         // DEV SCRIPT
         document.getElementById("dev_switch").addEventListener("click", function() {
             document.getElementById("cart_empty").classList.toggle("hidden");
@@ -85,7 +87,7 @@ include_once __DIR__ . "/config.php";
             document.getElementsByClassName("cart_item_card")[0].classList.toggle("hidden");
             document.getElementById("start_order").classList.toggle("hidden");
         });
-    </script>
+    </script> -->
     <script src="./js/index.js"></script>
     <script src="./js/g_map.js"></script>
     <script src="./js/header.js"></script>

@@ -29,7 +29,7 @@ include_once __DIR__ . "/dbh_inc.php";
         if($result && !($result->num_rows == 0)){
             echo '<div class="customize_section">';
             echo '    <p class="section_title">'. $category_name .'</p>';
-            if($is_single == 1){
+            if($is_single == 0){
                 echo '    <p>Choose 1</p>';
             }
             else{
@@ -53,6 +53,7 @@ include_once __DIR__ . "/dbh_inc.php";
         }
         else{
             $type = "checkbox";
+            $item_category .= "[]";
         }
 
         if ($price == 0){
@@ -76,4 +77,31 @@ include_once __DIR__ . "/dbh_inc.php";
         echo '            <input class="button_input" type="'. $type . '" name="'. $item_category . '" value="'. $item_name . '" '. $checkmark . '>';
         echo '            <label class="button_label" for="'. $item_name . '">'. $item_name . '</label>';
         echo '        </div>';
+    }
+
+    class cart_item{
+        public function __construct(string $uid, int $id, string $name)
+        {
+            $this->id = $id;
+            $this->uid = $uid;
+            $this->name = $name;
+            $this->items = array();
+        }
+        
+        public function addItem(string $category, string $name){
+            if(array_key_exists($category, $this->items)){
+                array_push($this->items[$category], $name);
+            }
+            else{
+                $this->items[$category] = array($name);
+            }
+        }
+
+        public function getItems(){
+            return $this->items;
+        }
+
+        public function getUID(){
+            return $this->uid;
+        }
     }
