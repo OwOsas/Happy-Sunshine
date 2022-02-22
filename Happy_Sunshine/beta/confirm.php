@@ -1,5 +1,9 @@
 <?php
 include_once __DIR__ . "/config.php";
+include_once __DIR__ . "/include/functions.php";
+include_once __DIR__ . "/include/dbh_inc.php";
+session_start();
+var_dump($_SESSION["cart_items"]);
 ?>
 
     <!DOCTYPE html>

@@ -38,9 +38,6 @@ if(isset($_GET["uid"]) && !$alreadyUploaded){
 
 var_dump($_SESSION["cart_items"]);
 
-
-
-
 //Check if user is logged in
 // $_SESSION["cart"] = 
 

@@ -105,3 +105,30 @@ include_once __DIR__ . "/dbh_inc.php";
             return $this->uid;
         }
     }
+
+function customization_cart_item_template(string $name, array $items, $price){
+    echo '    <div class="item">';
+    echo '        <div class="img" style="background-image:url(./img/breakfast-sandwich.png);"></div>';
+    echo '        <div class="item_description">';
+    echo '            <h3>' . $name . '</h3>';
+    echo '            <p>';
+    foreach($items as $item){
+        echo $item;
+        if($item != end($items)){
+            echo ",";
+        }
+    }
+    echo '</p>';
+    echo '        </div>';
+    echo '    </div>';
+    echo '    <div class="price">$' . number_format($price,2) . '</div>';
+    echo '    <div class="item_mod">';
+    echo '        <a href="">Edit</a>';
+    echo '        <a href="">Remove</a>';
+    echo '        <div class="quantity">';
+    echo '            <div class="subtract"></div>';
+    echo '            <p>1</p>';
+    echo '            <div class="add"></div>';
+    echo '        </div>';
+    echo '    </div>';
+}

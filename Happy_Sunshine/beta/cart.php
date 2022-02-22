@@ -34,6 +34,9 @@ include_once __DIR__ . "/include/data_handler.php"
         </div>
         <!-- Cart Item Card -->
         <div class="cart_item_card">
+            <?php
+            customization_cart_item_template("This is the name", ["item 1", "item 2"], 1.25);
+            ?>
             <div class="item">
                 <div class="img" style="background-image:url('./img/breakfast-sandwich.png');"></div>
                 <div class="item_description">
