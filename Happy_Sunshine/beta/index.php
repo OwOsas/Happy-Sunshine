@@ -4,6 +4,8 @@ include_once __DIR__ . "/include/functions.php";
 include_once __DIR__ . "/include/dbh_inc.php";
 ?>
 
+<?php $activePage = "index.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -38,6 +38,8 @@ if($result && !($result->num_rows == 0)){
 }
 ?>
 
+<?php $activePage = "customize.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

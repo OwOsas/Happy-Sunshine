@@ -4,6 +4,8 @@ include_once __DIR__ . "/include/functions.php";
 include_once __DIR__ . "/include/data_handler.php"
 ?>
 
+<?php $activePage = "cart.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
