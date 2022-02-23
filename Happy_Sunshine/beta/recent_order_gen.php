@@ -15,12 +15,11 @@
         echo '    </div>';
     }
 
-    generate_order("11/11/2021","./img/banner_img_mobile.png","Breakfast Sandwich", "$5.00");
-    generate_order("10/11/2021","./img/banner_img_mobile.png","Cheesesteaks, Coffee", "$7.00");
-    generate_order("9/11/2021","./img/banner_img_mobile.png","Breakfast Sandwich, Cheesesteaks, Coffee", "$11.00");
-    generate_order("11/11/2021","./img/banner_img_mobile.png","Breakfast Sandwich", "$5.00");
-    generate_order("10/11/2021","./img/banner_img_mobile.png","Cheesesteaks, Coffee", "$7.00");
-    generate_order("9/11/2021","./img/banner_img_mobile.png","Breakfast Sandwich, Cheesesteaks, Coffee", "$11.00");
+    generate_order("11/11/2021","./img/menu/thumbnail/breakfast_sandwich_reg.jpeg","Breakfast Sandwich", "$5.00");
+    generate_order("10/11/2021","./img/menu/thumbnail/hot_coffee_small.jpg","Cheesesteaks, Coffee", "$7.00");
+    generate_order("9/11/2021","./img/menu/thumbnail/cheesesteak_plain.jpg","Breakfast Sandwich, Cheesesteaks, Coffee", "$11.00");
+    generate_order("11/11/2021","./img/menu/thumbnail/grilled_cheese_plain.jpg","Grilled Cheese", "$5.00");
+    generate_order("9/11/2021","./img/menu/thumbnail/hoagie_italian.jpg","Hoagies, Cheesesteaks, Coffee", "$11.00");
     
     ?>
 </div>

@@ -35,29 +35,37 @@ include_once __DIR__ . "/include/data_handler.php";
             <h1>My Cart</h1>
         </div>
         <!-- Cart Item Card -->
-
+        
             <?php
-            foreach($_SESSION["cart_items"] as $theItem){
-                cart_item_template($theItem->getName(), $theItem->getItems_as_array(), $theItem->getPrice(), $theItem->getImg());
+            if(count($_SESSION["cart_items"]) > 0){
+                foreach($_SESSION["cart_items"] as $theItem){
+                    cart_item_template($theItem->getName(), $theItem->getItems_as_array(), $theItem->getPrice(), $theItem->getImg());
+                }
+                $isEmpty = false;
             }
+            else{
+                $isEmpty = true;
+            }
+
             ?>
 
         <!-- _____________________________________________ -->
 
-        <div id="confirm_order">
+        <div id="confirm_order" class = "<?php if($isEmpty){echo "hidden";}?>">
             <h3>Total: $5.00</h3>
             <a href="./confirm.php" class="btn" id="confirm_order_btn">
                 Confirm Order
             </a>
         </div>
-        <div id="cart_empty" class=" hidden">
+
+        <div id="cart_empty" class = "<?php if(!$isEmpty){echo "hidden";}?>">
             <img src="./img/icons/cart_empty_crying_bird.svg" alt="" width="50%" height="50%">
             <h2>My cart is empty!</h2>
 
             </a>
         </div>
 
-        <a href="./menu.php" class="btn hidden" id="start_order">
+        <a href="./menu.php" class="btn <?php if(!$isEmpty){echo "hidden";}?>" id="start_order">
             Order Now
             <img src="./img/icons/arrow_right.svg" alt="">
         </a>
@@ -70,15 +78,39 @@ include_once __DIR__ . "/include/data_handler.php";
     include_once __DIR__ . '/components/footer.php';
     ?>
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-    <!-- <script>
-        // DEV SCRIPT
-        document.getElementById("dev_switch").addEventListener("click", function() {
-            document.getElementById("cart_empty").classList.toggle("hidden");
-            document.getElementById("confirm_order").classList.toggle("hidden");
-            document.getElementsByClassName("cart_item_card")[0].classList.toggle("hidden");
-            document.getElementById("start_order").classList.toggle("hidden");
-        });
-    </script> -->
+    <script>
+        //display empty page when no item in cart
+        // if(document.getElementById("isEmpty").classList.contains('true')){
+        //     document.getElementById("cart_empty").classList.remove("hidden");
+        //     document.getElementById("confirm_order").classList.add("hidden");
+        //     var card = document.getElementsByClassName("cart_item_card");
+        //     if(card.length > 0){
+        //         forEach(element => 
+        //         element.classList.add("hidden")
+        //     );
+        //     }
+        //     else{
+        //         card.classList.add("hidden")
+        //     }
+
+        //     document.getElementById("start_order").classList.remove("hidden");
+        // }
+        // else{
+        //     document.getElementById("cart_empty").classList.add("hidden");
+        //     document.getElementById("confirm_order").classList.remove("hidden");
+        //     var card = document.getElementsByClassName("cart_item_card");
+        //     if(card.length > 0){
+        //         forEach(element => 
+        //         element.classList.remove("hidden")
+        //     );
+        //     }
+        //     else{
+        //         card.classList.remove("hidden")
+        //     }
+        //     document.getElementById("start_order").classList.add("hidden");
+        // }
+
+    </script>
     <script src="./js/index.js"></script>
     <script src="./js/g_map.js"></script>
     <script src="./js/header.js"></script>

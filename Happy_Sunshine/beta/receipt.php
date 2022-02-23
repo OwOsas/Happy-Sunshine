@@ -1,4 +1,5 @@
 <?php
+
 include_once __DIR__ . "/config.php";
 include_once __DIR__ . "/include/functions.php";
 include_once __DIR__ . "/include/dbh_inc.php";
@@ -37,17 +38,6 @@ session_start();
                 receipt_item_template($theItem->getName(), $theItem->getItems_as_array(), $theItem->getPrice(), $theItem->getImg());
             }
             ?>
-
-        <div class="cart_item_card">
-            <div class="item">
-                <div class="img" style="background-image:url('./img/breakfast-sandwich.png');"></div>
-                <div class="item_description">
-                    <h3>Breakfast Sandwich</h3>
-                    <p>Bagel, Bacon, Egg, Cheese, Ketchup, Salt, Pepper</p>
-                </div>
-            </div>
-            <p class="price">$5.00</p>
-        </div>
 
         <div class="order_info">
             <ul>

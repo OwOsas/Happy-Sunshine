@@ -395,6 +395,10 @@ a img {
   background-color: black;
 }
 
+.card_container {
+  width: 100%;
+}
+
 #confirm_order {
   width: 100%;
 }
