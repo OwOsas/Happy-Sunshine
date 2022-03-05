@@ -1,0 +1,150 @@
+@import './header';
+@import './footer';
+@import './general';
+@import './btn';
+@import './style_guide';
+
+.container{
+    padding: 1.5rem;
+}
+
+.receipt_header{
+    p{
+        font-weight: 500;
+        font-size: 1.25rem;
+        text-align: center;
+        padding: 0.5rem 2rem;
+    }
+
+    #warning{
+        background-color: $clr_tertiary;
+        color: $clr_white;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+}
+
+#title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &::after {
+        content: "";
+        display: block;
+        height: 1rem;
+        width: 4rem;
+    }
+
+    h1 {
+        text-align: center;
+        font-weight: 500;
+        font-size: 2rem;
+        justify-self: center;
+    }
+
+    a {
+        color: $clr_black;
+        text-decoration: none;
+        font-weight: normal;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+
+    }
+}
+
+.cart_item_card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+
+    width: 100%;
+    border-bottom: 2px $clr_grey solid;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+
+    .item {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+
+        .img {
+            width: 64px;
+            height: 64px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .item_description {
+            max-width: calc(100% - 80px);
+
+            h3 {
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    .price {
+        text-align: right;
+        font-weight: 500;
+        font-size: 1.15rem;
+    }
+}
+
+.order_info{
+    margin-top: 1rem;
+    width: 100%;
+
+    ul{
+        margin-bottom: 2rem;
+        li{
+            list-style: none;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.25rem;
+        }
+    }
+
+    b{
+        font-weight: 400;
+    }
+
+    #total{
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        
+        b{
+            font-weight: 600;
+        }
+    }
+}
+
+@media screen and (min-width: $tablet_bp){
+    #title{
+        display: block;
+
+        &::after{
+            content: none;
+        }
+    }
+
+    .container{
+        h1{
+            text-align: center;
+        }
+
+        #track_order{
+            margin: 0 auto;
+            width: 50%;
+        }
+    }
+}

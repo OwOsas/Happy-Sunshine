@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#confirmation_container {
+  display: flex;
+  padding: 1rem 1.5rem;
+  justify-content: space-between;
+}
+#confirmation_container::after {
+  content: "";
+  display: block;
+  height: 1rem;
+  width: 4rem;
+}
+#confirmation_container h1 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  justify-self: center;
+}
+#confirmation_container a {
+  color: black;
+  text-decoration: none;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+form {
+  margin: 0 1.5rem;
+}
+form #cart_info {
+  border-bottom: 1px solid #C4C4C4;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+form #cart_info h2 {
+  font-weight: 500;
+}
+form #cart_info img {
+  display: block;
+  width: 100%;
+}
+form #cart_info .item_info {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 64px 2fr;
+}
+form #cart_info .item_info img {
+  align-self: center;
+}
+form #cart_info .item_info div {
+  align-self: center;
+}
+form #cart_info .item_info div .item_name {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+form #cart_info .item_info div .item_content {
+  line-height: 1rem;
+}
+form #cart_info .item_info div .item_price {
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+form .cart_item_card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  border-bottom: 2px #CEC3B7 solid;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+form .cart_item_card .item {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+form .cart_item_card .item .img {
+  width: 64px;
+  height: 64px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+form .cart_item_card .item .item_description {
+  max-width: calc(100% - 80px);
+}
+form .cart_item_card .item .item_description h3 {
+  font-size: 1.25rem;
+}
+form .cart_item_card .price {
+  text-align: right;
+  font-weight: 500;
+  font-size: 1.15rem;
+}
+form #order_info {
+  border-bottom: 1px solid #C4C4C4;
+  padding-bottom: 1.5rem;
+  padding-top: 1rem;
+}
+form #order_info div div {
+  margin-top: 0.5rem;
+}
+form #order_info h2 {
+  font-weight: 500;
+}
+form #order_info label {
+  font-weight: 500;
+}
+form #order_info .input_field {
+  border: 2.5px solid black;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  width: 100%;
+}
+form #pick_up_time {
+  padding-bottom: 1.5rem;
+  padding-top: 1rem;
+}
+form #pick_up_time h2 {
+  font-weight: 500;
+}
+form #pick_up_time #time_selection {
+  display: grid;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  grid-template-columns: 1fr 2fr;
+  margin-top: 0.5rem;
+}
+form #pick_up_time input[type=radio], form #pick_up_time input[type=checkbox] {
+  display: none;
+}
+form #pick_up_time input[type=radio]:not(:checked) + label, form #pick_up_time input[type=checkbox]:not(:checked) + label {
+  background-color: white;
+  border: 2px solid #C4C4C4;
+  border-radius: 22px;
+  display: block;
+  filter: drop-shadow(0 3px 1.5px #C4C4C4);
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+}
+form #pick_up_time input[type=radio]:checked + label, form #pick_up_time input[type=checkbox]:checked + label {
+  background-color: #F0D028;
+  border: 2px solid #D6BA24;
+  border-radius: 22px;
+  display: block;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+}
+form #pick_up_time input[type=radio] + label:hover, form #pick_up_time input[type=checkbox] + label:hover {
+  cursor: pointer;
+}
+form #confirm_order {
+  margin-top: 1rem;
+}
+form #confirm_order p {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+form #confirm_order input {
+  border: none;
+}
+
+@media screen and (min-width: 750px) {
+  #confirmation_container {
+    display: block;
+  }
+
+  #cart_info img {
+    justify-self: end;
+    max-width: 80%;
+  }
+
+  #order_info > div {
+    display: grid;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  #confirm_order {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+  }
+}/*# sourceMappingURL=confirm.css.map */
