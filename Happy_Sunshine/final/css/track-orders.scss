@@ -48,6 +48,10 @@
     gap: 1rem;
 }
 
+#main_container{
+    width: 100%;
+}
+
 .tracking_card{
     background-color: $clr_white;
     width: 100%;
@@ -80,6 +84,7 @@
 }
 
 .location{
+    margin-top: 1rem;
     width: 100%;
 
     .find_us{
@@ -133,5 +138,31 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
+
+        #map{
+            margin-top: 0;
+        }
+    }
+}
+
+@media screen and (min-width: $desktop_bp){
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+
+        #main_container{
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 1fr 1fr;
+
+            .location{
+                display: block;
+                margin-top: 0;
+
+                #map{
+                    margin-top: 1rem;
+                }
+            }
+        }
     }
 }

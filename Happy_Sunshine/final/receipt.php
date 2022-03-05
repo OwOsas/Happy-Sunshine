@@ -41,10 +41,10 @@ session_start();
 
         <div class="order_info">
             <ul>
-                <li id="total">Total: <b>$5.00</b></li>
-                <li>Order number: <b>#0001</b></li>
-                <li>Name: <b>John Smith</b>  </li>
-                <li>Estimated pick-up time: <b>1:15pm</b></li>
+                <li id="total">Total: $5.00</li>
+                <li>Order number: #0001</li>
+                <li>Name: John Smith</li>
+                <li>Estimated pick-up time: 1:15pm</li>
             </ul>
                     
             <a href="./track_orders.php" class="btn hidden" id="track_order">Track Order</a>

@@ -24,7 +24,7 @@
 }
 
 .customize_section{
-    margin-top: 1rem;
+    margin-top: 2.5rem;
 
     p{
         display: inline-block;
@@ -39,7 +39,7 @@
     .selection{
         display: grid;
         align-items: end;
-        column-gap: 0.5rem;
+        gap: 1rem;
         grid-template-columns: 1fr 1fr;
     }
 
@@ -96,7 +96,8 @@
 }
 
 #add_note_section{
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 
     .input_field{
         border: 2.5px solid $clr_black;
