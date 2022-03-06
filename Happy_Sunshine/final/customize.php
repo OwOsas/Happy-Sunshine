@@ -28,18 +28,20 @@ $result = mysqli_query($conn, $sql);
 
 $category_list = [];
 $js_price = [];
+$price_dict = array();
 
 if ($result && !($result->num_rows == 0)) {
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
             array_push($js_price, [$row["c_option"], $row['c_additionalprice']]);
+            $price_dict[$row["c_option"]] = $row['c_additionalprice'];
             if (!(in_array([$row['c_category'], $row['c_ischeckbox']], $category_list))) {
                 array_push($category_list, [$row['c_category'], $row['c_ischeckbox']]);
             }
         }
     }
 }
-//echo '<pre>' , var_dump($js_price) , '</pre>';
+$_SESSION["price_dict"] = $price_dict;
 ?>
 
 <?php $activePage = "customize.php"; ?>

@@ -94,27 +94,40 @@ include_once __DIR__ . "/dbh_inc.php";
     }
 
     class cart_item{
-        public function __construct(string $uid, int $id, string $name, string $img)
+        public function __construct(string $uid, int $id, string $name, string $img, float $price)
         {
             $this->id = $id;
             $this->uid = $uid;
             $this->name = $name;
             $this->items = array();
-            $this->price = 0.00;
+            $this->base_price = $price;
             $this->img = $img;
+            $this->price_dict = array();
         }
         
-        public function addItem(string $category, string $name){
+        public function addItem(string $category, string $name, float $price){
             if(array_key_exists($category, $this->items)){
                 array_push($this->items[$category], $name);
             }
             else{
                 $this->items[$category] = array($name);
             }
+
+            if(!array_key_exists($name, $this->price_dict)){
+                $this->price_dict[$name] = $price;
+            }
         }
 
         public function getItems(){
             return $this->items;
+        }
+
+        public function getPriceDict(){
+            return $this->price_dict;
+        }
+
+        public function getBasePrice(){
+            return $this->base_price;
         }
 
         public function getItems_as_array(){
@@ -140,7 +153,11 @@ include_once __DIR__ . "/dbh_inc.php";
         }
         
         public function getPrice(){
-            return $this->price;
+            $total = $this->base_price;;
+            foreach($this->price_dict as $price){
+                $total += $price;
+            }
+            return $total;
         }
 
         public function getImg(){
@@ -230,4 +247,34 @@ function receipt_item_template(string $name, array $items, $price, string $img){
     echo '</div>';
     echo '<p class="price">$' . number_format($price, 2) . '</p>';
     echo '</div>';
+}
+
+function get_price_dict($conn, $i_name){
+    $sql = "SELECT * FROM customization WHERE c_nameofdish = '" . $i_name . "'";
+    $result = mysqli_query($conn, $sql);
+
+    $price_dict = array();
+
+    if ($result && !($result->num_rows == 0)) {
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $price_dict[$row["c_option"]] = $row['c_additionalprice'];
+            }
+        }
+    }
+    return $price_dict;
+}
+
+function get_item_price($conn, $i_name){
+    $sql = "SELECT * FROM menu WHERE m_name = '". $i_name . "'";
+    $result = mysqli_query($conn,$sql);
+
+    if($result != false){
+        $resultCheck = mysqli_num_rows($result);
+        if($resultCheck==1){
+            while ($row = mysqli_fetch_assoc($result)) {
+                return $row["m_price"];
+            }
+        }
+    }
 }
