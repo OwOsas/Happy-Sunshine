@@ -13,7 +13,7 @@ include_once __DIR__ . "/include/data_handler.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your cart | Happy Sunshine</title>
+    <title>Cart | Happy Sunshine</title>
     <link rel="shortcut icon" type="image/svg" href="./img/favicon.svg">
     <link rel="stylesheet" href="./css/cart.css">
 </head>
@@ -37,6 +37,7 @@ include_once __DIR__ . "/include/data_handler.php";
         <!-- Cart Item Card -->
         
             <?php
+            
             if(count($_SESSION["cart_items"]) > 0){
                 foreach($_SESSION["cart_items"] as $theItem){
                     cart_item_template($theItem->getName(), $theItem->getItems_as_array(), $theItem->getPrice(), $theItem->getImg());
