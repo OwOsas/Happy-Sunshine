@@ -34,7 +34,7 @@ include_once __DIR__ . "/include/dbh_inc.php";
         <div id="start_here">
 
             <div class="btn_container">
-                <h1>Hi, John!</h1>
+                <h1 id="welcome">Welcome!</h1>
                 <a href="./menu.php" class="btn" id="start_order">
                     Start Order 
                     <img src="./img/icons/arrow_right.svg" alt="">
@@ -80,30 +80,28 @@ include_once __DIR__ . "/include/dbh_inc.php";
                     </div>
                 </div>
                 
-                <a href="./receipt.php">View Receipt <img src="./img/icons/link_arrow_right.svg" alt=""></a>
+                <a href="./receipt.php">View Receipt →</a>
             </div>
 
-            <div class="location">
-                <div class="find_us">
+            <div class="find_us">
+                <div>
+                    <img src="./img/icons/truck.svg" alt="">
                     <div>
-                        <img src="./img/icons/truck.svg" alt="">
-                        <div>
-                            <h3>Find us at:</h3>
-                            <a target="_blank" href="https://www.google.com/maps/search/33rd+and+Arch+Street,++Philadelphia,+PA+19104/@39.9593223,-75.1915078,17z/data=!3m1!4b1">
-                                33rd and Arch Street,<br> Philadelphia, PA 19104
-                            </a>
-                            <p>6am to 2:30pm</p>
-                            <b>We are a cash only truck!</b>
-                            <a target="_blank" href="https://www.google.com/maps/search/33rd+and+Arch+Street,++Philadelphia,+PA+19104/@39.9593223,-75.1915078,17z/data=!3m1!4b1">
-                                View in Google Maps <img src="./img/icons/link_arrow_right.svg" alt="">
-                            </a>
-                        </div>
+                        <h3>Find us at:</h3>
+                        <a target="_blank" href="https://www.google.com/maps/search/33rd+and+Arch+Street,++Philadelphia,+PA+19104/@39.9593223,-75.1915078,17z/data=!3m1!4b1">
+                            33rd and Arch Street,<br> Philadelphia, PA 19104
+                        </a>
+                        <p>6am to 2:30pm</p>
+                        <b>We are a cash only truck!</b>
+                        <a target="_blank" href="https://www.google.com/maps/search/33rd+and+Arch+Street,++Philadelphia,+PA+19104/@39.9593223,-75.1915078,17z/data=!3m1!4b1">
+                            View in Google Maps →
+                        </a>
                     </div>
                 </div>
+            </div>
 
                 <!--The div element for the map -->
-                <div id="map"></div>
-            </div>
+            <div id="map"></div>
 
 
 

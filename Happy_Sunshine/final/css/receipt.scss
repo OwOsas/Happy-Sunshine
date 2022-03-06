@@ -108,7 +108,7 @@
             list-style: none;
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: end;
             font-size: 1.25rem;
         }
     }
@@ -138,13 +138,23 @@
     }
 
     .container{
+        max-width: 950px;
+        margin: 0 auto;
+
         h1{
             text-align: center;
         }
 
         #track_order{
-            margin: 0 auto;
+            margin-left: auto;
             width: 50%;
         }
+    }
+}
+
+@media screen and (min-width: $desktop_bp){
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
     }
 }

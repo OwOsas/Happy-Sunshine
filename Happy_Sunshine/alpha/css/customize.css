@@ -13,33 +13,42 @@
 .customize_section {
   margin-top: 1rem;
 }
+
 .customize_section p {
   display: inline-block;
 }
+
 .customize_section .section_title {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
 }
+
 .customize_section .selection {
+  display: -ms-grid;
   display: grid;
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
-  grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 0.5rem;
+          column-gap: 0.5rem;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
 }
-.customize_section input[type=radio], .customize_section input[type=checkbox] {
+
+.customize_section input[type="radio"], .customize_section input[type="checkbox"] {
   display: none;
 }
-.customize_section input[type=radio]:not(:checked) + label, .customize_section input[type=checkbox]:not(:checked) + label {
+
+.customize_section input[type="radio"]:not(:checked) + label, .customize_section input[type="checkbox"]:not(:checked) + label {
   background-color: white;
   border: 2px solid #C4C4C4;
   border-radius: 22px;
   display: block;
-  filter: drop-shadow(0 3px 1.5px #C4C4C4);
+  -webkit-filter: drop-shadow(0 3px 1.5px #C4C4C4);
+          filter: drop-shadow(0 3px 1.5px #C4C4C4);
   padding: 0.75rem 2rem;
   text-align: center;
 }
-.customize_section input[type=radio]:checked + label, .customize_section input[type=checkbox]:checked + label {
+
+.customize_section input[type="radio"]:checked + label, .customize_section input[type="checkbox"]:checked + label {
   background-color: #F0D028;
   border: 2px solid #D6BA24;
   border-radius: 22px;
@@ -47,24 +56,29 @@
   padding: 0.75rem 2rem;
   text-align: center;
 }
-.customize_section input[type=radio] + label:hover, .customize_section input[type=checkbox] + label:hover {
+
+.customize_section input[type="radio"] + label:hover, .customize_section input[type="checkbox"] + label:hover {
   cursor: pointer;
 }
+
 .customize_section .price_tag {
   background-color: #EE652A;
   border-radius: 16px;
   color: white;
-  filter: drop-shadow(0 3px 1.5px #C4C4C4);
+  -webkit-filter: drop-shadow(0 3px 1.5px #C4C4C4);
+          filter: drop-shadow(0 3px 1.5px #C4C4C4);
   padding: 0.1rem 0.5rem;
   position: absolute;
   right: 0;
   top: -12px;
   z-index: 10;
 }
+
 .customize_section .with_price_tag {
   margin-top: 1.25rem;
   position: relative;
 }
+
 .customize_section .without_price_tag {
   margin-top: 0.75rem;
 }
@@ -72,6 +86,7 @@
 #add_note_section {
   margin-bottom: 1rem;
 }
+
 #add_note_section .input_field {
   border: 2.5px solid black;
   border-radius: 5px;
@@ -80,6 +95,7 @@
   padding: 0 0.5rem;
   width: 100%;
 }
+
 #add_note_section label {
   display: block;
   font-size: 1.25rem;
@@ -94,11 +110,15 @@
 
 @media screen and (min-width: 750px) {
   .customize_section .selection {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
+
 @media screen and (min-width: 750px) {
   .customize_section .selection {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-}/*# sourceMappingURL=customize.css.map */
+}
+/*# sourceMappingURL=customize.css.map */

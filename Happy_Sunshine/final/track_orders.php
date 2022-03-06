@@ -26,7 +26,7 @@ session_start();
             <h1>Tracking</h1>
         </div>
 
-        
+        <div id="main_container">
             <div class="tracking_card">
                 <h2>Preparing</h2>
                 <div class="break"></div>
@@ -76,7 +76,6 @@ session_start();
                 <div id="map"></div>
             </div>
         </div>
-    
 
     <!--The div element for the map -->
 
