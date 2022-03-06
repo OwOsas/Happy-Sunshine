@@ -123,7 +123,7 @@ header{
 
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
 
     transform: translateX(-100%);
 
@@ -156,7 +156,6 @@ header{
         .desktop{
             display: unset;
         }
-        max-width: 950px;
         width: 100%;
         display: flex;
         position: relative;
@@ -196,10 +195,10 @@ header{
         position: relative;
 
         box-sizing: content-box;
-        padding: 1rem 2rem;
+        padding: 1rem 4rem;
 
         .active{
-            color: $clr_tertiary;
+            border-bottom: 2px solid $clr_tertiary;
         }
 
         
@@ -207,14 +206,9 @@ header{
         li{
             width: unset;
             a{
-                color: $clr_primary;
                 font-size: 1.25rem;
                 width: unset;
                 font-weight: bold;
-
-                &:hover{
-                    color: $clr_tertiary;
-                }
             }
 
         }
@@ -229,8 +223,5 @@ header{
     
 
 @media screen and (min-width: $desktop_bp){
-    #header_container{
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+
 }

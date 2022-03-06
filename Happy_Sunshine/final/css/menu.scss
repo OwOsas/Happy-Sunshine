@@ -44,7 +44,7 @@
         // justify-content: space-between;
         align-items: center;
         padding: 1.5rem;
-        gap: 0.5rem;
+        gap: 1.5rem;
         height: 110px;
 
         border-top: 1px solid $clr_black;
@@ -68,6 +68,7 @@
 }
 
 @media screen and (min-width: $tablet_bp){
+
     #food_menu_container{
         justify-content: center;
         &::after{

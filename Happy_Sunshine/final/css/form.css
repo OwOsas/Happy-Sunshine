@@ -22,24 +22,18 @@ label {
 }
 
 #login_options {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   font-size: 1.25rem;
   gap: 1rem;
   margin: 0 auto;
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
-
 #login_options a {
   display: block;
   text-decoration: none;
 }
-
 #login_options .active {
   border-bottom: 4px solid #EE702A;
 }
@@ -54,5 +48,4 @@ label {
     margin: 0 auto;
     width: 50%;
   }
-}
-/*# sourceMappingURL=form.css.map */
+}/*# sourceMappingURL=form.css.map */
