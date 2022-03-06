@@ -168,8 +168,6 @@ $_SESSION["price_dict"] = $price_dict;
             });
         }
 
-
-
         console.log(calc_price);
         price_html.innerHTML = calc_price.toFixed(2);
     </script>

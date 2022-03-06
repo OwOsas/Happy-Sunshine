@@ -35,34 +35,37 @@ include_once __DIR__ . "/include/data_handler.php";
             <h1>My Cart</h1>
         </div>
         <!-- Cart Item Card -->
-        
+
 
         <div id="cart_container">
             <div id="cart_items_container">
                 <?php
-                    if(count($_SESSION["cart_items"]) > 0){
-                        foreach($_SESSION["cart_items"] as $theItem){
-                            cart_item_template($theItem->getName(), $theItem->getItems_as_array(), $theItem->getPrice(), $theItem->getImg());
-                        }
-                        $isEmpty = false;
+                if (count($_SESSION["cart_items"]) > 0) {
+                    foreach ($_SESSION["cart_items"] as $theItem) {
+                        cart_item_template($theItem->getName(), $theItem->getItems_as_array(), $theItem->getPrice(), $theItem->getImg());
                     }
-                    else{
-                        $isEmpty = true;
-                    }
+                    $isEmpty = false;
+                } else {
+                    $isEmpty = true;
+                }
 
                 ?>
             </div>
 
             <!-- _____________________________________________ -->
 
-            <div id="confirm_order" class = "<?php if($isEmpty){echo "hidden";}?>">
+            <div id="confirm_order" class="<?php if ($isEmpty) {
+                                                echo "hidden";
+                                            } ?>">
                 <p><b>Total: $5.00</b></p>
                 <a href="./confirm.php" class="btn" id="confirm_order_btn">
                     Confirm Order
                 </a>
             </div>
 
-            <div id="cart_empty" class = "<?php if(!$isEmpty){echo "hidden";}?>">
+            <div id="cart_empty" class="<?php if (!$isEmpty) {
+                                            echo "hidden";
+                                        } ?>">
                 <img src="./img/icons/cart_empty_crying_bird.svg" alt="" width="50%" height="50%">
                 <h2>My cart is empty!</h2>
 
@@ -70,7 +73,9 @@ include_once __DIR__ . "/include/data_handler.php";
             </div>
         </div>
 
-        <a href="./menu.php" class="btn <?php if(!$isEmpty){echo "hidden";}?>" id="start_order">
+        <a href="./menu.php" class="btn <?php if (!$isEmpty) {
+                                            echo "hidden";
+                                        } ?>" id="start_order">
             Order Now
             <img src="./img/icons/arrow_right.svg" alt="">
         </a>
@@ -79,7 +84,7 @@ include_once __DIR__ . "/include/data_handler.php";
 
 
     <?php
-    
+
     include_once __DIR__ . '/components/footer.php';
     ?>
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
@@ -114,7 +119,6 @@ include_once __DIR__ . "/include/data_handler.php";
         //     }
         //     document.getElementById("start_order").classList.add("hidden");
         // }
-
     </script>
     <script src="./js/index.js"></script>
     <script src="./js/g_map.js"></script>
