@@ -1,25 +1,6 @@
 @import "./style_guide";
 @import "./input";
 
-#login_options{
-    display: flex;
-    justify-content: center;
-    font-size: 1.25rem;
-    gap: 1rem;
-    margin: 0 auto;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-
-    a{
-        display: block;
-        text-decoration: none;
-    }
-
-    .active{
-        border-bottom: 4px solid $clr_tertiary;
-    }
-}
-
 .form_btn{
     border: none;
     margin-top: 1rem;

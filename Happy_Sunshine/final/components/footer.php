@@ -10,6 +10,6 @@ Philadelphia, PA 19104</p>
 Saturday, 7am-3pm</p>
     </div>
     <div>
-        <p>Copyright @HappySunshine All Right Reserved</p>
+        <p id="copyright">Copyright @HappySunshine All Right Reserved</p>
     </div>
 </footer>

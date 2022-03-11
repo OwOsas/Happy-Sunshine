@@ -3,7 +3,7 @@ session_start();
 include_once __DIR__ . "/config.php";
 ?>
 
-<?php $activePage = "login.php"; ?>
+<?php $activePage = ""; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,11 +11,10 @@ include_once __DIR__ . "/config.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Happy Sunshine</title>
+    <title>Sign Up | Happy Sunshine</title>
     <link rel="shortcut icon" type="image/svg" href="./img/favicon.svg">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/form.css">
-    <link rel="stylesheet" href="./css/login.css">
 </head>
 <body>
     <?php
@@ -28,7 +27,7 @@ include_once __DIR__ . "/config.php";
 
     <div class="fst">
         <div class="main_container">
-            <h1>Login</h1>
+            <h1>Sign Up</h1>
             
             <div class="input_field_container">
                 <form action="#">
@@ -36,11 +35,9 @@ include_once __DIR__ . "/config.php";
                     <input type="text" id="login_email" name="login_email" class="input_field">
                     <label for="login_password">Password:</label>
                     <input type="password" id="login_password" name="login_password" class="input_field">
-                    <input type="submit" value="Login" class="btn form_btn" id="login_btn">
+                    <input type="submit" value="Sign Up" class="btn form_btn" id="login_btn">
                 </form>
             </div>
-
-            <a id="signup_link" href="signup.php">Not a member? Sign up here</a>
         </div>
     </div>
 

@@ -263,6 +263,10 @@ footer h3 {
   }
 }
 
+footer #copyright {
+  font-size: 0.8rem;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

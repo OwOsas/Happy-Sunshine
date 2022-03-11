@@ -263,6 +263,10 @@ footer h3 {
   }
 }
 
+footer #copyright {
+  font-size: 0.8rem;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -398,6 +402,11 @@ a img {
   width: fit-content;
 }
 
+.order .item_name {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
 .order div {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
@@ -423,6 +432,7 @@ a img {
 .order .btn {
   border: none;
   font-size: 1rem;
+  margin-top: 0.25rem;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;

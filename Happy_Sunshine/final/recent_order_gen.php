@@ -5,12 +5,12 @@
 
 <div id="recent_orders">
     <?php
-    function generate_order($order_date, $icon_link, $order_items, $order_price){
+    function generate_order($order_date, $icon_link, $order_item, $order_price){
         echo '    <div class="order">';
         echo '        <img src="' . $icon_link . '" alt="">';
-        echo '        <div><p>' . $order_date . '</p>';
-        echo '        <p>' . $order_items . '</p>';
+        echo '        <div><p class="item_name">' . $order_item . '</p>';
         echo '        <p>' . $order_price . '</p>';
+        echo '        <p>' . $order_date . '</p>';
         echo '        <button class="btn">Order again</button></div>';
         echo '    </div>';
     }

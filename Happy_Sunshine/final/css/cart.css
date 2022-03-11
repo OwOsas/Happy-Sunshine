@@ -263,6 +263,10 @@ footer h3 {
   }
 }
 
+footer #copyright {
+  font-size: 0.8rem;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -623,7 +627,7 @@ a img {
 
 @media screen and (min-width: 1050px) {
   .fst {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 }
