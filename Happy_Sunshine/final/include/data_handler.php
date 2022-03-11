@@ -50,5 +50,3 @@ if(isset($_GET["uid"]) && !$alreadyUploaded){
 if (!isset($_COOKIE["uid"])){
     setcookie("uid", uniqid("", true));
 }
-
-?>
