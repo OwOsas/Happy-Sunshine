@@ -165,7 +165,7 @@ include_once __DIR__ . "/dbh_inc.php";
         }
     }
 
-function cart_item_template(string $name, array $items, $price, string $img){
+function cart_item_template(string $name, array $items, $price, string $img, $i_ID){
     echo '<div class="cart_item_card">';
     echo '    <div class="item">';
     echo '        <div class="img" style="background-image:url(./img/menu/thumbnail/' . $img . ');"></div>';
@@ -179,17 +179,16 @@ function cart_item_template(string $name, array $items, $price, string $img){
             if($item != end($items)){
                 $echo .= ", ";
             }
-
         }
     }
-    echo substr($echo, 0, -2);
+    echo substr($echo, 0);
     echo '</p>';
     echo '        </div>';
     echo '    </div>';
     echo '    <div class="price">$' . number_format($price,2) . '</div>';
     echo '    <div class="item_mod">';
     echo '        <a href="">Edit</a>';
-    echo '        <a href="">Remove</a>';
+    echo '        <a href="cart.php?remove=' . $i_ID . '">Remove</a>';
     echo '        <div class="quantity">';
     echo '            <div class="subtract"></div>';
     echo '            <p>1</p>';
@@ -238,7 +237,6 @@ function receipt_item_template(string $name, array $items, $price, string $img){
             if($item != end($items)){
                 $echo .= ", ";
             }
-        
         }
     }
     echo substr($echo, 0, -2);

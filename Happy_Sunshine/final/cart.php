@@ -42,7 +42,7 @@ include_once __DIR__ . "/include/data_handler.php";
                 <?php
                 if (count($_SESSION["cart_items"]) > 0) {
                     foreach ($_SESSION["cart_items"] as $theItem) {
-                        cart_item_template($theItem->getName(), $theItem->getItems_as_array(), $theItem->getPrice(), $theItem->getImg());
+                        cart_item_template($theItem->getName(), $theItem->getItems_as_array(), $theItem->getPrice(), $theItem->getImg(), $theItem->getUID());
                     }
                     $isEmpty = false;
                 } else {

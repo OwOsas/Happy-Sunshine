@@ -16,7 +16,7 @@ else{
     $_SESSION["cart_items"] = array();
 }
 
-$reserved_words = ["i_name", "id", "uid", "clear", "delete", "order_note"];
+$reserved_words = ["i_name", "id", "uid", "clear", "delete", "order_note", "remove"];
 
 
 
@@ -49,4 +49,13 @@ if(isset($_GET["uid"]) && !$alreadyUploaded){
 
 if (!isset($_COOKIE["uid"])){
     setcookie("uid", uniqid("", true));
+}
+
+//remove item check
+if(isset($_GET["remove"])){
+    foreach($_SESSION["cart_items"] as $cart_item){
+        if($cart_item->getUID() == $_GET["remove"]){
+            unset($_SESSION["cart_items"][key($_SESSION["cart_items"])]);
+        }
+    }
 }
