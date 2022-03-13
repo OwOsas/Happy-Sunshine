@@ -79,14 +79,11 @@ session_start();
 
     <!--The div element for the map -->
 
-
-    
+</div>
 
     <?php
         include_once __DIR__ . '/components/footer.php';
     ?>
-
-</div>
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script
       src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly&channel=2"

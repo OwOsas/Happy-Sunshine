@@ -13,6 +13,7 @@
   max-width: 90%;
   width: 100%;
 }
+
 #item_info h1 {
   font-size: 1.5rem;
 }
@@ -20,36 +21,48 @@
 .customize_section {
   margin-top: 2.5rem;
 }
+
 .customize_section p {
   display: inline-block;
 }
+
 .customize_section .section_title {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
 }
+
 .customize_section .selection {
+  display: -ms-grid;
   display: grid;
-  align-items: end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
   gap: 1rem;
-  grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
 }
-.customize_section input[type=radio], .customize_section input[type=checkbox] {
+
+.customize_section input[type="radio"], .customize_section input[type="checkbox"] {
   accent-color: black;
   position: absolute;
-  transform: scale(1.75);
+  -webkit-transform: scale(1.75);
+          transform: scale(1.75);
   z-index: 10;
 }
-.customize_section input[type=radio]:not(:checked) + label, .customize_section input[type=checkbox]:not(:checked) + label {
+
+.customize_section input[type="radio"]:not(:checked) + label, .customize_section input[type="checkbox"]:not(:checked) + label {
   background-color: white;
   border: 2px solid #C4C4C4;
   border-radius: 22px;
   display: block;
-  filter: drop-shadow(0 3px 1.5px #C4C4C4);
+  -webkit-filter: drop-shadow(0 3px 1.5px #C4C4C4);
+          filter: drop-shadow(0 3px 1.5px #C4C4C4);
   padding: 0.75rem 0.5rem;
   text-align: center;
 }
-.customize_section input[type=radio]:checked + label, .customize_section input[type=checkbox]:checked + label {
+
+.customize_section input[type="radio"]:checked + label, .customize_section input[type="checkbox"]:checked + label {
   background-color: #F0D028;
   border: 2px solid #D6BA24;
   border-radius: 22px;
@@ -57,24 +70,29 @@
   padding: 0.75rem 0.5rem;
   text-align: center;
 }
-.customize_section input[type=radio] + label:hover, .customize_section input[type=checkbox] + label:hover {
+
+.customize_section input[type="radio"] + label:hover, .customize_section input[type="checkbox"] + label:hover {
   cursor: pointer;
 }
+
 .customize_section .price_tag {
   background-color: #EE652A;
   border-radius: 16px;
   color: white;
-  filter: drop-shadow(0 3px 1.5px #C4C4C4);
+  -webkit-filter: drop-shadow(0 3px 1.5px #C4C4C4);
+          filter: drop-shadow(0 3px 1.5px #C4C4C4);
   padding: 0.1rem 0.5rem;
   position: absolute;
   right: 0;
   top: -12px;
   z-index: 10;
 }
+
 .customize_section .with_price_tag {
   margin-top: 1.25rem;
   position: relative;
 }
+
 .customize_section .without_price_tag {
   margin-top: 0.75rem;
 }
@@ -83,6 +101,7 @@
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
+
 #add_note_section .input_field {
   border: 2.5px solid black;
   border-radius: 5px;
@@ -91,6 +110,7 @@
   padding: 0 0.5rem;
   width: 100%;
 }
+
 #add_note_section label {
   display: block;
   font-size: 1.25rem;
@@ -108,47 +128,55 @@
   margin: 1rem auto 0.5rem;
 }
 
-@media screen and (min-width: 750px) {
-  #item_info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: left;
-  }
-  #item_info div {
-    align-self: center;
-  }
-
-  #customize_main .customize_section .selection {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-  #customize_main #price_and_confirm_section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  #customize_main #price_and_confirm_section #add_to_cart_btn {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  #customize_main #price_and_confirm_section #total_price {
-    width: 100%;
-  }
+#total_price #cash-only {
+  white-space: nowrap;
 }
-@media screen and (min-width: 1050px) {
-  #customize_container {
-    display: grid;
-    -moz-column-gap: 1.5rem;
-         column-gap: 1.5rem;
-    grid-template-columns: 1fr 1.5fr;
-  }
 
+@media screen and (min-width: 750px) {
+  #customize_container {
+    display: -ms-grid;
+    display: grid;
+    -webkit-column-gap: 1.5rem;
+            column-gap: 1.5rem;
+    -ms-grid-columns: 1fr 1.5fr;
+        grid-template-columns: 1fr 1.5fr;
+  }
   #item_info {
     display: block;
   }
   #item_info img {
     max-width: 100%;
   }
-
   #customize_main .customize_section .selection {
-    grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
-}/*# sourceMappingURL=customize.css.map */
+  #customize_main #price_and_confirm_section {
+    display: -ms-grid;
+    display: grid;
+    gap: 1rem;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  #customize_main #price_and_confirm_section #add_to_cart_btn {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #customize_main #price_and_confirm_section #total_price {
+    -ms-grid-column-align: end;
+        justify-self: end;
+    text-align: right;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  #customize_main .customize_section .selection {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+/*# sourceMappingURL=customize.css.map */

@@ -57,7 +57,7 @@ include_once __DIR__ . "/include/data_handler.php";
             <div id="confirm_order" class="<?php if ($isEmpty) {
                                                 echo "hidden";
                                             } ?>">
-                <p><b>Total: $5.00</b></p>
+                <p><b>Total: $5.00</b> (Cash Only)</p>
                 <a href="./confirm.php" class="btn" id="confirm_order_btn">
                     Confirm Order
                 </a>

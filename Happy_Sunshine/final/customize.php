@@ -95,7 +95,7 @@ $_SESSION["price_dict"] = $price_dict;
                     <input type="text" id="i_name" name="i_name" class="i_name" value="<?php echo $i_name; ?>" style="display: none;">
                     <input type="text" id="uid" name="uid" class="uid" value="<?php echo uniqid(); ?>" style="display: none;">
                     <div id="price_and_confirm_section">
-                        <p id="total_price"><b>Total: $<span id="calc_price"></span></b> (Cash only)</p>
+                        <p id="total_price"><b>Total: $<span id="calc_price"></span></b><span id="cash-only"> (Cash only)</span></p>
                         <input type="submit" value="Add to cart" class="btn form_btn" id="add_to_cart_btn">
                     </div>
                     <form>

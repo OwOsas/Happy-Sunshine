@@ -42,6 +42,11 @@
     margin: 0 auto;
     padding: 1.5rem;
     width: fit-content;
+
+    .item_name{
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
 }
 
 .order div{
@@ -59,6 +64,7 @@
 .order .btn{
     border: none;
     font-size: 1rem;
+    margin-top: 0.25rem;
     width: fit-content;
 }
 
