@@ -103,6 +103,7 @@ include_once __DIR__ . "/dbh_inc.php";
             $this->base_price = $price;
             $this->img = $img;
             $this->price_dict = array();
+            $this->quantity = 1;
         }
         
         public function addItem(string $category, string $name, float $price){
@@ -163,10 +164,22 @@ include_once __DIR__ . "/dbh_inc.php";
         public function getImg(){
             return $this->img;
         }
+
+        public function getQuantity(){
+            return $this->quantity;
+        }
+
+        public function addQuantity($additional_quantity = 1){
+            $this->quantity += $additional_quantity;
+        }
+
+        public function deductQuantity($additional_quantity = 1){
+            $this->quantity -= $additional_quantity;
+        }
     }
 
-function cart_item_template(string $name, array $items, $price, string $img, $i_ID){
-    echo '<div class="cart_item_card">';
+function cart_item_template(string $name, array $items, $price, string $img, string $i_UID, int $i_ID, int $quantity){
+    echo '<div class="cart_item_card" id="' . $i_UID . '">';
     echo '    <div class="item">';
     echo '        <div class="img" style="background-image:url(./img/menu/thumbnail/' . $img . ');"></div>';
     echo '        <div class="item_description">';
@@ -187,12 +200,12 @@ function cart_item_template(string $name, array $items, $price, string $img, $i_
     echo '    </div>';
     echo '    <div class="price">$' . number_format($price,2) . '</div>';
     echo '    <div class="item_mod">';
-    echo '        <a href="">Edit</a>';
-    echo '        <a href="cart.php?remove=' . $i_ID . '">Remove</a>';
+    echo '        <a href="customize.php?id=' . $i_ID . '&edit=' . $i_UID . '"">Edit</a>';
+    echo '        <a href="cart.php?remove=' . $i_UID . '">Remove</a>';
     echo '        <div class="quantity">';
-    echo '            <div class="subtract"></div>';
-    echo '            <p>1</p>';
-    echo '            <div class="add"></div>';
+    echo '            <a href="cart.php?deduct=' . $i_UID . '&unicode=' . uniqid() . '" class="subtract"></a>';
+    echo '            <p>' . $quantity . '</p>';
+    echo '            <a href="cart.php?add=' . $i_UID . '&unicode=' . uniqid() . '" class="add"></a>';
     echo '        </div>';
     echo '    </div>';
     echo '</div>';

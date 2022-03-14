@@ -42,6 +42,7 @@ if ($result && !($result->num_rows == 0)) {
     }
 }
 $_SESSION["price_dict"] = $price_dict;
+
 ?>
 
 <?php $activePage = "customize.php"; ?>
@@ -134,12 +135,10 @@ $_SESSION["price_dict"] = $price_dict;
         var button_label_array = document.getElementsByClassName("button_label");
         var checkbox_list = document.getElementsByClassName("button_input");
 
-        console.log(checkbox_list);
-
         for (var i = 0; i < checkbox_list.length; i++) {
             if (checkbox_list[i].value in price_dict && checkbox_list[i].checked) {
                 console.log(checkbox_list[i].value, price_dict[checkbox_list[i].value]);
-                calc_price += parseInt(price_dict[checkbox_list[i].value]);
+                calc_price += parseFloat(price_dict[checkbox_list[i].value]);
             }
             checkbox_list[i].addEventListener('change', function(theBox) {
                 console.log(theBox);
@@ -148,7 +147,7 @@ $_SESSION["price_dict"] = $price_dict;
                 for (var i = 0; i < checkbox_list.length; i++) {
                     if (checkbox_list[i].value in price_dict && checkbox_list[i].checked) {
                         console.log(checkbox_list[i].value, price_dict[checkbox_list[i].value]);
-                        calc_price += parseInt(price_dict[checkbox_list[i].value]);
+                        calc_price += parseFloat(price_dict[checkbox_list[i].value]);
                     }
                 }
                 price_html.innerHTML = calc_price.toFixed(2);
@@ -161,7 +160,7 @@ $_SESSION["price_dict"] = $price_dict;
                 for (var i = 0; i < checkbox_list.length; i++) {
                     if (checkbox_list[i].value in price_dict && checkbox_list[i].checked) {
                         console.log(checkbox_list[i].value, price_dict[checkbox_list[i].value]);
-                        calc_price += parseInt(price_dict[checkbox_list[i].value]);
+                        calc_price += parseFloat(price_dict[checkbox_list[i].value]);
                     }
                 }
                 price_html.innerHTML = calc_price.toFixed(2);

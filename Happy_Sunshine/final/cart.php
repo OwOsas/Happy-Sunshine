@@ -41,13 +41,25 @@ include_once __DIR__ . "/include/data_handler.php";
             <div id="cart_items_container">
                 <?php
                 if (count($_SESSION["cart_items"]) > 0) {
+                    $js_price = [];
+                    $js_quantity = [];
                     foreach ($_SESSION["cart_items"] as $theItem) {
-                        cart_item_template($theItem->getName(), $theItem->getItems_as_array(), $theItem->getPrice(), $theItem->getImg(), $theItem->getUID());
+                        cart_item_template($theItem->getName(), $theItem->getItems_as_array(), $theItem->getPrice(), $theItem->getImg(), $theItem->getUID(), $theItem->getID(), $theItem->getQuantity());
+                        array_push($js_price, [$theItem->getUID(), $theItem->getPrice()]);
+                        array_push($js_quantity, [$theItem->getUID(), $theItem->getQuantity()]);
                     }
                     $isEmpty = false;
+
+                    echo "<script>";
+                    echo "";
+                    foreach ($_SESSION["cart_items"] as $theItem) {
+                    }
+                    echo "</script>";
                 } else {
                     $isEmpty = true;
                 }
+
+
 
                 ?>
             </div>
@@ -57,7 +69,7 @@ include_once __DIR__ . "/include/data_handler.php";
             <div id="confirm_order" class="<?php if ($isEmpty) {
                                                 echo "hidden";
                                             } ?>">
-                <p><b>Total: $5.00</b> (Cash Only)</p>
+                <p><b>Total: $<span id="total_price">5.00</span></b> (Cash Only)</p>
                 <a href="./confirm.php" class="btn" id="confirm_order_btn">
                     Confirm Order
                 </a>
@@ -89,36 +101,41 @@ include_once __DIR__ . "/include/data_handler.php";
     ?>
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script>
-        //display empty page when no item in cart
-        // if(document.getElementById("isEmpty").classList.contains('true')){
-        //     document.getElementById("cart_empty").classList.remove("hidden");
-        //     document.getElementById("confirm_order").classList.add("hidden");
-        //     var card = document.getElementsByClassName("cart_item_card");
-        //     if(card.length > 0){
-        //         forEach(element => 
-        //         element.classList.add("hidden")
-        //     );
-        //     }
-        //     else{
-        //         card.classList.add("hidden")
-        //     }
+        var price_dict;
+        var quantity_dict;
+        var total_price = 0;
+        <?php
+        echo "price_dict = {";
+        foreach ($js_price as $row) {
+            if ($row != $js_price[sizeof($js_price) - 1]) {
+                echo "'" . $row[0] . "': '" . $row[1] . "', ";
+            } else {
+                echo "'" . $row[0] . "': '" . $row[1] . "'";
+            }
+        }
+        echo "};";
 
-        //     document.getElementById("start_order").classList.remove("hidden");
-        // }
-        // else{
-        //     document.getElementById("cart_empty").classList.add("hidden");
-        //     document.getElementById("confirm_order").classList.remove("hidden");
-        //     var card = document.getElementsByClassName("cart_item_card");
-        //     if(card.length > 0){
-        //         forEach(element => 
-        //         element.classList.remove("hidden")
-        //     );
-        //     }
-        //     else{
-        //         card.classList.remove("hidden")
-        //     }
-        //     document.getElementById("start_order").classList.add("hidden");
-        // }
+        echo "quantity_dict = {";
+            foreach ($js_quantity as $row) {
+                if ($row != $js_quantity[sizeof($js_quantity) - 1]) {
+                    echo "'" . $row[0] . "': '" . $row[1] . "', ";
+                } else {
+                    echo "'" . $row[0] . "': '" . $row[1] . "'";
+                }
+            }
+            echo "};";
+        ?>
+
+        console.log(price_dict)
+
+        for(var key in price_dict){
+            total_price += parseFloat(price_dict[key]) * parseInt(quantity_dict[key]);
+        }
+
+        document.getElementById("total_price").innerHTML = total_price;
+
+        console.log(total_price);
+
     </script>
     <script src="./js/index.js"></script>
     <script src="./js/g_map.js"></script>
