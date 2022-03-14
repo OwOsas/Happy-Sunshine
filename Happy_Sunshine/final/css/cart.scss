@@ -46,7 +46,12 @@
     }
 
     #cart_empty {
-        margin: 4rem;
+        margin-top: 2rem;
+
+        h2{
+            margin-bottom: 2rem;
+            margin-top: 1rem;
+        }
 
         img {
             height: 300px;

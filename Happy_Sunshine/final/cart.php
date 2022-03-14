@@ -36,49 +36,47 @@ include_once __DIR__ . "/include/data_handler.php";
         </div>
         <!-- Cart Item Card -->
 
+        <?php
+            if (count($_SESSION["cart_items"]) > 0) {
+                $isEmpty = false;
+            } else {
+                $isEmpty = true;
+            }
 
-        <div id="cart_container">
+        ?>
+
+        <div id="cart_empty" class="<?php if (!$isEmpty) {
+                                                echo "hidden";
+                                            } ?>">
+            <div>
+                <img src="./img/icons/cart_empty_crying_bird.svg" alt="" width="50%" height="50%">
+                <h2>My cart is empty!</h2>
+            </div>
+            <a href="./menu.php" class="btn">Order Now</a>
+        </div>
+
+
+        <div id="cart_container" class="<?php if ($isEmpty) {
+                                                echo "hidden";
+                                            } ?>">
             <div id="cart_items_container">
                 <?php
-                if (count($_SESSION["cart_items"]) > 0) {
                     foreach ($_SESSION["cart_items"] as $theItem) {
                         cart_item_template($theItem->getName(), $theItem->getItems_as_array(), $theItem->getPrice(), $theItem->getImg());
                     }
-                    $isEmpty = false;
-                } else {
-                    $isEmpty = true;
-                }
 
                 ?>
             </div>
 
             <!-- _____________________________________________ -->
 
-            <div id="confirm_order" class="<?php if ($isEmpty) {
-                                                echo "hidden";
-                                            } ?>">
+            <div id="confirm_order">
                 <p><b>Total: $5.00</b> (Cash Only)</p>
                 <a href="./confirm.php" class="btn" id="confirm_order_btn">
                     Confirm Order
                 </a>
             </div>
-
-            <div id="cart_empty" class="<?php if (!$isEmpty) {
-                                            echo "hidden";
-                                        } ?>">
-                <img src="./img/icons/cart_empty_crying_bird.svg" alt="" width="50%" height="50%">
-                <h2>My cart is empty!</h2>
-
-                </a>
-            </div>
         </div>
-
-        <a href="./menu.php" class="btn <?php if (!$isEmpty) {
-                                            echo "hidden";
-                                        } ?>" id="start_order">
-            Order Now
-            <img src="./img/icons/arrow_right.svg" alt="">
-        </a>
     </div>
 
 
