@@ -15,7 +15,6 @@ include_once __DIR__ . "/config.php";
     <link rel="shortcut icon" type="image/svg" href="./img/favicon.svg">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/form.css">
-    <link rel="stylesheet" href="./css/login.css">
 </head>
 <body>
     <?php
@@ -39,8 +38,6 @@ include_once __DIR__ . "/config.php";
                     <input type="submit" value="Login" class="btn form_btn" id="login_btn">
                 </form>
             </div>
-
-            <a id="signup_link" href="signup.php">Not a member? Sign up here</a>
         </div>
     </div>
 

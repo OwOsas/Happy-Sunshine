@@ -75,7 +75,7 @@ if (isset($_SESSION["cart_items"]) && count($_SESSION["cart_items"]) > 0) {
                     </div>
                     <div>
                         <label for="phone_number">Phone Number</label>
-                        <input maxlength="13" type="tel" id="phone_number" name="phone_number" placeholder="(000)000-0000" class="input_field" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="<?php echo $u_phoneNo ?>" required>
+                        <input maxlength="9" type="tel" id="phone_number" name="phone_number" placeholder="0000000000" class="input_field" pattern="[0-9]{9}" value="<?php echo $u_phoneNo ?>" required>
                     </div>
                 </div>
             </div>

@@ -16,6 +16,7 @@ session_start();
     <link rel="shortcut icon" type="image/svg" href="./img/favicon.svg">
     <link rel="stylesheet" href="./css/menu.css">
     <link rel="stylesheet" href="./css/recent_orders.css">
+    <link rel="stylesheet" href="./css/form.css">
 </head>
 <body>
     <?php
@@ -26,7 +27,6 @@ session_start();
         else{
             
         }
-
         include_once __DIR__ .'/components/footer.php';
     ?>
 
