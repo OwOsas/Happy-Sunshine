@@ -126,7 +126,20 @@ body .desktop menu{
                     opacity: 60%;
                 }
             }
-            
+            .food_item{
+                width: 100%;
+                height: 5rem;
+
+                display: grid;
+                grid-template-columns: 5rem 1fr 5rem;
+                align-items: center;
+                
+                gap: 1rem;
+
+                img{
+                    height: 5rem
+                }
+            }
         }
 
         .find_us{
@@ -230,6 +243,7 @@ body .desktop menu{
         max-width: 1100px;
         #start_here{
             grid-template-columns: 1.25fr 1fr;
+            grid-template-rows: 1fr 1fr;
             grid-template-areas: 
                 "cta location"
                 "tracking map";
@@ -248,3 +262,6 @@ body .desktop menu{
     
     }
 }
+
+
+

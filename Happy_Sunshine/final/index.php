@@ -9,6 +9,7 @@ include_once __DIR__ . "/include/dbh_inc.php";
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,70 +19,97 @@ include_once __DIR__ . "/include/dbh_inc.php";
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/menu.css">
 </head>
+
 <body>
     <?php
-    include_once __DIR__ .'/components/header.php';
+    include_once __DIR__ . '/components/header.php';
     ?>
 
     <div class="banner desktop">
-        
+
     </div>
-    
+
     <div class="fst">
         <h2>Breakfast Sandwich</h2>
         <p>Our classic breakfast staple with your choice of protein + extras</p>
-        
+
         <div id="start_here">
 
             <div class="btn_container">
                 <h1 id="welcome">Welcome!</h1>
                 <a href="./menu.php" class="btn" id="start_order">
-                    Start Order 
+                    Start Order
                     <img src="./img/icons/arrow_right.svg" alt="">
                 </a>
 
                 <!-- <div> -->
-                    <a href="./recent_orders.php" class="btn" id="recent">
-                        Recent Orders
-                    </a>
-                    <!-- <div class="btn" id="favorites">
+                <a href="./recent_orders.php" class="btn" id="recent">
+                    Recent Orders
+                </a>
+                <!-- <div class="btn" id="favorites">
                         Favorites
                         <img src="" alt="">
                     </div> -->
                 <!-- </div> -->
             </div>
 
-            <div class="order_tracking">
-                <div class="order_no">
-                    <h2><b>Pick Up Time: </b> <br> 
-                        <!-- PHP -->
-                        9:30 am 
-                    </h2>
-                    <a href="./track_orders.php">
-                        Order #
-                        <!-- PHP -->
-                        42
-                    </a>
-                </div>
-                <div class="status_tracker">
-                    <div id="order_placed">
-                        <p>Order Placed</p>
-                        <img src="./img/icons/order_tracking_active.svg" alt="">
-                    </div>
-                    <div class="dash"></div>
-                    <div id="order_placed">
-                        <p>Order Preparing</p>
-                        <img src="./img/icons/order_tracking_active.svg" alt="">
-                    </div>
-                    <div class="dash"></div>
-                    <div id="order_placed">
-                        <p>Order Ready</p>
-                        <img src="./img/icons/order_tracking_active.svg" alt="">
-                    </div>
-                </div>
-                
-                <a href="./receipt.php">View Receipt →</a>
-            </div>
+            <?php
+            if (isset($_COOKIE["name"]) && isset($_COOKIE["phone_number"]) && userExists($conn, $_COOKIE["name"], $_COOKIE["phone_number"])) {
+                $isEmpty = false;
+
+                if (isset($_COOKIE["name"]) && isset($_COOKIE["phone_number"]) && userExists($conn, $_COOKIE["name"], $_COOKIE["phone_number"])) {
+                    $userID = getUserID($conn, $_COOKIE["name"], $_COOKIE["phone_number"]);
+                    $sql = "SELECT * FROM orders WHERE o_u_id = '" . $userID . "'";
+                    $result = mysqli_query($conn, $sql);
+
+                    if ($result && !($result->num_rows == 0)) {
+                        $resultCheck = mysqli_num_rows($result);
+                        if ($resultCheck > 1) {
+                            $order_array = array();
+                            while ($rows = mysqli_fetch_assoc($result)) {
+                                array_push($order_array, $rows);
+                            }
+
+                            $row = end($order_array);
+
+                            $orders = unserialize($row["o_order_detail"]);
+                            $items = "";
+                            foreach ($orders as $theOrder) {
+                                $items .= $theOrder->getName() . " ×" . $theOrder->getQuantity();
+                                if ($theOrder != end($orders)) {
+                                    $items .= ", ";
+                                }
+                            }
+                            $price = $row["o_price"];
+                            $orderID = $row["o_id"];
+                            $pickupTime = $row["o_pickupTime"];
+                            $img = reset($orders)->getImg();
+                        } elseif ($resultCheck == 1) {
+                            $row = mysqli_fetch_assoc($result);
+
+                            $orders = unserialize($row["o_order_detail"]);
+                            $items = "";
+                            foreach ($orders as $theOrder) {
+                                $items .= $theOrder->getName() . " ×" . $theOrder->getQuantity();
+                                if ($theOrder != end($orders)) {
+                                    $items .= ", ";
+                                }
+                            }
+                            $price = $row["o_price"];
+                            $orderID = $row["o_id"];
+                            $pickupTime = $row["o_pickupTime"];
+                            $img = reset($orders)->getImg();
+                        }
+                    } else {
+                        $isEmpty = true;
+                    }
+                }
+
+                if (!$isEmpty) {
+                    include_once __DIR__ . "/components/tracking_card.php";
+                }
+            }
+            ?>
 
             <div class="find_us">
                 <div>
@@ -100,7 +128,7 @@ include_once __DIR__ . "/include/dbh_inc.php";
                 </div>
             </div>
 
-                <!--The div element for the map -->
+            <!--The div element for the map -->
             <div id="map"></div>
 
 
@@ -109,18 +137,16 @@ include_once __DIR__ . "/include/dbh_inc.php";
     </div>
 
 
-<?php
-    include_once __DIR__ .'/components/footer.php';
-?>
+    <?php
+    include_once __DIR__ . '/components/footer.php';
+    ?>
 
-</div>
+    </div>
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-<script
-  src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly&channel=2"
-  async
-></script>
-<script src="./js/index.js"></script>
-<script src="./js/g_map.js"></script>
-<script src="./js/header.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly&channel=2" async></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/g_map.js"></script>
+    <script src="./js/header.js"></script>
 </body>
+
 </html>

@@ -348,6 +348,7 @@ a img {
 
 #cart_empty {
   margin: 3rem auto;
+  padding: 1rem;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -359,21 +360,26 @@ a img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-  grid-column-end: 2;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: end;
 }
 
 #cart_empty img {
   display: block;
   height: 300px;
   margin: 0 auto;
-  width: unset;
+  width: 100%;
 }
 
 #cart_empty h2 {
   margin: 1rem 0;
   text-align: center;
+}
+
+#cart_empty a {
+  max-width: 500px;
+  margin-inline: auto;
 }
 
 #recent_orders_container {

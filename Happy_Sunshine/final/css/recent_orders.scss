@@ -7,25 +7,30 @@
 #cart_empty {
 
     margin: 3rem auto;
+    padding: 1rem;
     width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
 
-    grid-column-start: 2;
-    grid-column-end: 2;
+    grid-column-start: 1;
+    grid-column-end: end;
 
 
     img {
         display: block;
         height: 300px;
         margin: 0 auto;
-        width: unset;
+        width: 100%;
     }
 
     h2 {
         margin: 1rem 0;
         text-align: center;
+    }
+    a{
+        max-width: 500px;
+        margin-inline: auto;
     }
 }
 
