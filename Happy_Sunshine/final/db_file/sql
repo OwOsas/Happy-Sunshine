@@ -28,9 +28,12 @@ CREATE TABLE customization(
 
 CREATE TABLE orders(
     o_id int(11) not null PRIMARY KEY AUTO_INCREMENT,
-    o_order_detail varchar(128) NOT null,
+    o_uid varchar(128) NOT null,
+    o_order_detail blob NOT null,
     o_u_id int(11) NOT null,
     o_u_name varchar(128) NOT null,
     o_u_phone_no varchar(128) NOT null,
+    o_pickupTime varchar(128) NOT null,
+    o_price decimal(8, 2) NOT null,
     c_ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
