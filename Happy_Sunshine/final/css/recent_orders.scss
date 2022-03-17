@@ -4,6 +4,32 @@
 @import './btn';
 @import './style_guide';
 
+#cart_empty {
+
+    margin: 3rem auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    grid-column-start: 2;
+    grid-column-end: 2;
+
+
+    img {
+        display: block;
+        height: 300px;
+        margin: 0 auto;
+        width: unset;
+    }
+
+    h2 {
+        margin: 1rem 0;
+        text-align: center;
+    }
+}
+
+
 #recent_orders_container{
     display: flex;
     padding: 1rem;

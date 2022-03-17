@@ -56,7 +56,6 @@ else{
 //check if user exist, if no create one
 if(isset($_COOKIE["phone_number"]) && isset($_COOKIE["name"]) && !userExists($conn, $_COOKIE["name"], $_COOKIE["phone_number"])){
     createUser($conn, $_COOKIE["name"], $_COOKIE["phone_number"]);
-    echo "submit";
 }
 
 $userID = getUserID($conn, $_COOKIE["name"], $_COOKIE["phone_number"]);

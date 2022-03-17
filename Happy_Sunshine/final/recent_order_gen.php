@@ -5,7 +5,7 @@
 
 <div id="recent_orders">
     <?php
-    function generate_order($order_date, $order_item, $order_price){
+    function generate_order($order_date, $icon_link, $order_item, $order_price){
         echo '    <div class="order">';
         echo '        <img src="./img/menu/thumbnail/' . $icon_link . '" alt="">';
         echo '        <div><p class="item_name">' . $order_item . '</p>';
@@ -38,6 +38,15 @@
                 }
             }
         }
-    
+        else{
+            echo '<div id="cart_empty">';
+            echo '<div>';
+            echo '    <img src="./img/icons/cart_empty_crying_bird.svg" alt="" width="50%" height="50%">';
+            echo '    <h2>You have no past orders!</h2>';
+            echo '</div>';
+            echo '<a href="./menu.php" class="btn">Order Now</a>';
+            echo '</div>';
+        }
+    }
     ?>
 </div>

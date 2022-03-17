@@ -11,6 +11,10 @@
             $pages = array();
             $pages["menu.php"] = "Menu";
             $pages["recent_orders.php"] = "Recent Orders";
+            if(isset($_COOKIE["phone_number"]) && isset($_COOKIE["name"]) && userExists($conn, $_COOKIE["name"], $_COOKIE["phone_number"])){
+                $pages["log_out.php"] = "Log Out";
+            }
+            
         ?>
 
         <ul class="desktop menu" id="desktop_menu">

@@ -20,12 +20,31 @@ session_start();
 </head>
 <body>
     <?php
+    if(!isset($_COOKIE["name"])){
+        if(isset($_GET["name"])){
+            $_COOKIE["name"] = $_GET["name"];
+            setcookie("name", $_GET["name"], time()+(60 * 60 * 24 * 30), "/");
+        }
+    }
+    
+    
+    if(!isset($_COOKIE["phone_number"])){
+        if(isset($_GET["phone_number"])){
+            $_COOKIE["phone_number"] = setcookie("phone_number", $_GET["phone_number"], time()+(60 * 60 * 24 * 30), "/");
+        }
+    }
+
+    if(isset($_COOKIE["phone_number"]) && isset($_COOKIE["name"]) && !userExists($conn, $_COOKIE["name"], $_COOKIE["phone_number"])){
+        createUser($conn, $_COOKIE["name"], $_COOKIE["phone_number"]);
+        echo "submit";
+    }
+
         include_once __DIR__ .'/components/header.php';
         if(isset($_COOKIE["phone_number"]) && isset($_COOKIE["name"]) && userExists($conn, $_COOKIE["name"], $_COOKIE["phone_number"])){
             include_once __DIR__ .'/recent_order_gen.php';
         }
         else{
-            
+            include_once __DIR__ .'/components/login_model.php';
         }
         include_once __DIR__ .'/components/footer.php';
     ?>
