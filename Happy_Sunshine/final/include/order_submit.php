@@ -8,6 +8,8 @@ session_start();
 
 date_default_timezone_set("America/New_York"); 
 
+
+//check cookie
 $is_consistent = true;
 if(isset($_COOKIE["name"])){
     if(!isset($_GET["name"]) || $_GET["name"] != $_COOKIE["name"]){
@@ -23,6 +25,7 @@ else{
     }
 }
 
+
 if(isset($_COOKIE["phone_number"])){
     if(!isset($_GET["phone_number"]) || $_GET["phone_number"] != $_COOKIE["phone_number"]){
         echo "phone_number not consistent";
@@ -35,8 +38,13 @@ else{
     }
 }
 
+echo orderExists($conn, $_COOKIE["name"], $_COOKIE["phone_number"], $_GET["uid"]);
+
+
+//check if uid exist
 if(isset($_GET["uid"])){
     if(orderExists($conn, $_COOKIE["name"], $_COOKIE["phone_number"], $_GET["uid"])){
+        die();
         header("location: ../confirm.php?error=order_exist");
     }
 }
@@ -44,13 +52,17 @@ else{
     header("location: ../confirm.php?error=no_uid");
 }
 
-if(!userExists($conn, $_COOKIE["name"], $_COOKIE["phone_number"]) && isset($_COOKIE["phone_number"]) && isset($_COOKIE["name"])){
+
+//check if user exist, if no create one
+if(isset($_COOKIE["phone_number"]) && isset($_COOKIE["name"]) && !userExists($conn, $_COOKIE["name"], $_COOKIE["phone_number"])){
     createUser($conn, $_COOKIE["name"], $_COOKIE["phone_number"]);
     echo "submit";
 }
 
 $userID = getUserID($conn, $_COOKIE["name"], $_COOKIE["phone_number"]);
 
+
+//check pickup time
 if(isset($_GET["custom_pick_up_time"]) && $_GET["custom_pick_up_time"] != ""){
     $pickupTime = $_GET["custom_pick_up_time"];
 }
@@ -60,8 +72,26 @@ else{
     }
 }
 
-placeOrder($conn, $_COOKIE["name"], $_COOKIE["phone_number"], $userID, $_GET["uid"], $_SESSION["cart_items"], $pickupTime);
+//total price
+$total_price = 0;
+
+if (isset($_SESSION["cart_items"]) && count($_SESSION["cart_items"]) > 0) {
+        foreach ($_SESSION["cart_items"] as $theItem) {
+            $total_price += $theItem->getTotalPrice();
+        }
+}
+
+echo $total_price;
+
+//place order
+if(!orderExists($conn, $_COOKIE["name"], $_COOKIE["phone_number"], $_GET["uid"])){
+    placeOrder($conn, $_COOKIE["name"], $_COOKIE["phone_number"], $userID, $_GET["uid"], $_SESSION["cart_items"], $pickupTime,$total_price);
+}
+
 
 $_SESSION["cart_items"] = null;
 
+
+
+header("location: ../receipt.php?o_id=" . mysqli_insert_id($conn));
 //echo '<pre>' , var_dump($unserialize_item) , '</pre>';

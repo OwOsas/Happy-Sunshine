@@ -314,18 +314,19 @@ function createUser($conn, $username, $phoneNo){
     //header("location: ../index.php?error=none");
 }
 
-function placeOrder($conn, $username, $phoneNo, $u_id, $o_uid, $o_orderdetail, $pickup_time){
-    $sql = "INSERT INTO orders (o_uid, o_order_detail, o_u_id, o_u_name, o_u_phone_no, 	o_pickupTime) VALUES (?,?,?,?,?,?)";
+function placeOrder($conn, $username, $phoneNo, $u_id, $o_uid, $o_orderdetail, $pickup_time, $price){
+    $sql = "INSERT INTO orders (o_uid, o_order_detail, o_u_id, o_u_name, o_u_phone_no, 	o_pickupTime, o_price) VALUES (?,?,?,?,?,?,?)";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)){
         header("location: ../index.php?error=stmtFailed");
         exit(); 
     }
-    
-    mysqli_stmt_bind_param($stmt, "ssisss", $o_uid, $o_orderdetail, $u_id, $username, $phoneNo, $pickup_time);
+    $serialized_order = serialize($o_orderdetail);
+    mysqli_stmt_bind_param($stmt, "ssisssd", $o_uid, $serialized_order, $u_id, $username, $phoneNo, $pickup_time,$price);
+
     mysqli_stmt_execute($stmt);
+    echo mysqli_error($conn);
     mysqli_stmt_close($stmt);
-    header("location: ../index.php?error=none");
 }
 
 function orderExists($conn, $username, $phoneNo, $uid){
@@ -333,7 +334,7 @@ function orderExists($conn, $username, $phoneNo, $uid){
 
     $result = mysqli_query($conn,$sql);
 
-    if ($result && !($result->num_rows == 0)) {
+    if ($result && $result->num_rows != 0) {
         return true;
     }
     else{
@@ -370,6 +371,28 @@ function getUserID($conn, $username, $phoneNo){
         }
     }
     else{
+        return false;
+    }
+    return false;
+}
+
+function getOrder($conn, $o_id){
+    $sql = "SELECT * FROM orders WHERE o_id ='" . $o_id. "';";
+    $result = mysqli_query($conn,$sql);
+
+    if ($result && !($result->num_rows == 0)) {
+        $resultCheck = mysqli_num_rows($result);
+        if($resultCheck==1){
+            while ($row = mysqli_fetch_assoc($result)) {
+                return $row;
+            }
+        }
+        else{
+            echo "more than one";
+        }
+    }
+    else{
+        echo "no results";
         return false;
     }
     return false;
