@@ -3,26 +3,47 @@ include_once __DIR__ . "/config.php";
 include_once __DIR__ . "/include/functions.php";
 include_once __DIR__ . "/include/dbh_inc.php";
 session_start();
+$u_name = null;
+if (isset($_COOKIE["u_name"])) {
+    $u_name = $_COOKIE["u_name"];
+}
+
+$u_phoneNo = null;
+if (isset($_COOKIE["u_phoneNo"])) {
+    $u_phoneNo = $_COOKIE["u_phoneNo"];
+}
+
+//var_dump($_SESSION["cart_items"]);
+
+$total_price = 0;
+
+if (isset($_SESSION["cart_items"]) && count($_SESSION["cart_items"]) > 0) {
+        foreach ($_SESSION["cart_items"] as $theItem) {
+            $total_price += $theItem->getTotalPrice();
+        }
+}
+        
+
 ?>
 
 <?php $activePage = "confirm.php"; ?>
 
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Confirm Order | Happy Sunshine</title>
-        <link rel="shortcut icon" type="image/svg" href="./img/favicon.svg">
-        <link rel="stylesheet" href="./css/index.css">
-        <link rel="stylesheet" href="./css/confirm.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Order | Happy Sunshine</title>
+    <link rel="shortcut icon" type="image/svg" href="./img/favicon.svg">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/confirm.css">
+</head>
 
-    <body>
-        <?php
-        include_once __DIR__ .'/components/header.php';
+<body>
+    <?php
+    include_once __DIR__ . '/components/header.php';
     ?>
 
     <div class="fst">
@@ -35,9 +56,9 @@ session_start();
             <div id="cart_info">
                 <h2>My Cart</h2>
                 <?php
-                    foreach($_SESSION["cart_items"] as $theItem){
-                        confirm_item_template($theItem->getName(), $theItem->getItems_as_array(), $theItem->getPrice(), $theItem->getImg());
-                    }
+                foreach ($_SESSION["cart_items"] as $theItem) {
+                    confirm_item_template($theItem->getName(), $theItem->getItems_as_array(), $theItem->getTotalPrice(), $theItem->getImg(), $theItem->getQuantity());
+                }
                 ?>
             </div>
             <div id="order_info">
@@ -45,13 +66,11 @@ session_start();
                 <div>
                     <div>
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" class="input_field" value="John Smith">
+                        <input type="text" id="name" name="name" class="input_field" placeholder="Enter your name..." value="<?php echo $u_name ?>" required>
                     </div>
                     <div>
                         <label for="phone_number">Phone Number</label>
-                        <input type="tel" id="phone_number" name="phone_number" class="input_field"
-                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                        value="111-111-1111">
+                        <input maxlength="13" type="tel" id="phone_number" name="phone_number" placeholder="(000)000-0000" class="input_field" pattern="([0-9]{3})[0-9]{3}-[0-9]{4}" value="<?php echo $u_phoneNo ?>" required>
                     </div>
                 </div>
             </div>
@@ -62,28 +81,40 @@ session_start();
                         <input class="button_input" type="radio" name="pick_up_time" value="ASAP" checked>
                         <label class="button_label" for="ASAP">ASAP</label>
                     </div>
-                    <div>
-                        <input class="button_input" type="radio" name="pick_up_time" value="">
-                        <label class="button_label" for="pick_up_time">Select pickup time</label>
+
+                    <?php
+                    $starting_hr = "06:30";
+                    $closing_hr = "16:00";
+                    if (date("w") == 6 || date("w") == 7) {
+                        $starting_hr = "07:00";
+                        $closing_hr = "15:00";
+                    }
+                    ?>
+                    <div id="time_picker_container">
+                        <label class="button_label" for="custom_pick_up_time">Pick-up Time: </label>
+                        <input type="time" id="custom_pick_up_time" name="custom_pick_up_time" min="<?php echo $starting_hr; ?>" max="<?php echo $closing_hr; ?>">
                     </div>
+
                 </div>
-            </div> 
+            </div>
             <div id="confirm_order">
-                <p id="total"><b>Total: $5.00</b> (Cash only)</p>
+                <p id="total"><b>Total: $<?php echo number_format($total_price,2); ?></b> (Cash only)</p>
                 <input type="submit" value="Place Order" class="btn form_btn" id="place_order_btn">
             </div>
         </form>
     </div>
 
     <?php
-        include_once __DIR__ .'/components/footer.php';
+    include_once __DIR__ . '/components/footer.php';
     ?>
 
-                <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
 
-                <script src="./js/index.js"></script>
-                <script src="./js/header.js"></script>
-                <script src="./js/button.js"></script>
-    </body>
+    <script src="./js/index.js"></script>
+    <script src="./js/header.js"></script>
+    <script src="./js/button.js"></script>
+    <script src="./js/confirm.js"></script>
+    
+</body>
 
-    </html>
+</html>

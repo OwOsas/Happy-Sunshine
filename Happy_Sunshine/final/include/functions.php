@@ -103,6 +103,7 @@ include_once __DIR__ . "/dbh_inc.php";
             $this->base_price = $price;
             $this->img = $img;
             $this->price_dict = array();
+            $this->quantity = 1;
         }
         
         public function addItem(string $category, string $name, float $price){
@@ -160,13 +161,35 @@ include_once __DIR__ . "/dbh_inc.php";
             return $total;
         }
 
+        public function getTotalPrice(){
+            $total = $this->base_price;;
+            foreach($this->price_dict as $price){
+                $total += $price;
+            }
+
+            $total = $total *$this->quantity;
+            return $total;
+        }
+
         public function getImg(){
             return $this->img;
         }
+
+        public function getQuantity(){
+            return $this->quantity;
+        }
+
+        public function addQuantity($additional_quantity = 1){
+            $this->quantity += $additional_quantity;
+        }
+
+        public function deductQuantity($additional_quantity = 1){
+            $this->quantity -= $additional_quantity;
+        }
     }
 
-function cart_item_template(string $name, array $items, $price, string $img){
-    echo '<div class="cart_item_card">';
+function cart_item_template(string $name, array $items, $price, string $img, string $i_UID, int $i_ID, int $quantity){
+    echo '<div class="cart_item_card" id="' . $i_UID . '">';
     echo '    <div class="item">';
     echo '        <div class="img" style="background-image:url(./img/menu/thumbnail/' . $img . ');"></div>';
     echo '        <div class="item_description">';
@@ -179,31 +202,30 @@ function cart_item_template(string $name, array $items, $price, string $img){
             if($item != end($items)){
                 $echo .= ", ";
             }
-
         }
     }
-    echo substr($echo, 0, -2);
+    echo substr($echo, 0);
     echo '</p>';
     echo '        </div>';
     echo '    </div>';
     echo '    <div class="price">$' . number_format($price,2) . '</div>';
     echo '    <div class="item_mod">';
-    echo '        <a href="">Edit</a>';
-    echo '        <a href="">Remove</a>';
+    echo '        <a href="customize.php?id=' . $i_ID . '&edit=' . $i_UID . '"">Edit</a>';
+    echo '        <a href="cart.php?remove=' . $i_UID . '">Remove</a>';
     echo '        <div class="quantity">';
-    echo '            <div class="subtract"></div>';
-    echo '            <p>1</p>';
-    echo '            <div class="add"></div>';
+    echo '            <a href="cart.php?deduct=' . $i_UID . '&unicode=' . uniqid() . '" class="subtract"></a>';
+    echo '            <p>' . $quantity . '</p>';
+    echo '            <a href="cart.php?add=' . $i_UID . '&unicode=' . uniqid() . '" class="add"></a>';
     echo '        </div>';
     echo '    </div>';
     echo '</div>';
 }
 
-function confirm_item_template(string $name, array $items, $price, string $img){
+function confirm_item_template(string $name, array $items, $price, string $img, int $quantity){
     echo '<div class="item_info">';
     echo '    <img src="./img/menu/thumbnail/' . $img . '" alt="Cart Item Photo">';
     echo '    <div>';
-    echo '        <p class="item_name">' . $name . '</p>';
+    echo '        <p class="item_name">' . $name . ' &times' . $quantity  . '</p>';
     echo '        <p class="item_content">';
     $echo = "";
     foreach($items as $item){
@@ -215,7 +237,7 @@ function confirm_item_template(string $name, array $items, $price, string $img){
 
         }
     }
-    echo substr($echo, 0, -2);
+    echo $echo;
     echo '</p>';
     echo '        <p class="item_price">Price: $' . number_format($price,2) . '</p>';
     echo '    </div>';
@@ -224,12 +246,12 @@ function confirm_item_template(string $name, array $items, $price, string $img){
 }
 
 
-function receipt_item_template(string $name, array $items, $price, string $img){
+function receipt_item_template(string $name, array $items, $price, string $img, int $quantity){
     echo '<div class="cart_item_card">';
     echo '<div class="item">';
     echo '        <div class="img" style="background-image:url(./img/menu/thumbnail/' . $img . ');"></div>';
     echo '    <div class="item_description">';
-    echo '    <h3>' . $name . '</h3>';
+    echo '    <h3>' . $name . ' &times' . $quantity  . '</h3>';
     echo '            <p>';
     $echo = "";
     foreach($items as $item){
@@ -238,10 +260,9 @@ function receipt_item_template(string $name, array $items, $price, string $img){
             if($item != end($items)){
                 $echo .= ", ";
             }
-        
         }
     }
-    echo substr($echo, 0, -2);
+    echo $echo;
     echo '</p>';
     echo '</div>';
     echo '</div>';

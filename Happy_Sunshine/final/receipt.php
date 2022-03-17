@@ -35,7 +35,7 @@ session_start();
 
         <?php
             foreach($_SESSION["cart_items"] as $theItem){
-                receipt_item_template($theItem->getName(), $theItem->getItems_as_array(), $theItem->getPrice(), $theItem->getImg());
+                receipt_item_template($theItem->getName(), $theItem->getItems_as_array(), $theItem->getPrice(), $theItem->getImg(), $theItem->getQuantity());
             }
             ?>
 

@@ -196,21 +196,56 @@ form #pick_up_time h2 {
   font-weight: 500;
 }
 
+form #pick_up_time #time_picker_container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 9rem 1fr;
+      grid-template-columns: 9rem 1fr;
+}
+
+form #pick_up_time #time_picker_container label {
+  background-color: #F0D028;
+  border: 2px solid #D6BA24;
+  border-right: 0;
+  border-radius: 22px 0 0 22px;
+  display: block;
+  padding: 0.75rem 0;
+  text-align: center;
+}
+
+form #pick_up_time #time_picker_container input[type=time] {
+  background-color: white;
+  border: 2px solid #D6BA24;
+  border-left: 0;
+  border-radius: 0 22px 22px 0;
+  display: block;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+form #pick_up_time #time_picker_container input[type=time] :active {
+  border: 2px solid #F0D028;
+}
+
 form #pick_up_time #time_selection {
   display: -ms-grid;
   display: grid;
   -webkit-column-gap: 0.5rem;
           column-gap: 0.5rem;
-  -ms-grid-columns: 1fr 2fr;
-      grid-template-columns: 1fr 2fr;
+  row-gap: 1rem;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
   margin-top: 0.5rem;
 }
 
-form #pick_up_time input[type="radio"], form #pick_up_time input[type="checkbox"] {
+form #pick_up_time input[type="radio"],
+form #pick_up_time input[type="checkbox"] {
   display: none;
 }
 
-form #pick_up_time input[type="radio"]:not(:checked) + label, form #pick_up_time input[type="checkbox"]:not(:checked) + label {
+form #pick_up_time input[type="radio"]:not(:checked) + label,
+form #pick_up_time input[type="checkbox"]:not(:checked) + label {
   background-color: white;
   border: 2px solid #C4C4C4;
   border-radius: 22px;
@@ -221,7 +256,8 @@ form #pick_up_time input[type="radio"]:not(:checked) + label, form #pick_up_time
   text-align: center;
 }
 
-form #pick_up_time input[type="radio"]:checked + label, form #pick_up_time input[type="checkbox"]:checked + label {
+form #pick_up_time input[type="radio"]:checked + label,
+form #pick_up_time input[type="checkbox"]:checked + label {
   background-color: #F0D028;
   border: 2px solid #D6BA24;
   border-radius: 22px;
@@ -230,7 +266,8 @@ form #pick_up_time input[type="radio"]:checked + label, form #pick_up_time input
   text-align: center;
 }
 
-form #pick_up_time input[type="radio"] + label:hover, form #pick_up_time input[type="checkbox"] + label:hover {
+form #pick_up_time input[type="radio"] + label:hover,
+form #pick_up_time input[type="checkbox"] + label:hover {
   cursor: pointer;
 }
 
@@ -275,6 +312,15 @@ form #confirm_order input {
             align-items: center;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+  }
+  #time_selection {
+    display: -ms-grid;
+    display: grid;
+    -webkit-column-gap: 0.5rem;
+            column-gap: 0.5rem;
+    -ms-grid-columns: 1fr 2fr;
+        grid-template-columns: 1fr 2fr;
+    margin-top: 0.5rem;
   }
 }
 /*# sourceMappingURL=confirm.css.map */
