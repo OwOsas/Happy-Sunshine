@@ -419,7 +419,8 @@ a img {
 }
 
 #food_menu .food_item img {
-  height: unset;
+  height: auto;
+  width: 60px;
 }
 
 @media screen and (min-width: 750px) {
