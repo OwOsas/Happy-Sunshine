@@ -5,7 +5,9 @@ var button_label_array = document.getElementsByClassName("button_label");
 
 for(var i = 0; i < button_label_array.length; i++){
     //console.log(button_label_array[i]);
-    button_label_array[i].addEventListener("click", bindClick(i));
+    if(!button_input_array[i].classList.contains("custom_pick_up_time")){
+        button_label_array[i].addEventListener("click", bindClick(i));
+    }
 }
 
 function bindClick(i){

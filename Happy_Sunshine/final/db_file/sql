@@ -1,8 +1,6 @@
 CREATE TABLE users(
     u_id int(11) not null PRIMARY KEY AUTO_INCREMENT,
-    u_username varchar(128) not null,
-    u_pwd varchar(128) not null,
-    u_email varchar(128) not null,
+    u_name varchar(128) not null,
     u_phonenumber varchar(20) not null,
     u_ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
@@ -25,5 +23,14 @@ CREATE TABLE customization(
     c_additionalprice decimal(8, 2) NOT null,
     c_ischeckbox boolean NOT null,
     c_isdefault boolean NOT null,
+    c_ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+
+CREATE TABLE orders(
+    o_id int(11) not null PRIMARY KEY AUTO_INCREMENT,
+    o_order_detail varchar(128) NOT null,
+    o_u_id int(11) NOT null,
+    o_u_name varchar(128) NOT null,
+    o_u_phone_no varchar(128) NOT null,
     c_ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );

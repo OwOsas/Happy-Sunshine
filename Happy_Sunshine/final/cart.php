@@ -25,7 +25,14 @@ include_once __DIR__ . "/include/data_handler.php";
 
     <?php
     include_once __DIR__ . '/components/header.php';
+    if (count($_SESSION["cart_items"]) > 0) {
+        $isEmpty = false;
+    } else {
+        $isEmpty = true;
+    }
     ?>
+
+    
 
 
 
@@ -38,9 +45,11 @@ include_once __DIR__ . "/include/data_handler.php";
 
 
         <div id="cart_container">
-            <div id="cart_items_container">
+            <div id="cart_items_container" class="<?php if ($isEmpty) {
+                                                echo "hidden";
+                                            } ?>">
                 <?php
-                if (count($_SESSION["cart_items"]) > 0) {
+                if (!$isEmpty) {
                     $js_price = [];
                     $js_quantity = [];
                     foreach ($_SESSION["cart_items"] as $theItem) {
@@ -55,8 +64,6 @@ include_once __DIR__ . "/include/data_handler.php";
                     foreach ($_SESSION["cart_items"] as $theItem) {
                     }
                     echo "</script>";
-                } else {
-                    $isEmpty = true;
                 }
                 ?>
             </div>

@@ -1,14 +1,24 @@
-document.addEventListener()
+var inputList = document.getElementsByClassName('button_input');
 
-function phoneNumberFormatter() {
-  // grab the value of what the user is typing into the input
-  const inputField = document.getElementById("phone_number");
-  if (inputField.value) {
-    const value = inputField.value;
-    console.log(value.length);
-  }
+var ASAP = document.getElementById("ASAP");
 
-  // next, we're going to format this input with the `formatPhoneNumber` function, which we'll write next.
+// for(var i of inputList){
+//     if(i.value == "ASAP"){
+//         console.log("IS ASAP");
+//         ASAP = i;
+//     }
+// }
 
-  // Then we'll set the value of the inputField to the formattedValue we generated with the formatPhoneNumber
+var customTime = document.getElementById("custom_pick_up_time");
+
+if(ASAP.checked == true){
+    customTime.value = "";
+    
 }
+
+ASAP.addEventListener("click", function(){
+    console.log("ASAP CLICKED");
+    if(ASAP.checked == true){
+        customTime.value = "";
+    }
+});

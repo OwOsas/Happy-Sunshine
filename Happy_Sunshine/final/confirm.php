@@ -3,14 +3,19 @@ include_once __DIR__ . "/config.php";
 include_once __DIR__ . "/include/functions.php";
 include_once __DIR__ . "/include/dbh_inc.php";
 session_start();
-$u_name = null;
-if (isset($_COOKIE["u_name"])) {
-    $u_name = $_COOKIE["u_name"];
+
+if($_SESSION["cart_items"] == null){
+    header("location: ./cart.php");
 }
 
-$u_phoneNo = null;
-if (isset($_COOKIE["u_phoneNo"])) {
-    $u_phoneNo = $_COOKIE["u_phoneNo"];
+$u_name = "";
+if (isset($_COOKIE["name"])) {
+    $u_name = $_COOKIE["name"];
+}
+
+$u_phoneNo = "";
+if (isset($_COOKIE["phone_number"])) {
+    $u_phoneNo = $_COOKIE["phone_number"];
 }
 
 //var_dump($_SESSION["cart_items"]);
@@ -52,7 +57,7 @@ if (isset($_SESSION["cart_items"]) && count($_SESSION["cart_items"]) > 0) {
             <h1>Confirm Order</h1>
         </div>
 
-        <form action="receipt.php">
+        <form action="./include/order_submit.php">
             <div id="cart_info">
                 <h2>My Cart</h2>
                 <?php
@@ -70,7 +75,7 @@ if (isset($_SESSION["cart_items"]) && count($_SESSION["cart_items"]) > 0) {
                     </div>
                     <div>
                         <label for="phone_number">Phone Number</label>
-                        <input maxlength="13" type="tel" id="phone_number" name="phone_number" placeholder="(000)000-0000" class="input_field" pattern="([0-9]{3})[0-9]{3}-[0-9]{4}" value="<?php echo $u_phoneNo ?>" required>
+                        <input maxlength="13" type="tel" id="phone_number" name="phone_number" placeholder="(000)000-0000" class="input_field" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="<?php echo $u_phoneNo ?>" required>
                     </div>
                 </div>
             </div>
@@ -79,7 +84,7 @@ if (isset($_SESSION["cart_items"]) && count($_SESSION["cart_items"]) > 0) {
                 <div id="time_selection">
                     <div>
                         <input class="button_input" type="radio" name="pick_up_time" value="ASAP" checked>
-                        <label class="button_label" for="ASAP">ASAP</label>
+                        <label class="button_label" for="ASAP" id="ASAP">ASAP</label>
                     </div>
 
                     <?php
@@ -91,12 +96,14 @@ if (isset($_SESSION["cart_items"]) && count($_SESSION["cart_items"]) > 0) {
                     }
                     ?>
                     <div id="time_picker_container">
-                        <label class="button_label" for="custom_pick_up_time">Pick-up Time: </label>
-                        <input type="time" id="custom_pick_up_time" name="custom_pick_up_time" min="<?php echo $starting_hr; ?>" max="<?php echo $closing_hr; ?>">
+                        <label class="button_label custom_pick_up_time" for="custom_pick_up_time">Pick-up Time: </label>
+                        <input type="time" id="custom_pick_up_time" 
+                        class="custom_pick_up_time" name="custom_pick_up_time" min="<?php echo $starting_hr; ?>" max="<?php echo $closing_hr; ?>">
                     </div>
 
                 </div>
             </div>
+            <input type="text" id="uid" name="uid" class="uid" value="<?php echo uniqid(); ?>" style="display: none;">
             <div id="confirm_order">
                 <p id="total"><b>Total: $<?php echo number_format($total_price,2); ?></b> (Cash only)</p>
                 <input type="submit" value="Place Order" class="btn form_btn" id="place_order_btn">

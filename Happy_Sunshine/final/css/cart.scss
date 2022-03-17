@@ -41,12 +41,15 @@
             justify-content: center;
             align-items: center;
             gap: .5rem;
-
         }
     }
 
     #cart_empty {
-        margin: 4rem;
+        margin: 4rem auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
 
         img {
             height: 300px;

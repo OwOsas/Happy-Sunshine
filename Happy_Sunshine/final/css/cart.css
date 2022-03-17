@@ -406,7 +406,18 @@ a img {
 }
 
 .fst #cart_empty {
-  margin: 4rem;
+  margin: 4rem auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .fst #cart_empty img {

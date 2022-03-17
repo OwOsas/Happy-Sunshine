@@ -299,3 +299,78 @@ function get_item_price($conn, $i_name){
         }
     }
 }
+
+function createUser($conn, $username, $phoneNo){
+    $sql = "INSERT INTO users (u_name, u_phonenumber) VALUES (?,?)";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../confirm.php?error=stmtFailed");
+        exit(); 
+    }
+
+    mysqli_stmt_bind_param($stmt, "ss", $username, $phoneNo);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    //header("location: ../index.php?error=none");
+}
+
+function placeOrder($conn, $username, $phoneNo, $u_id, $o_uid, $o_orderdetail, $pickup_time){
+    $sql = "INSERT INTO orders (o_uid, o_order_detail, o_u_id, o_u_name, o_u_phone_no, 	o_pickupTime) VALUES (?,?,?,?,?,?)";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../index.php?error=stmtFailed");
+        exit(); 
+    }
+    
+    mysqli_stmt_bind_param($stmt, "ssisss", $o_uid, $o_orderdetail, $u_id, $username, $phoneNo, $pickup_time);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../index.php?error=none");
+}
+
+function orderExists($conn, $username, $phoneNo, $uid){
+    $sql = "SELECT * FROM users WHERE  u_name ='" . $username . "' AND u_phonenumber ='" . $phoneNo . "' AND o_uid ='" . $uid  . "';";
+
+    $result = mysqli_query($conn,$sql);
+
+    if ($result && !($result->num_rows == 0)) {
+        return true;
+    }
+    else{
+        return false;
+    }
+    return false;
+}
+
+function userExists($conn, $username, $phoneNo){
+    $sql = "SELECT * FROM users WHERE  u_name ='" . $username . "' AND u_phonenumber ='" . $phoneNo . "';";
+
+    $result = mysqli_query($conn,$sql);
+
+    if ($result && !($result->num_rows == 0)) {
+        return true;
+    }
+    else{
+        return false;
+    }
+    return false;
+}
+
+function getUserID($conn, $username, $phoneNo){
+    $sql = "SELECT * FROM users WHERE  u_name ='" . $username . "' AND u_phonenumber ='" . $phoneNo . "';";
+
+    $result = mysqli_query($conn,$sql);
+
+    if ($result && !($result->num_rows == 0)) {
+        $resultCheck = mysqli_num_rows($result);
+        if($resultCheck==1){
+            while ($row = mysqli_fetch_assoc($result)) {
+                return $row["u_id"];
+            }
+        }
+    }
+    else{
+        return false;
+    }
+    return false;
+}
