@@ -166,9 +166,11 @@ form {
         #time_picker_container {
             display: grid;
             grid-template-columns:  9rem 1fr;
+            filter: drop-shadow(0 3px 1.5px #C4C4C4);
+            
             label{
-                background-color: $clr_secondary;
-                border: 2px solid $clr_btn_selected_border;
+                background-color: #ECECEC;
+                border: 2px solid $clr_grey;
                 border-right: 0;
                 border-radius: 22px 0 0 22px;
                 display: block;
@@ -178,7 +180,7 @@ form {
 
             input[type=time] {
                 background-color: $clr_white;
-                border: 2px solid $clr_btn_selected_border;
+                border: 2px solid $clr_grey;
                 border-left: 0;
                 border-radius: 0 22px 22px 0;
                 display: block;
