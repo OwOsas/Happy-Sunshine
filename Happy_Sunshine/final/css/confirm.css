@@ -201,11 +201,13 @@ form #pick_up_time #time_picker_container {
   display: grid;
   -ms-grid-columns: 9rem 1fr;
       grid-template-columns: 9rem 1fr;
+  -webkit-filter: drop-shadow(0 3px 1.5px #C4C4C4);
+          filter: drop-shadow(0 3px 1.5px #C4C4C4);
 }
 
 form #pick_up_time #time_picker_container label {
-  background-color: #F0D028;
-  border: 2px solid #D6BA24;
+  background-color: #ECECEC;
+  border: 2px solid #CEC3B7;
   border-right: 0;
   border-radius: 22px 0 0 22px;
   display: block;
@@ -215,7 +217,7 @@ form #pick_up_time #time_picker_container label {
 
 form #pick_up_time #time_picker_container input[type=time] {
   background-color: white;
-  border: 2px solid #D6BA24;
+  border: 2px solid #CEC3B7;
   border-left: 0;
   border-radius: 0 22px 22px 0;
   display: block;
