@@ -58,9 +58,6 @@ include_once __DIR__ . "/include/data_handler.php";
                 } else {
                     $isEmpty = true;
                 }
-
-
-
                 ?>
             </div>
 
@@ -132,7 +129,7 @@ include_once __DIR__ . "/include/data_handler.php";
             total_price += parseFloat(price_dict[key]) * parseInt(quantity_dict[key]);
         }
 
-        document.getElementById("total_price").innerHTML = total_price;
+        document.getElementById("total_price").innerHTML = total_price.toFixed(2);
 
         console.log(total_price);
 
