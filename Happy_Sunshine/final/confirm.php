@@ -82,9 +82,9 @@ if (isset($_SESSION["cart_items"]) && count($_SESSION["cart_items"]) > 0) {
             <div id="pick_up_time">
                 <h2>Pick-up Time</h2>
                 <div id="time_selection">
-                    <div>
-                        <input class="button_input" type="radio" name="pick_up_time" value="ASAP" checked>
-                        <label class="button_label" for="ASAP" id="ASAP">ASAP</label>
+                    <div id="ASAP_picker">
+                        <input class="button_input" type="radio" id="ASAP" name="pick_up_time" value="ASAP" checked>
+                        <label class="button_label" for="ASAP" id="ASAP_label">ASAP</label>
                     </div>
 
                     <?php
@@ -96,7 +96,7 @@ if (isset($_SESSION["cart_items"]) && count($_SESSION["cart_items"]) > 0) {
                     }
                     ?>
                     <div id="time_picker_container">
-                        <label class="button_label custom_pick_up_time" for="custom_pick_up_time">Pick-up Time: </label>
+                        <label class="custom_pick_up_time" id="custom_pick_up_time_label" for="custom_pick_up_time">Pick-up Time: </label>
                         <input type="time" id="custom_pick_up_time" 
                         class="custom_pick_up_time" name="custom_pick_up_time" min="<?php echo $starting_hr; ?>" max="<?php echo $closing_hr; ?>">
                     </div>
