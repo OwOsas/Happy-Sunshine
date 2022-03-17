@@ -33,5 +33,5 @@
             <p class="item_price">Total: $<?php echo $price ?></p>
         </div>
 
-    <!-- <a href="./receipt.php">View Receipt →</a> -->
+    <a href="./receipt.php?o_id=<?php echo $orderID; ?>">View Receipt →</a>
 </div>

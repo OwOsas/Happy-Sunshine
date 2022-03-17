@@ -5,14 +5,16 @@
 
 <div id="recent_orders">
     <?php
-    function generate_order($order_date, $icon_link, $order_item, $order_price){
+    function generate_order($order_date, $icon_link, $order_item, $order_price, $orderID){
         echo '    <div class="order">';
         echo '        <img src="./img/menu/thumbnail/' . $icon_link . '" alt="">';
-        echo '        <div><p class="item_name">' . $order_item . '</p>';
-        echo '        <p>' . $order_price . '</p>';
+        echo '        <div><h2 class="item_name">' . $order_item . '</h2>';
+        echo '        <p>Total: $' . $order_price . '</p>';
         echo '        <p>' . $order_date . '</p>';
-        echo '        <button class="btn">Order again</button></div>';
-        echo '    </div>';
+        echo '<a href="./receipt.php?o_id=' . $orderID . '">';
+        echo '    View Receipt →';
+        echo '</a>';
+        echo '    </div></div>';
     }
 
     if(isset($_COOKIE["name"]) && isset($_COOKIE["phone_number"]) && userExists($conn, $_COOKIE["name"], $_COOKIE["phone_number"])){
@@ -34,7 +36,7 @@
                     }
                     
                     $img = reset($orders)->getImg();
-                    generate_order($row["o_ts"], $img, $items, $row["o_price"]);
+                    generate_order($row["o_ts"], $img, $items, $row["o_price"],$row["o_id"]);
                 }
             }
         }

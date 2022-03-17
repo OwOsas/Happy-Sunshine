@@ -19,24 +19,17 @@ session_start();
     <link rel="stylesheet" href="./css/form.css">
 </head>
 <body>
-    <?php
-    if(!isset($_COOKIE["name"])){
-        if(isset($_GET["name"])){
-            $_COOKIE["name"] = $_GET["name"];
+    <?php  
+    if(!isset($_COOKIE["phone_number"])&& !isset($_COOKIE["name"])){
+        if(isset($_GET["phone_number"]) && isset($_GET["name"])){
             setcookie("name", $_GET["name"], time()+(60 * 60 * 24 * 30), "/");
-        }
-    }
-    
-    
-    if(!isset($_COOKIE["phone_number"])){
-        if(isset($_GET["phone_number"])){
-            $_COOKIE["phone_number"] = setcookie("phone_number", $_GET["phone_number"], time()+(60 * 60 * 24 * 30), "/");
+            setcookie("phone_number", $_GET["phone_number"], time()+(60 * 60 * 24 * 30), "/");
+            header("location: ./recent_orders.php");
         }
     }
 
     if(isset($_COOKIE["phone_number"]) && isset($_COOKIE["name"]) && !userExists($conn, $_COOKIE["name"], $_COOKIE["phone_number"])){
         createUser($conn, $_COOKIE["name"], $_COOKIE["phone_number"]);
-        echo "submit";
     }
 
         include_once __DIR__ .'/components/header.php';

@@ -427,6 +427,18 @@ a img {
   border-bottom: 1px solid black;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
+  height: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.order img {
+  height: 100%;
 }
 
 .order .item_name {
@@ -486,12 +498,15 @@ a img {
     margin: 0 auto;
     padding: 0;
     width: 80%;
+    -webkit-column-gap: 1.5rem;
+            column-gap: 1.5rem;
   }
   #recent_orders .order {
     border: none;
+    padding-bottom: 0;
   }
   #recent_orders .order .btn {
-    width: 50%;
+    width: 100%;
   }
   #login_container {
     margin: 0 auto;

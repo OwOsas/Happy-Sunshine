@@ -69,7 +69,13 @@
     border-bottom: 1px solid $clr_black;
     padding-bottom: 1rem;
     margin-bottom: 1rem;
+    height: 8rem;
 
+    display: flex;
+    flex-direction: row;
+    img{
+        height: 100%;
+    }
     .item_name{
         font-size: 1.1rem;
         font-weight: 600;
@@ -126,11 +132,14 @@
         padding: 0;
         width: 80%;
 
+        column-gap: 1.5rem;
+
         .order{
             border: none;
+            padding-bottom: 0;
 
             .btn{
-                width: 50%;
+                width: 100%;
             }
         }
     }

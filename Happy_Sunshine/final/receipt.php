@@ -46,12 +46,14 @@ session_start();
             $name = $orders_info["o_u_name"];
             $phone_number = $orders_info["o_u_phone_no"];
             $pickUp = $orders_info["o_pickupTime"];
+            $date = $orders_info["o_ts"]
             ?>
 
         <div class="order_info">
             <ul>
                 <li id="total">Total: $<?php echo number_format($total_price,2); ?></li>
                 <li>Order number: #<?php echo $orderID; ?></li>
+                <li>Date: <?php echo $date ?></li>
                 <li>Name: <?php echo $name; ?></li>
                 <li>Phone No.: <?php echo $phone_number; ?></li>
                 <li>Estimated pick-up time: <?php echo $pickUp ?></li>
