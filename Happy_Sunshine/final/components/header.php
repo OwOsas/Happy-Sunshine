@@ -11,7 +11,6 @@
             $pages = array();
             $pages["menu.php"] = "Menu";
             $pages["recent_orders.php"] = "Recent Orders";
-            $pages["login.php"] = "Login";
         ?>
 
         <ul class="desktop menu" id="desktop_menu">
@@ -30,7 +29,6 @@
     <ul id="mobile_menu" class="mobile menu">        
         <li class="mobile"><a href="<?php echo './menu.php';?>">Menu</a></li>
         <li><a href="./recent_orders.php">Recent Orders</a></li>
-        <li><a href="./recent_orders.php">Login</a></li>
         <!-- <li><a href="">Profile</a></li> -->
     </ul>
 </div>

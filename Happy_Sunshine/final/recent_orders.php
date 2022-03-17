@@ -16,10 +16,12 @@ session_start();
     <link rel="shortcut icon" type="image/svg" href="./img/favicon.svg">
     <link rel="stylesheet" href="./css/menu.css">
     <link rel="stylesheet" href="./css/recent_orders.css">
+    <link rel="stylesheet" href="./css/form.css">
 </head>
 <body>
     <?php
         include_once __DIR__ .'/components/header.php';
+        //include_once __DIR__ .'/components/login_model.php';
         include_once __DIR__ .'/recent_order_gen.php';
         include_once __DIR__ .'/components/footer.php';
     ?>
