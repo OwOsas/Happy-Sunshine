@@ -21,8 +21,12 @@ session_start();
 <body>
     <?php
         include_once __DIR__ .'/components/header.php';
-        //include_once __DIR__ .'/components/login_model.php';
-        include_once __DIR__ .'/recent_order_gen.php';
+        if(isset($_COOKIE["phone_number"]) && isset($_COOKIE["name"]) && userExists($conn, $_COOKIE["name"], $_COOKIE["phone_number"])){
+            include_once __DIR__ .'/recent_order_gen.php';
+        }
+        else{
+            
+        }
         include_once __DIR__ .'/components/footer.php';
     ?>
 
