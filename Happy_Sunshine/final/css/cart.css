@@ -406,7 +406,12 @@ a img {
 }
 
 .fst #cart_empty {
-  margin: 4rem;
+  margin-top: 2rem;
+}
+
+.fst #cart_empty h2 {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 
 .fst #cart_empty img {
