@@ -46,7 +46,7 @@
 
     #cart_empty {
 
-        margin: 4rem auto;
+        margin: 3rem auto;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -54,11 +54,14 @@
 
 
         img {
+            display: block;
             height: 300px;
+            margin: 0 auto;
             width: unset;
         }
 
         h2 {
+            margin: 1rem 0;
             text-align: center;
         }
     }
@@ -232,6 +235,13 @@
             display: block;
         }
     }
+
+    #cart_empty{
+        a{
+            margin: 0 auto;
+            width: 60%;
+        }
+    }
     
     #cart_container{
         display: grid;
@@ -257,5 +267,11 @@
     .fst{
         max-width: 1200px;
         margin: 0 auto;
+    }
+
+    #cart_empty{
+        a{
+            width: 50%;
+        }
     }
 }

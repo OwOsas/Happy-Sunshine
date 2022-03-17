@@ -406,7 +406,7 @@ a img {
 }
 
 .fst #cart_empty {
-  margin: 4rem auto;
+  margin: 3rem auto;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -421,11 +421,14 @@ a img {
 }
 
 .fst #cart_empty img {
+  display: block;
   height: 300px;
+  margin: 0 auto;
   width: unset;
 }
 
 .fst #cart_empty h2 {
+  margin: 1rem 0;
   text-align: center;
 }
 
@@ -615,6 +618,10 @@ a img {
   .fst #title {
     display: block;
   }
+  #cart_empty a {
+    margin: 0 auto;
+    width: 60%;
+  }
   #cart_container {
     display: -ms-grid;
     display: grid;
@@ -640,6 +647,9 @@ a img {
   .fst {
     max-width: 1200px;
     margin: 0 auto;
+  }
+  #cart_empty a {
+    width: 50%;
   }
 }
 /*# sourceMappingURL=cart.css.map */
