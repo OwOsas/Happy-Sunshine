@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* font-family: 'Poppins', sans-serif; */
+html {
+  --hl_h2: #EE702A;
+  --hl_h3: #FC9E12;
+  --font_1: white;
+  background-color: #FAF6F1;
+}
+
+body, * {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+#team_logo {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumbnail {
+  width: 100%;
+}
+.thumbnail .title {
+  background-color: #EE702A;
+  color: white;
+  padding: 1rem 3rem;
+}
+.thumbnail .title h1 {
+  font-size: 3rem;
+  margin-inline: auto;
+  margin: 1rem 0;
+}
+
+.text {
+  margin-inline: auto;
+  max-width: 1200px;
+  padding-inline: 1rem;
+}
+.text h3 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+.text p {
+  font-size: 1.25rem;
+}
+.text h1 {
+  padding: 1rem;
+  font-size: 3em;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--hl_h2);
+  color: white;
+}
+
+.section {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.section h2 {
+  padding: 1rem;
+  padding-bottom: 0;
+  font-size: 2em;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  color: black;
+}
+
+.card_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1vw;
+  min-height: 80vh;
+}
+
+.card_container img {
+  width: 100%;
+  max-width: 1400px;
+}
+
+.desktop {
+  display: none;
+}
+
+.tablet {
+  display: none;
+}
+
+.mobile {
+  display: block;
+}
+
+a {
+  font-size: 1.15em;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1em;
+  margin: 0 4em;
+}
+
+a img {
+  height: 3em;
+  vertical-align: baseline;
+}
+
+#wireframe {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 2em;
+  padding: 2em;
+}
+
+#wireframe img {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 576px) {
+  .desktop {
+    display: none;
+  }
+
+  .tablet {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  #wireframe img {
+    max-width: 320px;
+  }
+}
+@media screen and (min-width: 997px) {
+  .desktop {
+    display: block;
+  }
+
+  .tablet {
+    display: none;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  #wireframe img {
+    max-width: 220px;
+  }
+}/*# sourceMappingURL=index.css.map */

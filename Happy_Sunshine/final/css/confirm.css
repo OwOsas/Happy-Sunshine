@@ -5,139 +5,89 @@
 }
 
 #confirmation_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 1rem 1.5rem;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 #confirmation_container::after {
   content: "";
   display: block;
   height: 1rem;
   width: 4rem;
 }
-
 #confirmation_container h1 {
   text-align: center;
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 1.5rem;
-  -ms-grid-column-align: center;
-      justify-self: center;
+  justify-self: center;
 }
-
 #confirmation_container a {
   color: black;
   text-decoration: none;
   font-weight: normal;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: .5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 form {
   margin: 0 1.5rem;
 }
-
 form #cart_info {
   border-bottom: 1px solid #C4C4C4;
   padding-bottom: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 1rem;
 }
-
 form #cart_info h2 {
   font-weight: 500;
 }
-
 form #cart_info img {
   display: block;
   width: 100%;
 }
-
 form #cart_info .item_info {
-  display: -ms-grid;
   display: grid;
   gap: 1rem;
-  -ms-grid-columns: 64px 2fr;
-      grid-template-columns: 64px 2fr;
+  grid-template-columns: 64px 2fr;
 }
-
 form #cart_info .item_info img {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
-
 form #cart_info .item_info div {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
-
 form #cart_info .item_info div .item_name {
   font-size: 1.25rem;
   font-weight: 600;
 }
-
 form #cart_info .item_info div .item_content {
   line-height: 1rem;
 }
-
 form #cart_info .item_info div .item_price {
   font-weight: 600;
   margin-top: 0.25rem;
 }
-
 form .cart_item_card {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  align-items: center;
   gap: 1rem;
   width: 100%;
   border-bottom: 2px #CEC3B7 solid;
   padding-bottom: 1rem;
   padding-top: 1rem;
 }
-
 form .cart_item_card .item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-start;
+  align-items: center;
   gap: 1rem;
 }
-
 form .cart_item_card .item .img {
   width: 64px;
   height: 64px;
@@ -145,39 +95,31 @@ form .cart_item_card .item .img {
   background-repeat: no-repeat;
   background-position: center;
 }
-
 form .cart_item_card .item .item_description {
   max-width: calc(100% - 80px);
 }
-
 form .cart_item_card .item .item_description h3 {
   font-size: 1.25rem;
 }
-
 form .cart_item_card .price {
   text-align: right;
   font-weight: 500;
   font-size: 1.15rem;
 }
-
 form #order_info {
   border-bottom: 1px solid #C4C4C4;
   padding-bottom: 1.5rem;
   padding-top: 1rem;
 }
-
 form #order_info div div {
   margin-top: 0.5rem;
 }
-
 form #order_info h2 {
   font-weight: 500;
 }
-
 form #order_info label {
   font-weight: 500;
 }
-
 form #order_info .input_field {
   border: 2.5px solid black;
   border-radius: 5px;
@@ -186,25 +128,18 @@ form #order_info .input_field {
   padding: 0 0.5rem;
   width: 100%;
 }
-
 form #pick_up_time {
   padding-bottom: 1.5rem;
   padding-top: 1rem;
 }
-
 form #pick_up_time h2 {
   font-weight: 500;
 }
-
 form #pick_up_time #time_picker_container {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 9rem 1fr;
-      grid-template-columns: 9rem 1fr;
-  -webkit-filter: drop-shadow(0 3px 1.5px #C4C4C4);
-          filter: drop-shadow(0 3px 1.5px #C4C4C4);
+  grid-template-columns: 9rem 1fr;
+  filter: drop-shadow(0 3px 1.5px #C4C4C4);
 }
-
 form #pick_up_time #time_picker_container label {
   background-color: #ECECEC;
   border: 2px solid #CEC3B7;
@@ -214,7 +149,6 @@ form #pick_up_time #time_picker_container label {
   padding: 0.75rem 0;
   text-align: center;
 }
-
 form #pick_up_time #time_picker_container input[type=time] {
   background-color: white;
   border: 2px solid #CEC3B7;
@@ -225,41 +159,33 @@ form #pick_up_time #time_picker_container input[type=time] {
   text-align: center;
   font-size: 1rem;
 }
-
 form #pick_up_time #time_picker_container input[type=time] :active {
   border: 2px solid #F0D028;
 }
-
 form #pick_up_time #time_selection {
-  display: -ms-grid;
   display: grid;
-  -webkit-column-gap: 0.5rem;
-          column-gap: 0.5rem;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
   row-gap: 1rem;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
+  grid-template-rows: 1fr;
   margin-top: 0.5rem;
 }
-
-form #pick_up_time input[type="radio"],
-form #pick_up_time input[type="checkbox"] {
+form #pick_up_time input[type=radio],
+form #pick_up_time input[type=checkbox] {
   display: none;
 }
-
-form #pick_up_time input[type="radio"]:not(:checked) + label,
-form #pick_up_time input[type="checkbox"]:not(:checked) + label {
+form #pick_up_time input[type=radio]:not(:checked) + label,
+form #pick_up_time input[type=checkbox]:not(:checked) + label {
   background-color: white;
   border: 2px solid #C4C4C4;
   border-radius: 22px;
   display: block;
-  -webkit-filter: drop-shadow(0 3px 1.5px #C4C4C4);
-          filter: drop-shadow(0 3px 1.5px #C4C4C4);
+  filter: drop-shadow(0 3px 1.5px #C4C4C4);
   padding: 0.75rem 0.5rem;
   text-align: center;
 }
-
-form #pick_up_time input[type="radio"]:checked + label,
-form #pick_up_time input[type="checkbox"]:checked + label {
+form #pick_up_time input[type=radio]:checked + label,
+form #pick_up_time input[type=checkbox]:checked + label {
   background-color: #F0D028;
   border: 2px solid #D6BA24;
   border-radius: 22px;
@@ -267,21 +193,17 @@ form #pick_up_time input[type="checkbox"]:checked + label {
   padding: 0.75rem 0.5rem;
   text-align: center;
 }
-
-form #pick_up_time input[type="radio"] + label:hover,
-form #pick_up_time input[type="checkbox"] + label:hover {
+form #pick_up_time input[type=radio] + label:hover,
+form #pick_up_time input[type=checkbox] + label:hover {
   cursor: pointer;
 }
-
 form #confirm_order {
   margin-top: 1rem;
 }
-
 form #confirm_order p {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
-
 form #confirm_order input {
   border: none;
 }
@@ -290,39 +212,34 @@ form #confirm_order input {
   #confirmation_container {
     display: block;
   }
+
   #cart_info img {
-    -ms-grid-column-align: end;
-        justify-self: end;
+    justify-self: end;
     max-width: 80%;
   }
+
   #order_info > div {
-    display: -ms-grid;
     display: grid;
-    -webkit-column-gap: 1rem;
-            column-gap: 1rem;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
   }
+
   h2 {
     font-size: 1.5rem;
   }
+
   #confirm_order {
-    display: -ms-grid;
     display: grid;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
   }
+
   #time_selection {
-    display: -ms-grid;
     display: grid;
-    -webkit-column-gap: 0.5rem;
-            column-gap: 0.5rem;
-    -ms-grid-columns: 1fr 2fr;
-        grid-template-columns: 1fr 2fr;
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
+    grid-template-columns: 1fr 2fr;
     margin-top: 0.5rem;
   }
-}
-/*# sourceMappingURL=confirm.css.map */
+}/*# sourceMappingURL=confirm.css.map */

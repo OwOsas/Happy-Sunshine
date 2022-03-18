@@ -13,7 +13,6 @@ date_default_timezone_set("America/New_York");
 $is_consistent = true;
 if(isset($_COOKIE["name"])){
     if(!isset($_GET["name"]) || $_GET["name"] != $_COOKIE["name"]){
-        echo "name not consistent";
         header("location: ../cart.php?error=none");
         $is_consistent = false;
     }
@@ -28,7 +27,6 @@ else{
 
 if(isset($_COOKIE["phone_number"])){
     if(!isset($_GET["phone_number"]) || $_GET["phone_number"] != $_COOKIE["phone_number"]){
-        echo "phone_number not consistent";
         $is_consistent = false;
     }
 }
@@ -79,8 +77,6 @@ if (isset($_SESSION["cart_items"]) && count($_SESSION["cart_items"]) > 0) {
             $total_price += $theItem->getTotalPrice();
         }
 }
-
-echo $total_price;
 
 //place order
 if(!orderExists($conn, $_COOKIE["name"], $_COOKIE["phone_number"], $_GET["uid"])){
