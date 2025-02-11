@@ -1,0 +1,126 @@
+1,Breakfast Sandwich,Bread,Bagel,0.00,0,1
+2,Breakfast Sandwich,Bread,Hoagie Roll,0.00,0,0
+3,Breakfast Sandwich,More,Egg,0.00,1,0
+4,Breakfast Sandwich,More,Hashbrown,0.00,1,0
+5,Breakfast Sandwich,More,Cheese,0.00,1,0
+6,Breakfast Sandwich,Topping,Ketchup,0.00,1,0
+7,Breakfast Sandwich,Topping,Salt,0.00,1,0
+8,Breakfast Sandwich,Topping,Pepper,0.00,1,0
+9,Breakfast Sandwich,Protein,None,0.00,0,1
+10,Breakfast Sandwich,Protein,Bacon,1.00,0,0
+11,Breakfast Sandwich,Protein,Turkey Bacon,1.00,0,0
+12,Breakfast Sandwich,Protein,Sausage,1.00,0,0
+13,Breakfast Sandwich,Protein,Ham,1.00,0,0
+14,Breakfast Sandwich,Protein,Hot Ham,1.00,0,0
+15,Breakfast Sandwich,Protein,Turkey Breast,1.00,0,0
+16,Breakfast Sandwich,Protein,Pork Roll,1.00,0,0
+17,Breakfast Sandwich,Protein,Scrapple,1.00,0,0
+18,Breakfast Sandwich,Protein,Hot Sausage,2.00,0,0
+19,Breakfast Sandwich,Protein,Kielbasa,2.00,0,0
+20,Breakfast Sandwich,Protein,Steak,3.00,0,0
+21,Breakfast Sandwich,Protein,Italian Sausage,0.50,0,0
+22,French Toast,Protein,Plain,0.00,0,0
+23,French Toast,Protein,Egg & Cheese,1.00,0,0
+24,French Toast,Protein,Bacon,1.00,0,0
+25,French Toast,Protein,Sausage,1.00,0,0
+26,French Toast,Protein,Kielbasa,2.00,0,0
+27,French Toast,Protein,Hot Sausage,2.00,0,0
+28,French Toast,Protein,Italian Sausage,2.00,0,0
+29,Cheesesteak,Protein,Plain,0.00,0,0
+30,Cheesesteak,Protein,Mushroom,1.00,0,0
+31,Cheesesteak,Protein,Pepper,1.00,0,0
+32,Cheesesteak,Protein,Pepperoni,1.00,0,0
+33,Cheesesteak,Protein,Hoagie,1.00,0,0
+34,Cheesesteak,Options,Cheese,0.00,1,0
+35,Cheesesteak,Options,Fried Onion,0.00,1,0
+36,Cheesesteak,Toppings,Ketchup,0.00,1,0
+37,Cheesesteak,Toppings,Mayo,0.00,1,0
+38,Cheesesteak,Toppings,Salt,0.00,1,0
+39,Cheesesteak,Toppings,Pepper,0.00,1,0
+40,Cheesesteak,Bread,Hoagie Roll,0.00,1,0
+41,Chicken Cheesesteak,Protein,Plain,0.00,1,0
+42,Chicken Cheesesteak,Protein,Mushroom,1.00,1,0
+43,Chicken Cheesesteak,Protein,Pepper,1.00,1,0
+44,Chicken Cheesesteak,Protein,Pepperoni,1.00,1,0
+45,Chicken Cheesesteak,Protein,Hoagie,1.00,1,0
+46,Chicken Cheesesteak,Protein,Buffalo,1.00,1,0
+47,Chicken Cheesesteak,Protein,Buffalo Grilled,1.00,1,0
+48,Chicken Cheesesteak,Options,Cheese,0.00,1,0
+49,Chicken Cheesesteak,Options,Fried Onion,0.00,1,0
+50,Chicken Cheesesteak,Options,Hash Brown & Bacon,0.00,1,0
+51,Chicken Cheesesteak,Toppings,Ketchup,0.00,1,0
+52,Chicken Cheesesteak,Toppings,Mayo,0.00,1,0
+53,Chicken Cheesesteak,Toppings,Salt,0.00,1,0
+54,Chicken Cheesesteak,Toppings,Pepper,0.00,1,0
+55,Chicken Cheesesteak,Bread,Hoagie Roll,0.00,1,0
+56,Sandwich,Protein,Ham,0.00,1,0
+57,Sandwich,Protein,Turkey,0.00,1,0
+58,Sandwich,Protein,Cooked Salami,0.00,1,0
+59,Sandwich,Protein,Grilled Chicken,2.00,1,0
+60,Sandwich,Options,Lettuce,0.00,1,0
+61,Sandwich,Options,Tomato,0.00,1,0
+62,Sandwich,Options,Onion,0.00,1,0
+63,Sandwich,Toppings,Mayo,0.00,1,0
+64,Sandwich,Bread,Sandwich Bread,0.00,1,0
+65,Sandwich,Bread,Hoagie Roll,0.00,1,0
+66,Club Sandwich,Protein,BLT,0.00,1,0
+67,Club Sandwich,Protein,BLT Club,1.50,1,0
+68,Club Sandwich,Protein,Ham Club,1.50,1,0
+69,Club Sandwich,Protein,Hot Ham Club,1.50,1,0
+70,Club Sandwich,Protein,Turkey Club,1.50,1,0
+71,Club Sandwich,Protein,Cooked Salami Club,1.50,1,0
+72,Club Sandwich,Options,Lettuce,0.00,1,0
+73,Club Sandwich,Options,Tomato,0.00,1,0
+74,Club Sandwich,Options,Bacon,0.00,1,0
+75,Club Sandwich,Toppings,Mayo,0.00,1,0
+76,Hot Dog & Sausage,Protein,Hot Dog,0.00,1,0
+77,Hot Dog & Sausage,Protein,Hot Sausage,1.50,1,0
+78,Hot Dog & Sausage,Protein,Kielbasa,2.00,1,0
+79,Hot Dog & Sausage,Protein,Texas Tommy,3.00,1,0
+80,Hoagies,Protein,Vegetable,0.00,1,0
+81,Hoagies,Protein,Cheese,1.50,1,0
+82,Hoagies,Protein,American,2.50,1,0
+83,Hoagies,Protein,Italian,2.50,1,0
+84,Hoagies,Protein,Ham,2.50,1,0
+85,Hoagies,Protein,Turkey,2.50,1,0
+86,Hoagies,Options,Lettuce,0.00,1,0
+87,Hoagies,Options,Tomato,0.00,1,0
+88,Hoagies,Options,Onion,0.00,1,0
+89,Hoagies,Options,Pickles,0.00,1,0
+90,Hoagies,Options,Sweet Peppers,0.00,1,0
+91,Hoagies,Options,Hot Peppers,0.00,1,0
+92,Hoagies,Toppings,Mayo,0.00,1,0
+93,Hoagies,Toppings,Salt,0.00,1,0
+94,Hoagies,Toppings,Pepper,0.00,1,0
+95,Hoagies,Toppings,Oregano,0.00,1,0
+96,Burger,Protein,Cheeseburger,0.00,1,0
+97,Burger,Protein,Bacon Cheeseburger,1.00,1,0
+98,Burger,Options,Lettuce,0.00,1,0
+99,Burger,Options,Tomato,0.00,1,0
+100,Burger,Options,Onion,0.00,1,0
+101,Burger,Options,Pickles,0.00,1,0
+102,Burger,Toppings,Mayo,0.00,1,0
+103,Burger,Toppings,Salt,0.00,1,0
+104,Burger,Toppings,Pepper,0.00,1,0
+105,Burger,Toppings,Ketchup,0.00,1,0
+106,Grilled Cheese,Protein,Plain,0.00,1,0
+107,Grilled Cheese,Protein,Tomato,0.50,1,0
+108,Grilled Cheese,Protein,Ham,1.00,1,0
+109,Grilled Cheese,Protein,Bacon,1.00,1,0
+110,Grilled Cheese,Protein,Turkey Bacon,1.00,1,0
+111,Grilled Cheese,Protein,Pork Roll,1.00,1,0
+112,Grilled Cheese,Protein,Turkey Breast,1.00,1,0
+113,Grilled Cheese,Protein,Sausage,1.00,1,0
+114,Side Orders,Choice,Side order of Hash Browns,1.50,1,0
+115,Side Orders,Choice,Side order of Bacon,2.00,1,0
+116,Drinks,Choice,Hot Coffee - Small,1.00,1,0
+117,Drinks,Choice,Hot Coffee - Large,1.50,1,0
+118,Drinks,Choice,Hot Tea - Small,1.00,1,0
+119,Drinks,Choice,Hot Tea - Large,1.50,1,0
+120,Drinks,Choice,Ice Coffee,3.00,1,0
+121,Drinks,Choice,Soda Can,1.00,1,0
+122,Drinks,Choice,Soda Bottle,2.00,1,0
+123,Drinks,Choice,Juices,2.00,1,0
+124,Drinks,Choice,Energy Drink,3.00,1,0
+125,Drinks,Choice,Bucket Ice Tea,3.50,1,0
+126,Drinks,Choice,Bucket Lemonade,3.50,1,0
